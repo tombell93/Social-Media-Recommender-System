@@ -1,6 +1,13 @@
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
 
 /*
  * To change this template, choose Tools | Templates
@@ -16,10 +23,27 @@ public class Prioritiser {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("This is a ranking agent.");
-        Gson gson = new GsonBuilder().serializeNulls().create();
+    public static void main(String[] args) throws IOException {
+                
+        int commandSet = 0;
+        
+        do{
+            Scanner reader = new Scanner(System.in);
+            System.out.println("What do you want to do?");
+            System.out.println("Commands: \n 1 - Add new item of test data \n 2 - Load test data and proceed");
+
+            int mode = reader.nextInt();
+
+            if(mode == 1) {
+                createTestData();
+                commandSet = 1;
+            } else if(mode == 2) {
+                runPrioritiser();
+                commandSet = 1;
+            } else {
+                System.out.println("Incorrect command.");
+            }
+        } while(!(commandSet==1));
         
          /* 
 +         * 1. Load test data into list of raw data objects
@@ -40,7 +64,17 @@ public class Prioritiser {
 +         *          ii. Maintain unsorted DataItems in List<DataItem>
 +         *      d. Place new DataItem into list according to score
 +         */
-
+    }
+    
+    private static void createTestData() throws IOException{
+        TestDataManager.createTestData();
         
     }
+    
+    public static void runPrioritiser() throws IOException{
+        System.out.println("Load test data and proceed.");
+        List<DataItem> dataItems = TestDataManager.loadData();
+    }
+    
+    
 }
