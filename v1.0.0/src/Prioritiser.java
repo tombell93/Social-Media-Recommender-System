@@ -74,7 +74,6 @@ public class Prioritiser {
     public static void runPrioritiser() throws IOException{
         System.out.println("Load test data and proceed.");
         List<DataItem> dataItems = TestDataManager.loadData();
+        
     }
-    
-    
 }
