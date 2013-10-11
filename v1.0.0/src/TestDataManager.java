@@ -189,7 +189,7 @@ public class TestDataManager {
         //TODO: Open each file in folder and load as DataItem to return
         for(Iterator<String> i = files.iterator(); i.hasNext(); ) {
             String file = folder.getPath() + "/" + i.next();
-            System.out.println(file);
+            System.out.println("Loading " + file);
             String fileContent = FileManager.readFile(file);
             dataItem = gson.fromJson(fileContent, DataItem.class);
             dataItems.add(dataItem);
