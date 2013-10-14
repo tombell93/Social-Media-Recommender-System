@@ -1,0 +1,1 @@
+{"id":0,"title":null,"detail":"","type":"Tweet","score":0,"link":null,"date":null,"author":"test","location":null,"from":null,"to":null,"hashtag":"#test","priority":0}

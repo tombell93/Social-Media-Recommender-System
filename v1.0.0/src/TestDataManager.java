@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -133,27 +134,119 @@ public class TestDataManager {
     private static int addTestData(String dataType) throws IOException {
         System.out.println("Adding " + dataType);
         Scanner reader = new Scanner(System.in);
-        String filePath = "testData/" + dataType + "/test.txt";
+        Random rand = new Random();
+        int uniqueFilePath = rand.nextInt(10000000);
+        
+        String filePath = "testData/" + dataType + "/" 
+                + Integer.toString(uniqueFilePath) + ".txt";
+        
         Gson gson = new GsonBuilder().serializeNulls().create();
         DataItem dataItem = new DataItem(dataType);
         
         //Types: Appointment  Email  FacebookStatus  SMS  Task  Tweet
-        
-        System.out.println("Enter title:");
-        dataItem.setTitle(reader.nextLine());
-        
-        System.out.println("Enter content:");
-        dataItem.setDetail(reader.nextLine());
-        
-        //Asks them for a date
-        System.out.println("Set a date (y/n)?");
-        if(reader.nextLine().equals("y")){
-            dataItem.setDate(setTestDate());
+        if(dataType.equals("Appointment")){
+            System.out.println("Enter title:");
+            dataItem.setTitle(reader.nextLine());
+
+            System.out.println("Enter content:");
+            dataItem.setDetail(reader.nextLine());
+            
+            System.out.println("Enter location:");
+            dataItem.setLocation(reader.nextLine());
+
+            //Asks them for a date
+            System.out.println("Set a date (y/n)?");
+            if(reader.nextLine().equals("y")){
+                dataItem.setDate(setTestDate());
+            }
+
+        } else if(dataType.equals("Email")){
+            System.out.println("Enter subject:");
+            dataItem.setTitle(reader.nextLine());
+
+            System.out.println("Enter content:");
+            dataItem.setDetail(reader.nextLine());
+
+            System.out.println("Enter from:");
+            dataItem.setFrom(reader.nextLine());
+
+            System.out.println("Enter to:");
+            dataItem.setTo(reader.nextLine());
+
+            //Asks them for a date
+            System.out.println("Set a date of arrival (y/n)?");
+            if(reader.nextLine().equals("y")){
+                dataItem.setDate(setTestDate());
+            }
+
+        } else if(dataType.equals("FacebookStatus")){
+            System.out.println("Enter content:");
+            dataItem.setDetail(reader.nextLine());
+
+            System.out.println("Enter author:");
+            dataItem.setAuthor(reader.nextLine());
+
+            System.out.println("Enter hashtags:");
+            dataItem.setHashtag(reader.nextLine());
+
+            //Asks them for a date
+            System.out.println("Set a date of post(y/n)?");
+            if(reader.nextLine().equals("y")){
+                dataItem.setDate(setTestDate());
+            }
+
+            System.out.println("Enter link:");
+            dataItem.setLink(reader.nextLine());
+            
+        } else if(dataType.equals("SMS")){
+            System.out.println("Enter content:");
+            dataItem.setDetail(reader.nextLine());
+
+            System.out.println("Enter from:");
+            dataItem.setFrom(reader.nextLine());
+
+            //Asks them for a date
+            System.out.println("Set a date of arrival(y/n)?");
+            if(reader.nextLine().equals("y")){
+                dataItem.setDate(setTestDate());
+            }
+
+        } else if(dataType.equals("Task")){
+            System.out.println("Enter title:");
+            dataItem.setTitle(reader.nextLine());
+
+            System.out.println("Enter content:");
+            dataItem.setDetail(reader.nextLine());
+            
+            //Asks them for a date
+            System.out.println("Set a due date (y/n)?");
+            if(reader.nextLine().equals("y")){
+                dataItem.setDate(setTestDate());
+            }
+            
+            System.out.println("Enter priority:");
+            dataItem.setPriority(reader.nextInt());
+
+        } else if(dataType.equals("Tweet")){
+            System.out.println("Enter content:");
+            dataItem.setDetail(reader.nextLine());
+
+            System.out.println("Enter author:");
+            dataItem.setAuthor(reader.nextLine());
+
+            System.out.println("Enter hashtags:");
+            dataItem.setHashtag(reader.nextLine());
+
+            //Asks them for a date
+            System.out.println("Set a date of tweet(y/n)?");
+            if(reader.nextLine().equals("y")){
+                dataItem.setDate(setTestDate());
+            }
+
+            System.out.println("Enter link:");
+            dataItem.setLink(reader.nextLine());
         }
-        
-        System.out.println("Enter link:");
-        dataItem.setDetail(reader.nextLine());
-        
+                
         
         String json = gson.toJson(dataItem);  
         FileManager.writeFile(filePath, json);

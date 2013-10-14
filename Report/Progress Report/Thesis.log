@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.9)  9 OCT 2013 23:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.9)  14 OCT 2013 16:39
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -530,14 +530,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-))
+) [4
+
+
+])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
- [4
-
-
-]
+ [5]
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
@@ -545,7 +545,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 \tf@lof=\write5
 \openout5 = `Thesis.lof'.
 
- [5
+ [6
 
 
 ]
@@ -556,20 +556,12 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 \tf@lot=\write6
 \openout6 = `Thesis.lot'.
 
- [6
+ [7
 
 
 ]
 ------------------------------------------------------------------------------
  Abbreviations
-------------------------------------------------------------------------------
-[7
-
-
-
-]
-------------------------------------------------------------------------------
- Physical Constants
 ------------------------------------------------------------------------------
 [8
 
@@ -577,7 +569,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 ]
 ------------------------------------------------------------------------------
- Symbols
+ Physical Constants
 ------------------------------------------------------------------------------
 [9
 
@@ -585,40 +577,111 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 ]
 ------------------------------------------------------------------------------
- Dedicatory
+ Symbols
 ------------------------------------------------------------------------------
 [10
 
-] (./Chapters/Chapter1.tex
+
+
+]
+------------------------------------------------------------------------------
+ Dedicatory
+------------------------------------------------------------------------------
+[11
+
+] (./Chapters/Introduction.tex
 Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
-[1
+) (./Chapters/BackgroundResearch.tex [1
 
 
 
-]) (./Appendices/AppendixA.tex [2]
+]
+Chapter 2.
+------------------------------------------------------------------------------
+ 2 Background Research
+------------------------------------------------------------------------------
+
+Package natbib Warning: Citation `article1' on page 2 undefined on input line 1
+2.
+
+) (./Chapters/Specification.tex [2
+
+] [3]
+Chapter 3.
+------------------------------------------------------------------------------
+ 3 Specification
+------------------------------------------------------------------------------
+) (./Chapters/DesignDetail.tex [4
+
+]
+Chapter 4.
+------------------------------------------------------------------------------
+ 4 Design Detail
+------------------------------------------------------------------------------
+) (./Chapters/PlanningAndProgress.tex [5
+
+]
+Chapter 5.
+------------------------------------------------------------------------------
+ 5 Planning and Progress
+------------------------------------------------------------------------------
+) (./Chapters/TestingStrategyAndResults.tex [6
+
+]
+Chapter 6.
+------------------------------------------------------------------------------
+ 6 Testing Strategy and Results
+------------------------------------------------------------------------------
+) (./Chapters/CriticalEvaluation.tex [7
+
+]
+Chapter 7.
+------------------------------------------------------------------------------
+ 7 Critical Evaluation
+------------------------------------------------------------------------------
+) (./Chapters/Conclusion.tex [8
+
+]
+Chapter 8.
+------------------------------------------------------------------------------
+ 8 Conclusion
+------------------------------------------------------------------------------
+) (./Chapters/FurtherWork.tex [9
+
+]
+Chapter 9.
+------------------------------------------------------------------------------
+ 9 Further Work
+------------------------------------------------------------------------------
+) (./Appendices/AppendixA.tex [10
+
+]
 Appendix A.
 ------------------------------------------------------------------------------
  A An Appendix
 ------------------------------------------------------------------------------
-[3
+[11
 
-]) [4]
+]) [12]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
 No file Thesis.bbl.
+
+Package natbib Warning: There were undefined citations.
+
 (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 9744 strings out of 495061
- 134542 string characters out of 1182621
- 212083 words of memory out of 3000000
- 12709 multiletter control sequences out of 15000+50000
+ 9852 strings out of 495061
+ 136085 string characters out of 1182621
+ 216083 words of memory out of 3000000
+ 12747 multiletter control sequences out of 15000+50000
  12362 words of font info for 45 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 48i,11n,45p,13210b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,11n,45p,13210b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10
 .pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
 share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf
@@ -630,9 +693,9 @@ b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-tex
 live/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/
 type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Thesis.pdf (15 pages, 171979 bytes).
+Output written on Thesis.pdf (24 pages, 207642 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 433 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 

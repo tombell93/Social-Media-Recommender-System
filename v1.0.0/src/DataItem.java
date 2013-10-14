@@ -1,6 +1,5 @@
 
 import java.util.Calendar;
-import java.util.Date;
 
 /*
  * To change this template, choose Tools | Templates
@@ -17,7 +16,7 @@ public class DataItem {
     private String title;
     private String detail;
     private String type;
-    private int score;
+    private Double score;
     private String link;
     private Calendar date;
     private String author;
@@ -25,7 +24,8 @@ public class DataItem {
     private String from;
     private String to;
     private String hashtag;
-    private String priority;
+    private int priority;
+    private Topic topic;
     
     public DataItem(){
         
@@ -94,14 +94,14 @@ public class DataItem {
     /**
      * @return the score
      */
-    public int getScore() {
+    public Double getScore() {
         return score;
     }
 
     /**
      * @param score the score to set
      */
-    public void setScore(int score) {
+    public void setScore(Double score) {
         this.score = score;
     }
 
@@ -206,15 +206,29 @@ public class DataItem {
     /**
      * @return the priority
      */
-    public String getPriority() {
+    public int getPriority() {
         return priority;
     }
 
     /**
      * @param priority the priority to set
      */
-    public void setPriority(String priority) {
+    public void setPriority(int priority) {
         this.priority = priority;
+    }
+
+    /**
+     * @return the topic
+     */
+    public Topic getTopic() {
+        return topic;
+    }
+
+    /**
+     * @param topic the topic to set
+     */
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
     
 }
