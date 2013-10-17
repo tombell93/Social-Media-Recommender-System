@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.9)  14 OCT 2013 16:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.9)  16 OCT 2013 12:24
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -594,108 +594,107 @@ Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
-) (./Chapters/BackgroundResearch.tex [1
+[1
 
 
 
-]
+]) (./Chapters/BackgroundResearch.tex [2]
 Chapter 2.
 ------------------------------------------------------------------------------
  2 Background Research
 ------------------------------------------------------------------------------
+) (./Chapters/Specification.tex [3
 
-Package natbib Warning: Citation `article1' on page 2 undefined on input line 1
-2.
-
-) (./Chapters/Specification.tex [2
-
-] [3]
+] [4]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Specification
 ------------------------------------------------------------------------------
-) (./Chapters/DesignDetail.tex [4
+) (./Chapters/DesignDetail.tex [5
 
 ]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Design Detail
 ------------------------------------------------------------------------------
-) (./Chapters/PlanningAndProgress.tex [5
+) (./Chapters/PlanningAndProgress.tex [6
 
 ]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Planning and Progress
 ------------------------------------------------------------------------------
-) (./Chapters/TestingStrategyAndResults.tex [6
+) (./Chapters/TestingStrategyAndResults.tex [7
 
 ]
 Chapter 6.
 ------------------------------------------------------------------------------
  6 Testing Strategy and Results
 ------------------------------------------------------------------------------
-) (./Chapters/CriticalEvaluation.tex [7
+) (./Chapters/CriticalEvaluation.tex [8
 
 ]
 Chapter 7.
 ------------------------------------------------------------------------------
  7 Critical Evaluation
 ------------------------------------------------------------------------------
-) (./Chapters/Conclusion.tex [8
+) (./Chapters/Conclusion.tex [9
 
 ]
 Chapter 8.
 ------------------------------------------------------------------------------
  8 Conclusion
 ------------------------------------------------------------------------------
-) (./Chapters/FurtherWork.tex [9
+) (./Chapters/FurtherWork.tex [10
 
 ]
 Chapter 9.
 ------------------------------------------------------------------------------
  9 Further Work
 ------------------------------------------------------------------------------
-) (./Appendices/AppendixA.tex [10
+) (./Appendices/AppendixA.tex [11
 
 ]
 Appendix A.
 ------------------------------------------------------------------------------
  A An Appendix
 ------------------------------------------------------------------------------
-[11
+) [12
 
-]) [12]
+]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-No file Thesis.bbl.
+(./Thesis.bbl
 
-Package natbib Warning: There were undefined citations.
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-(./Thesis.aux) ) 
+) [13
+
+
+] (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 9852 strings out of 495061
- 136085 string characters out of 1182621
+ 9869 strings out of 495061
+ 136207 string characters out of 1182621
  216083 words of memory out of 3000000
- 12747 multiletter control sequences out of 15000+50000
+ 12748 multiletter control sequences out of 15000+50000
  12362 words of font info for 45 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 48i,11n,45p,13210b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl12.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Thesis.pdf (24 pages, 207642 bytes).
+ 48i,11n,45p,13210b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl12.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Thesis.pdf (25 pages, 209299 bytes).
 PDF statistics:
- 433 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
+ 454 PDF objects out of 1000 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
  393 words of extra memory for PDF output out of 10000 (max. 10000000)
 

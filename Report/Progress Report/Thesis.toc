@@ -9,46 +9,46 @@
 \contentsline {chapter}{Symbols}{x}{dummy.14}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.17}
-\contentsline {section}{\numberline {1.1}Background}{1}{section.18}
-\contentsline {subsection}{\numberline {1.1.1}A Subsection}{1}{subsection.19}
-\contentsline {section}{\numberline {1.2}Project Objective}{1}{section.20}
-\contentsline {section}{\numberline {1.3}Goals}{1}{section.21}
-\contentsline {section}{\numberline {1.4}Unique Features}{1}{section.22}
-\contentsline {chapter}{\numberline {2}Background Research}{2}{chapter.23}
-\contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{2}{section.24}
-\contentsline {subsection}{\numberline {2.1.1}Google Now}{2}{subsection.25}
-\contentsline {section}{\numberline {2.2}Data-mining}{2}{section.26}
-\contentsline {section}{\numberline {2.3}Topic Analysis}{2}{section.27}
-\contentsline {section}{\numberline {2.4}Context-Sensitive Scoring Algorithms}{2}{section.28}
-\contentsline {section}{\numberline {2.5}Ranking Algorithms}{3}{section.29}
-\contentsline {chapter}{\numberline {3}Specification}{4}{chapter.30}
-\contentsline {section}{\numberline {3.1}A Section}{4}{section.31}
-\contentsline {subsection}{\numberline {3.1.1}A Subsection}{4}{subsection.32}
-\contentsline {section}{\numberline {3.2}Another Section}{4}{section.33}
-\contentsline {chapter}{\numberline {4}Design Detail}{5}{chapter.34}
-\contentsline {section}{\numberline {4.1}Data Acquisition}{5}{section.35}
-\contentsline {section}{\numberline {4.2}Scoring Algorithm}{5}{section.36}
-\contentsline {section}{\numberline {4.3}Ranking Algorithm}{5}{section.37}
-\contentsline {chapter}{\numberline {5}Planning and Progress}{6}{chapter.38}
-\contentsline {section}{\numberline {5.1}A Section}{6}{section.39}
-\contentsline {subsection}{\numberline {5.1.1}A Subsection}{6}{subsection.40}
-\contentsline {section}{\numberline {5.2}Another Section}{6}{section.41}
-\contentsline {chapter}{\numberline {6}Testing Strategy and Results}{7}{chapter.42}
-\contentsline {section}{\numberline {6.1}A Section}{7}{section.43}
-\contentsline {subsection}{\numberline {6.1.1}A Subsection}{7}{subsection.44}
-\contentsline {section}{\numberline {6.2}Another Section}{7}{section.45}
-\contentsline {chapter}{\numberline {7}Critical Evaluation}{8}{chapter.46}
-\contentsline {section}{\numberline {7.1}A Section}{8}{section.47}
-\contentsline {subsection}{\numberline {7.1.1}A Subsection}{8}{subsection.48}
-\contentsline {section}{\numberline {7.2}Another Section}{8}{section.49}
-\contentsline {chapter}{\numberline {8}Conclusion}{9}{chapter.50}
-\contentsline {section}{\numberline {8.1}A Section}{9}{section.51}
-\contentsline {subsection}{\numberline {8.1.1}A Subsection}{9}{subsection.52}
-\contentsline {section}{\numberline {8.2}Another Section}{9}{section.53}
-\contentsline {chapter}{\numberline {9}Further Work}{10}{chapter.54}
-\contentsline {section}{\numberline {9.1}A Section}{10}{section.55}
-\contentsline {subsection}{\numberline {9.1.1}A Subsection}{10}{subsection.56}
-\contentsline {section}{\numberline {9.2}Another Section}{10}{section.57}
+\contentsline {section}{\numberline {1.1}The Problem}{1}{section.18}
+\contentsline {section}{\numberline {1.2}Project Objective}{1}{section.19}
+\contentsline {section}{\numberline {1.3}Goals}{1}{section.20}
+\contentsline {section}{\numberline {1.4}Unique Features}{2}{section.33}
+\contentsline {chapter}{\numberline {2}Background Research}{3}{chapter.34}
+\contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{3}{section.35}
+\contentsline {subsection}{\numberline {2.1.1}Google Now}{3}{subsection.36}
+\contentsline {section}{\numberline {2.2}Data-mining}{3}{section.37}
+\contentsline {section}{\numberline {2.3}Topic Analysis}{3}{section.38}
+\contentsline {section}{\numberline {2.4}Context-Sensitive Scoring Algorithms}{3}{section.39}
+\contentsline {section}{\numberline {2.5}Ranking Algorithms}{4}{section.40}
+\contentsline {chapter}{\numberline {3}Specification}{5}{chapter.41}
+\contentsline {section}{\numberline {3.1}A Section}{5}{section.42}
+\contentsline {subsection}{\numberline {3.1.1}A Subsection}{5}{subsection.43}
+\contentsline {section}{\numberline {3.2}Another Section}{5}{section.44}
+\contentsline {chapter}{\numberline {4}Design Detail}{6}{chapter.45}
+\contentsline {section}{\numberline {4.1}Data Acquisition}{6}{section.46}
+\contentsline {section}{\numberline {4.2}Scoring Algorithm}{6}{section.47}
+\contentsline {section}{\numberline {4.3}Ranking Algorithm}{6}{section.48}
+\contentsline {chapter}{\numberline {5}Planning and Progress}{7}{chapter.49}
+\contentsline {section}{\numberline {5.1}A Section}{7}{section.50}
+\contentsline {subsection}{\numberline {5.1.1}A Subsection}{7}{subsection.51}
+\contentsline {section}{\numberline {5.2}Another Section}{7}{section.52}
+\contentsline {chapter}{\numberline {6}Testing Strategy and Results}{8}{chapter.53}
+\contentsline {section}{\numberline {6.1}A Section}{8}{section.54}
+\contentsline {subsection}{\numberline {6.1.1}A Subsection}{8}{subsection.55}
+\contentsline {section}{\numberline {6.2}Another Section}{8}{section.56}
+\contentsline {chapter}{\numberline {7}Critical Evaluation}{9}{chapter.57}
+\contentsline {section}{\numberline {7.1}A Section}{9}{section.58}
+\contentsline {subsection}{\numberline {7.1.1}A Subsection}{9}{subsection.59}
+\contentsline {section}{\numberline {7.2}Another Section}{9}{section.60}
+\contentsline {chapter}{\numberline {8}Conclusion}{10}{chapter.61}
+\contentsline {section}{\numberline {8.1}A Section}{10}{section.62}
+\contentsline {subsection}{\numberline {8.1.1}A Subsection}{10}{subsection.63}
+\contentsline {section}{\numberline {8.2}Another Section}{10}{section.64}
+\contentsline {chapter}{\numberline {9}Further Work}{11}{chapter.65}
+\contentsline {section}{\numberline {9.1}A Section}{11}{section.66}
+\contentsline {subsection}{\numberline {9.1.1}A Subsection}{11}{subsection.67}
+\contentsline {section}{\numberline {9.2}Another Section}{11}{section.68}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{11}{appendix.58}
+\contentsline {chapter}{\numberline {A}An Appendix}{12}{appendix.69}
 \vspace {2em}
+\contentsline {chapter}{Bibliography}{13}{dummy.70}

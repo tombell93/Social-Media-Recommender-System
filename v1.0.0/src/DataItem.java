@@ -25,7 +25,9 @@ public class DataItem {
     private String to;
     private String hashtag;
     private int priority;
-    private Topic topic;
+    private DataContext dataContext = new DataContext();
+    private int timeShown; //in minutes
+    private Calendar timeAdded;
     
     public DataItem(){
         
@@ -218,17 +220,45 @@ public class DataItem {
     }
 
     /**
-     * @return the topic
+     * @return the dataContext
      */
-    public Topic getTopic() {
-        return topic;
+    public DataContext getDataContext() {
+        return dataContext;
     }
 
     /**
-     * @param topic the topic to set
+     * @param dataContext the dataContext to set
      */
-    public void setTopic(Topic topic) {
-        this.topic = topic;
+    public void setDataContext(DataContext dataContext) {
+        this.dataContext = dataContext;
+    }
+
+    /**
+     * @return the timeShown
+     */
+    public int getTimeShown() {
+        return timeShown;
+    }
+
+    /**
+     * @param timeShown the timeShown to set
+     */
+    public void setTimeShown(int timeShown) {
+        this.timeShown = timeShown;
+    }
+
+    /**
+     * @return the timeAdded
+     */
+    public Calendar getTimeAdded() {
+        return timeAdded;
+    }
+
+    /**
+     * @param timeAdded the timeAdded to set
+     */
+    public void setTimeAdded(Calendar timeAdded) {
+        this.timeAdded = timeAdded;
     }
     
 }

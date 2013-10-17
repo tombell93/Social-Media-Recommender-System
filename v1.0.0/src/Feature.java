@@ -5,11 +5,11 @@
 
 /**
  *
- * @author tjb2g11
+ * @author tom
  */
-public class UserContext {
+public class Feature {
     
-    public UserContext(){
+    public Feature(){
         
     }
     

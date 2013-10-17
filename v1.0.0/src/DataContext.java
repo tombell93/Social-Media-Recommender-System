@@ -9,4 +9,23 @@
  */
 public class DataContext {
     
+    private Topic topic;
+    
+    public DataContext(){
+        
+    }
+    
+    /**
+     * @return the topic
+     */
+    public Topic getTopic() {
+        return topic;
+    }
+
+    /**
+     * @param topic the topic to set
+     */
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
 }

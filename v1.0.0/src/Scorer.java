@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /*
  * To change this template, choose Tools | Templates
@@ -13,8 +14,10 @@ import java.util.List;
  */
 public class Scorer {
         
+    Random r;
+    
     public Scorer(){
-        
+        r = new Random();
     }
     
     public List<DataItem> scoreDataItems(List<DataItem> unscoredDataItems){
@@ -32,11 +35,11 @@ public class Scorer {
      */
     public DataItem scoreDataItem(DataItem unscoredDataItem){
         DataItem scoredDataItem = unscoredDataItem;
-        Double score = 0.0;
-        
-        
+        //Double score = 0.0;
+        scoredDataItem.getDataContext();
         //Make the meat happen here
         
+        double score = r.nextDouble();
         
         scoredDataItem.setScore(score);
         return scoredDataItem;
