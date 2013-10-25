@@ -275,7 +275,8 @@ public class TestDataManager {
         Gson gson = new GsonBuilder().serializeNulls().create();
         System.out.println("Loading " + dataType);
         DataItem dataItem = new DataItem();
-        final File folder = new File("testData/" + dataType);
+        String location = "testData/" + dataType;
+        final File folder = new File(location);
         List<String> files = TestDataManager.listFilesInFolder(folder);
         
         //TODO: Open each file in folder and load as DataItem to return

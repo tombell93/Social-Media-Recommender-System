@@ -17,7 +17,7 @@ public class Scorer {
     Random r;
     
     public Scorer(){
-        r = new Random();
+        
     }
     
     public List<DataItem> scoreDataItems(List<DataItem> unscoredDataItems){
@@ -35,11 +35,21 @@ public class Scorer {
      */
     public DataItem scoreDataItem(DataItem unscoredDataItem){
         DataItem scoredDataItem = unscoredDataItem;
-        //Double score = 0.0;
+        Double score = 0.0;
         scoredDataItem.getDataContext();
-        //Make the meat happen here
+        int testing = 1;
+        //testing = 0;
         
-        double score = r.nextDouble();
+        if(testing==1){
+            r = new Random();
+            score = r.nextDouble();            
+        }else{
+            //Make the meat happen here
+            //TODO: 1st Create user context before this - JavaDB
+            
+        }
+        
+        
         
         scoredDataItem.setScore(score);
         return scoredDataItem;

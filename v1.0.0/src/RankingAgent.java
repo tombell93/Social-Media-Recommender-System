@@ -55,25 +55,15 @@ public class RankingAgent {
     }
     
     /**
-     * If only a single DataItem is added, add to list and call update(List<>)
-     * @param addedDataItem
-     * @return 
-     */
-    public List<DataItem> update(DataItem addedDataItem){
-        List<DataItem> addedDataItems = new ArrayList<DataItem>();
-        addedDataItems.add(addedDataItem);
-        return update(addedDataItems);
-    }
-    
-    /**
      * Accepts new DataItems and returns the most recent ranked list
      * @param addedDataItems
      * @return 
      */
-    public List<DataItem> update(List<DataItem> addedDataItems){
+    public List<DataItem> update(List<DataItem> addedDataItems) 
+            throws FileNotFoundException, IOException, SAXException, 
+            ParserConfigurationException, XPathExpressionException{
         List<DataItem> dataItemsWithContext = new ArrayList<DataItem>();
         
-        //TODO: Implement 2nd
         dataItemsWithContext = 
                 dataContextBuilder.buildDataContexts(addedDataItems);
         
@@ -85,14 +75,26 @@ public class RankingAgent {
         //Adds new scored DataItems to ranked list in correct place
         sortedDataItems = sortNewScoredDataItems(newScoredDataItems);
         
-        //TODO: Implement 4th
-        updateShownTimes();
-        
+        //TODO: Implement 4th        
         if(needMaintenance()){
             runMaintenance();
         }
+        
         System.out.println("End of program");        
         return sortedDataItems;
+    }
+    
+    /**
+     * If only a single DataItem is added, add to list and call update(List<>)
+     * @param addedDataItem
+     * @return 
+     */
+    public List<DataItem> update(DataItem addedDataItem)
+            throws FileNotFoundException, IOException, SAXException, 
+            ParserConfigurationException, XPathExpressionException{
+        List<DataItem> addedDataItems = new ArrayList<DataItem>();
+        addedDataItems.add(addedDataItem);
+        return update(addedDataItems);
     }
     
     /**
@@ -128,7 +130,9 @@ public class RankingAgent {
     };
 
     private boolean needMaintenance() {
+        updateShownTimes();
         //Check if it's time for a maintenance check or if too many in list
+        
         return false;
     }
 
