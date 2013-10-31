@@ -47,6 +47,7 @@ public class Scorer {
             //Make the meat happen here
             //TODO: 1st Create user context before this - JavaDB
             
+            
         }
         
         

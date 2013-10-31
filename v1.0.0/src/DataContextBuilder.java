@@ -1,18 +1,21 @@
 
 import com.alchemyapi.api.AlchemyAPI;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.StringWriter;
+//import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+//import javax.xml.transform.Transformer;
+//import javax.xml.transform.TransformerException;
+//import javax.xml.transform.TransformerFactory;
+//import javax.xml.transform.dom.DOMSource;
+//import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -27,41 +30,71 @@ import org.xml.sax.SAXException;
  */
 public class DataContextBuilder {
     
+    SentimentAPI sentimentAPI = new SentimentAPI();
+    Gson gson = new GsonBuilder().serializeNulls().create();
+    String result;
+    
     public DataContextBuilder(){
         
     }
     
-    public List<DataItem> buildDataContexts(List<DataItem> dataItems)
-            throws FileNotFoundException, IOException, SAXException, 
-            ParserConfigurationException, XPathExpressionException{
+    public List<DataItem> buildDataContexts(List<DataItem> dataItems){
         List<DataItem> dataItemsWithContext = new ArrayList<DataItem>();
         
         // Create an AlchemyAPI object.
-        AlchemyAPI alchemyObj = AlchemyAPI.GetInstanceFromFile("api_key.txt");
+//        AlchemyAPI alchemyObj = AlchemyAPI.GetInstanceFromFile("api_key.txt");
         
         for(DataItem dataItem: dataItems){
             DataContext dataContext = new DataContext();  
-            
+            FeaturesList featuresList = new FeaturesList();
             //TODO: Include more text for this and generate more accurate score
             //TODO: Get category of different text fields and assign score and category to each
-            //TODO: Try out alernative scoring API's
             String text = dataItem.getDetail();
             
             if(!text.isEmpty()){
+                String tempValue = null;
+                JSONObject temp;
+                JSONObject object;
                 
-                Document doc = alchemyObj.TextGetCategory(text);
-                System.out.println(getStringFromDocument(doc));
-
-                String category = doc.getElementsByTagName("category").item(0).getTextContent();
-
-                Double score = Double.parseDouble(doc.getElementsByTagName("score").item(0).getTextContent());
-
-                if(!category.equals("unknown")){
-                    int indexOfCategory = new FeaturesList().getIndexOfCategory(category);
-                    dataContext.getFeatures().get(indexOfCategory).setScore(score);
-                    dataItem.setDataContext(dataContext);
-                    dataItemsWithContext.add(dataItem);
-                }
+                //Subjectivity detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.SubjectivityAnalysis(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setIsSubjective(("objective".equals(object.get("result").toString())?false:true));
+                
+                //Gender detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.GenderDetection(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setGender(object.get("result").toString());
+                
+                //Spam detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.SpamDetection(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setIsSpam(("nospam".equals(object.get("result").toString())?false:true));
+                
+                //Adult content detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.AdultContentDetection(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setIsAdult(("noadult".equals(object.get("result").toString())?false:true));
+                
+                //Readability detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setIsReadable(("advanced".equals(object.get("result").toString())?false:true));
+                
+                //Commercial detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setIsCommercial(("commercial".equals(object.get("result").toString())?true:false));
+                
+                //Educational detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.EducationalDetection(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setIsEducational(("educational".equals(object.get("result").toString())?true:false));
+                    
+                //Educational detection
+                temp = (JSONObject) JSONValue.parse(sentimentAPI.TopicClassification(text));
+                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+                featuresList.setTopic(object.get("result").toString());
             }
             
         }
@@ -69,24 +102,24 @@ public class DataContextBuilder {
         return dataItemsWithContext;
     }
         
-    /**
-     * Converts a document (XML in this case) into a String
-     * @param doc
-     * @return String
-     */
-    private String getStringFromDocument(Document doc) {
-        try {
-            DOMSource domSource = new DOMSource(doc);
-            StringWriter writer = new StringWriter();
-            StreamResult result = new StreamResult(writer);
-
-            TransformerFactory tf = TransformerFactory.newInstance();
-            Transformer transformer = tf.newTransformer();
-            transformer.transform(domSource, result);
-
-            return writer.toString();
-        } catch (TransformerException ex) {
-            return null;
-        }
-    }
+//    /**
+//     * Converts a document (XML in this case) into a String
+//     * @param doc
+//     * @return String
+//     */
+//    private String getStringFromDocument(Document doc) {
+//        try {
+//            DOMSource domSource = new DOMSource(doc);
+//            StringWriter writer = new StringWriter();
+//            StreamResult result = new StreamResult(writer);
+//
+//            TransformerFactory tf = TransformerFactory.newInstance();
+//            Transformer transformer = tf.newTransformer();
+//            transformer.transform(domSource, result);
+//
+//            return writer.toString();
+//        } catch (TransformerException ex) {
+//            return null;
+//        }
+//    }
 }

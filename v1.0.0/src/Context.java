@@ -13,24 +13,37 @@ import java.util.List;
 public class Context {
     
     private FeaturesList featuresList = new FeaturesList();
-    private List<Feature> features;
     
     public Context(){
-        features = featuresList.getNewFeaturesList();
+        
+    }
+    
+    /**
+     * @return the FeaturesList
+     */
+    public FeaturesList getFeaturesList() {
+        return featuresList;
     }
 
+    /**
+     * @param adds the FeaturesList to set
+     */
+    public void setFeaturesList(FeaturesList featuresList) {
+        this.featuresList = featuresList;
+    }
+    
     /**
      * @return the features
      */
     public List<Feature> getFeatures() {
-        return features;
+        return featuresList.getFeatures();
     }
 
     /**
      * @param features the features to set
      */
-    public void setFeatures(List<Feature> features) {
-        this.features = features;
+    public void setFeaturesList(List<Feature> features) {
+        this.featuresList.setFeatures(features);
     }
         
 }

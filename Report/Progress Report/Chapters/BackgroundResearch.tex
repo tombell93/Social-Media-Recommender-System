@@ -1,14 +1,39 @@
 \chapter{Background Research}
 
-This is some sample text.
+A progressive project in the sphere of cross-platform relevance-based intelligent ranking agents, using text analysis and a mathematically rigorous scoring algorithms, requires research in a range of areas across the entire spectrum of low- to high-level computational theory and existing product research. The following summarises the research performed 
+TODO: continue the above \dots
 
 \section{Existing Data-Ranking Implementations}
 
-This is some sample text.
+A good number of content aggregators exist at present in various forms, yet all distinctly lack the complementary relationship between social media (and others) and context-sensitive text-analytics for relevance-based ranking. The following is a summary to the key players in this space at present.
 
-\subsection{Google Now}
+\paragraph{Google Now}
+Google Now is a mobile app which combines Google's search feature with useful information which is deemed relevant to the user's environment such as weather, a map to get them home after a night out or nearby events.
 
-This is some sample text.
+\paragraph{ViralHeat}
+ViralHeat is a web-based social media content aggregator and filter, used for commercial uses of social media. It allows the user to filter content from twitter, Facebook and others according to its sentiment (positive/negative). It's not available as a non-commercial social media aggregator and does not perform topic analysis for ranking.
+
+\paragraph{StreamLife}
+This app aggregates facebook content and tweets, but performs no topic/sentiment analysis or ranking, and provides no capability for including tasks, calendar appointments, SMS messages or emails.
+
+\section{Text analytics services}
+
+There are a good number of existing text analysics services available to the end user and the developer for a range of different types of analytics. These services include sentiment analysis, text categorisation, contextual targeting and a range of others. This section highlights some which are relevant to this study.
+
+\paragraph{AlchemyAPI}
+Alchemy provides an API which performs entity extraction, sentiment analysis, contept tagging, relation extraction and most notably, text categorisation (among others). It provides a free licence for up to 1,000 API calls per day. It provides all the core features which this project requires in terms of text analytics, however the text categorisation did not produce strong results for short amounts of text (such as tweets) and often failed to make any categorisation.
+
+\paragraph{Semantria}
+The best solution for sentiment analysis appears to be semantria. It gave consistently precise and accurate sentiment analysis for text containing more than 5 words. 
+
+\paragraph{Saplo}
+Saplo was distinguished in its contextual analysis feature which allowed me to define a personalised textual context which could be matched against any type of text. This could have allowed me to define user-specific textual contexts against which to match data items, however it only allows users 2000 API calls per month on their free account.
+
+\paragraph{Wingify}
+This is a beta-stage contextual targeting API which can categorise text from a web page and extract key conepts. The online demo provided accurate results, yet there is not yet a public API available.
+
+\paragraph{DatumBox}
+DatumBox is a free machine learning API which performs sentiment analysis, subjectivity analysis, topic slassification, language detection, readability detection, educational detection, document similarity analysis, and gender detection. Many of these features may be useful for ranking text based upon its relevance to a particular individual. It has a simple API using http POST requests and a JSON response. 
 
 \section{Data-mining}
 
