@@ -2,11 +2,11 @@
 \vspace {1em}
 \contentsline {chapter}{Acknowledgements}{iii}{dummy.2}
 \vspace {1em}
-\contentsline {chapter}{List of Figures}{vi}{dummy.4}
-\contentsline {chapter}{List of Tables}{vii}{dummy.6}
-\contentsline {chapter}{Abbreviations}{viii}{dummy.8}
-\contentsline {chapter}{Physical Constants}{ix}{dummy.11}
-\contentsline {chapter}{Symbols}{x}{dummy.14}
+\contentsline {chapter}{List of Figures}{vii}{dummy.4}
+\contentsline {chapter}{List of Tables}{viii}{dummy.6}
+\contentsline {chapter}{Abbreviations}{ix}{dummy.8}
+\contentsline {chapter}{Physical Constants}{x}{dummy.11}
+\contentsline {chapter}{Symbols}{xi}{dummy.14}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.17}
 \contentsline {section}{\numberline {1.1}The Problem}{1}{section.18}
@@ -16,52 +16,61 @@
 \contentsline {chapter}{\numberline {2}Background Research}{3}{chapter.34}
 \contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{3}{section.35}
 \contentsline {paragraph}{Google Now}{3}{section*.36}
-\contentsline {paragraph}{Viralheat}{3}{section*.37}
-\contentsline {paragraph}{StreamLife}{3}{section*.38}
-\contentsline {section}{\numberline {2.2}Text analytics services}{4}{section.39}
+\contentsline {paragraph}{ViralHeat}{3}{section*.37}
+\contentsline {paragraph}{StreamLife}{4}{section*.38}
+\contentsline {section}{\numberline {2.2}Text analytics libraries}{4}{section.39}
 \contentsline {paragraph}{AlchemyAPI}{4}{section*.40}
 \contentsline {paragraph}{Semantria}{4}{section*.41}
 \contentsline {paragraph}{Saplo}{4}{section*.42}
 \contentsline {paragraph}{Wingify}{4}{section*.43}
 \contentsline {paragraph}{DatumBox}{4}{section*.44}
 \contentsline {section}{\numberline {2.3}Data-mining}{5}{section.45}
-\contentsline {section}{\numberline {2.4}Topic Analysis}{5}{section.46}
-\contentsline {section}{\numberline {2.5}Context-Sensitive Scoring Algorithms}{5}{section.47}
-\contentsline {section}{\numberline {2.6}Ranking Algorithms}{5}{section.48}
-\contentsline {chapter}{\numberline {3}Specification}{6}{chapter.49}
-\contentsline {section}{\numberline {3.1}A Section}{6}{section.50}
-\contentsline {subsection}{\numberline {3.1.1}A Subsection}{6}{subsection.51}
-\contentsline {section}{\numberline {3.2}Another Section}{6}{section.52}
-\contentsline {chapter}{\numberline {4}Design Detail}{7}{chapter.53}
-\contentsline {section}{\numberline {4.1}Data Acquisition}{7}{section.54}
-\contentsline {subsection}{\numberline {4.1.1}Data Item Acquisition}{7}{subsection.55}
-\contentsline {subsection}{\numberline {4.1.2}User Data Acquisition}{7}{subsection.56}
-\contentsline {section}{\numberline {4.2}Classification}{7}{section.57}
-\contentsline {section}{\numberline {4.3}Scoring Algorithm}{7}{section.58}
-\contentsline {subsection}{\numberline {4.3.1}Data Item Scoring}{8}{subsection.59}
-\contentsline {subsection}{\numberline {4.3.2}User Data Scoring}{8}{subsection.60}
-\contentsline {section}{\numberline {4.4}Ranking Algorithm}{8}{section.61}
-\contentsline {chapter}{\numberline {5}Planning and Progress}{9}{chapter.62}
-\contentsline {section}{\numberline {5.1}A Section}{9}{section.63}
-\contentsline {subsection}{\numberline {5.1.1}A Subsection}{9}{subsection.64}
-\contentsline {section}{\numberline {5.2}Another Section}{9}{section.65}
-\contentsline {chapter}{\numberline {6}Testing Strategy and Results}{10}{chapter.66}
-\contentsline {section}{\numberline {6.1}A Section}{10}{section.67}
-\contentsline {subsection}{\numberline {6.1.1}A Subsection}{10}{subsection.68}
-\contentsline {section}{\numberline {6.2}Another Section}{10}{section.69}
-\contentsline {chapter}{\numberline {7}Critical Evaluation}{11}{chapter.70}
-\contentsline {section}{\numberline {7.1}A Section}{11}{section.71}
-\contentsline {subsection}{\numberline {7.1.1}A Subsection}{11}{subsection.72}
-\contentsline {section}{\numberline {7.2}Another Section}{11}{section.73}
-\contentsline {chapter}{\numberline {8}Conclusion}{12}{chapter.74}
-\contentsline {section}{\numberline {8.1}A Section}{12}{section.75}
-\contentsline {subsection}{\numberline {8.1.1}A Subsection}{12}{subsection.76}
-\contentsline {section}{\numberline {8.2}Another Section}{12}{section.77}
-\contentsline {chapter}{\numberline {9}Further Work}{13}{chapter.78}
-\contentsline {section}{\numberline {9.1}A Section}{13}{section.79}
-\contentsline {subsection}{\numberline {9.1.1}A Subsection}{13}{subsection.80}
-\contentsline {section}{\numberline {9.2}Another Section}{13}{section.81}
+\contentsline {subsection}{\numberline {2.3.1}Facebook}{5}{subsection.46}
+\contentsline {subsection}{\numberline {2.3.2}Twitter}{5}{subsection.55}
+\contentsline {subsection}{\numberline {2.3.3}Android API}{6}{subsection.64}
+\contentsline {subsection}{\numberline {2.3.4}Google Calendar}{6}{subsection.65}
+\contentsline {subsection}{\numberline {2.3.5}Google Tasks}{6}{subsection.73}
+\contentsline {subsection}{\numberline {2.3.6}Android SMS}{6}{subsection.76}
+\contentsline {section}{\numberline {2.4}Semantic Analysis}{7}{section.96}
+\contentsline {subsection}{\numberline {2.4.1}DatumBox API and usage}{7}{subsection.97}
+\contentsline {section}{\numberline {2.5}Context-Sensitive Scoring Algorithms}{7}{section.98}
+\contentsline {section}{\numberline {2.6}Ranking Algorithms}{7}{section.99}
+\contentsline {chapter}{\numberline {3}Specification}{8}{chapter.100}
+\contentsline {section}{\numberline {3.1}Data sources}{8}{section.101}
+\contentsline {section}{\numberline {3.2}Scoring Algorithm}{8}{section.102}
+\contentsline {section}{\numberline {3.3}Ranking Algorithm}{8}{section.103}
+\contentsline {section}{\numberline {3.4}Android Demonstration}{8}{section.104}
+\contentsline {chapter}{\numberline {4}Algorithm Design}{9}{chapter.105}
+\contentsline {section}{\numberline {4.1}Data Acquisition}{9}{section.106}
+\contentsline {subsection}{\numberline {4.1.1}Data Item Acquisition}{9}{subsection.107}
+\contentsline {subsection}{\numberline {4.1.2}User Data Acquisition}{9}{subsection.108}
+\contentsline {section}{\numberline {4.2}Classification}{9}{section.109}
+\contentsline {section}{\numberline {4.3}Scoring Algorithm}{9}{section.110}
+\contentsline {section}{\numberline {4.4}Ranking Algorithm}{10}{section.111}
+\contentsline {chapter}{\numberline {5}Implementation}{11}{chapter.112}
+\contentsline {section}{\numberline {5.1}Data Acquisition}{11}{section.113}
+\contentsline {subsection}{\numberline {5.1.1}Data Item Acquisition}{11}{subsection.114}
+\contentsline {chapter}{\numberline {6}Planning and Progress}{12}{chapter.115}
+\contentsline {section}{\numberline {6.1}A Section}{12}{section.116}
+\contentsline {subsection}{\numberline {6.1.1}A Subsection}{12}{subsection.117}
+\contentsline {section}{\numberline {6.2}Another Section}{12}{section.118}
+\contentsline {chapter}{\numberline {7}Testing Strategy and Results}{13}{chapter.119}
+\contentsline {section}{\numberline {7.1}A Section}{13}{section.120}
+\contentsline {subsection}{\numberline {7.1.1}A Subsection}{13}{subsection.121}
+\contentsline {section}{\numberline {7.2}Another Section}{13}{section.122}
+\contentsline {chapter}{\numberline {8}Critical Evaluation}{14}{chapter.123}
+\contentsline {section}{\numberline {8.1}A Section}{14}{section.124}
+\contentsline {subsection}{\numberline {8.1.1}A Subsection}{14}{subsection.125}
+\contentsline {section}{\numberline {8.2}Another Section}{14}{section.126}
+\contentsline {chapter}{\numberline {9}Conclusion}{15}{chapter.127}
+\contentsline {section}{\numberline {9.1}A Section}{15}{section.128}
+\contentsline {subsection}{\numberline {9.1.1}A Subsection}{15}{subsection.129}
+\contentsline {section}{\numberline {9.2}Another Section}{15}{section.130}
+\contentsline {chapter}{\numberline {10}Further Work}{16}{chapter.131}
+\contentsline {section}{\numberline {10.1}A Section}{16}{section.132}
+\contentsline {subsection}{\numberline {10.1.1}A Subsection}{16}{subsection.133}
+\contentsline {section}{\numberline {10.2}Another Section}{16}{section.134}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{14}{appendix.82}
+\contentsline {chapter}{\numberline {A}An Appendix}{17}{appendix.135}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{15}{dummy.83}
+\contentsline {chapter}{Bibliography}{18}{dummy.136}

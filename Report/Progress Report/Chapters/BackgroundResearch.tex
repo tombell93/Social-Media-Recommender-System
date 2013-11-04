@@ -1,7 +1,6 @@
 \chapter{Background Research}
 
-A progressive project in the sphere of cross-platform relevance-based intelligent ranking agents, using text analysis and a mathematically rigorous scoring algorithms, requires research in a range of areas across the entire spectrum of low- to high-level computational theory and existing product research. The following summarises the research performed 
-TODO: continue the above \dots
+A progressive project in the sphere of cross-platform relevance-based intelligent ranking agents, using text analysis and a mathematically rigorous scoring algorithms, requires research in a range of areas across the entire spectrum of low- to high-level computational theory and existing product research. The following summarises the research undertaken before and during the research and design phases.
 
 \section{Existing Data-Ranking Implementations}
 
@@ -16,7 +15,7 @@ ViralHeat is a web-based social media content aggregator and filter, used for co
 \paragraph{StreamLife}
 This app aggregates facebook content and tweets, but performs no topic/sentiment analysis or ranking, and provides no capability for including tasks, calendar appointments, SMS messages or emails.
 
-\section{Text analytics services}
+\section{Text analytics libraries}
 
 There are a good number of existing text analysics services available to the end user and the developer for a range of different types of analytics. These services include sentiment analysis, text categorisation, contextual targeting and a range of others. This section highlights some which are relevant to this study.
 
@@ -39,9 +38,96 @@ DatumBox is a free machine learning API which performs sentiment analysis, subje
 
 Outline: Facebook and Twitter API (phone, web and desktop), Android API, Android Calendar, Android Tasks, Android SMS, Android Sensors, Google Calendar and Tasks (web-based and desktop API).
 
-\section{Topic Analysis}
+\subsection{Facebook}
+The Facebook statuses of a users friends can be fetched either using the Facebook API, or through wrapper libraries which simplify common Facebook API usage. The Facebook API is full-featured and well documented, yet for the purposes of demonstrating this ranking agent it's not necessary. 
+Facebook4J is a java Facebook wrapper API which simplifies the most common Facebook API features into a more minimal library. 
 
-This is some sample text.
+\lstset{language=Java, caption=Facebook4J example \cite{Facebook4JExample} }
+\begin{lstlisting}
+Facebook facebook = new FacebookFactory().getInstance();
+facebook.setOAuthAppId(appId, appSecret);
+facebook.setOAuthPermissions(commaSeparetedPermissions);
+facebook.setOAuthAccessToken(new AccessToken(accessToken, null));
+facebook.postStatusMessage("This is my status.");
+//Gets a list of the users feed (friend's status updates)
+ResponseList<Post> feed = facebook.getHome();
+\end{lstlisting}
+
+
+This library provides the capability to public messages and links, getting the users news feed, 'liking' a post, publishing a comment, searching for users, groups, events, places or locations and others. It supports pagination and reading options. Altogether it fulfills the needs of this project adquately. 
+
+\subsection{Twitter}
+
+Simlar to Facebook, Twitter provides an API which is freely available yet overly complex for this project. Twitter4J is a free API which simplifies the Twitter API.
+
+\lstset{language=Java, caption=Twitter4J example \cite{Twitter4JExample} }
+\begin{lstlisting}
+Twitter twitter = TwitterFactory.getSingleton();
+//Gets and prints the users timeline
+List<Status> statuses = twitter.getHomeTimeline();
+for (Status status : statuses) {
+    System.out.println(status.getUser().getName() + ":" +
+                       status.getText());
+}
+\end{lstlisting}
+
+Twitter4J provides sufficient documentation, support and features making it suitable for retrieving a users Twitter feed.  
+
+\subsection{Android API}
+\subsection{Google Calendar}
+Calendars from a users Google account can be retrieved on the Android platform using the Calendar Provider. This is a repository of a user's calendar events which can be queried.
+
+\lstset{language=Java, caption=Calendar Provider example }
+\begin{lstlisting}
+    Cursor cursor = context.getContentResolver()
+            .query(
+                    Uri.parse("content://com.android.calendar/events"),
+                    new String[] { "calendar_id", "title", "description",
+                            "dtstart", "dtend", "eventLocation" }, null,
+                    null, null);
+\end{lstlisting}
+
+This query returns a list of events which can be freely processed and sorted as required. 
+\subsection{Google Tasks}
+In Android, Tasks can be retrieved from a Google accoutn using the Google Tasks API by prompting the user for their account credentials, retrieving an AuthenticationToken to create a GoogleCredential and using the Tasks Builder to create a Tasks Service. This is demonstrated in Listing ~\ref{GoogleTasksExample}.
+
+\lstset{language=Java, caption=Google Tasks example, label=GoogleTasksExample}
+\begin{lstlisting}
+    	List<Task> tasks = service.tasks().list("@default").execute().getItems();
+\end{lstlisting}
+
+\subsection{Android SMS}
+SMS messages can be recieved in Android applications using a BroadcastReveiver which collects incoming SMS messages.
+
+\lstset{language=Java, caption=Android SMS example, label=AndroidSMSExample}
+\begin{lstlisting}
+
+public class receiver extends BroadcastReceiver {
+      public String str = "";
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Bundle bundle = intent.getExtras();
+            SmsMessage[] msgs = null;
+            if (bundle != null) {
+                Object[] pdus = (Object[]) bundle.get("pdus");
+                msgs = new SmsMessage[pdus.length];
+                for (int i = 0; i < msgs.length; i++) 
+                {
+                    msgs[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
+                }
+            }
+        }
+    }
+
+\end{lstlisting}
+
+This example shows a BroadcastReceiver which collects SMS messages when they're received and adds then to an array of SmsMessage objects for processing. 
+
+\section{Semantic Analysis}
+
+This project requires topic analysis of items of mobile data, in order to compare them to the user's preference and ascribe relevance to them. Other semantic analysis capabilities would prove beneficial for increasing the range of criteria by which relevaance may be judged and to elliminate irrelevant data as early on as possible. These include readability, gender, subjectivity and language detection. The DatumBox API is chosen for semantic analysis for its coverage of these requirements, its ease of implementation and the fact that its use is free. 
+
+\subsection{DatumBox API and usage}
 
 \section{Context-Sensitive Scoring Algorithms}
 
