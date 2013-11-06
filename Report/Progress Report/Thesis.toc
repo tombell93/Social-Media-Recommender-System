@@ -27,50 +27,52 @@
 \contentsline {section}{\numberline {2.3}Data-mining}{5}{section.45}
 \contentsline {subsection}{\numberline {2.3.1}Facebook}{5}{subsection.46}
 \contentsline {subsection}{\numberline {2.3.2}Twitter}{5}{subsection.55}
-\contentsline {subsection}{\numberline {2.3.3}Android API}{6}{subsection.64}
-\contentsline {subsection}{\numberline {2.3.4}Google Calendar}{6}{subsection.65}
-\contentsline {subsection}{\numberline {2.3.5}Google Tasks}{6}{subsection.73}
-\contentsline {subsection}{\numberline {2.3.6}Android SMS}{6}{subsection.76}
-\contentsline {section}{\numberline {2.4}Semantic Analysis}{7}{section.96}
-\contentsline {subsection}{\numberline {2.4.1}DatumBox API and usage}{7}{subsection.97}
-\contentsline {section}{\numberline {2.5}Context-Sensitive Scoring Algorithms}{7}{section.98}
-\contentsline {section}{\numberline {2.6}Ranking Algorithms}{7}{section.99}
-\contentsline {chapter}{\numberline {3}Specification}{8}{chapter.100}
-\contentsline {section}{\numberline {3.1}Data sources}{8}{section.101}
-\contentsline {section}{\numberline {3.2}Scoring Algorithm}{8}{section.102}
-\contentsline {section}{\numberline {3.3}Ranking Algorithm}{8}{section.103}
-\contentsline {section}{\numberline {3.4}Android Demonstration}{8}{section.104}
-\contentsline {chapter}{\numberline {4}Algorithm Design}{9}{chapter.105}
-\contentsline {section}{\numberline {4.1}Data Acquisition}{9}{section.106}
-\contentsline {subsection}{\numberline {4.1.1}Data Item Acquisition}{9}{subsection.107}
-\contentsline {subsection}{\numberline {4.1.2}User Data Acquisition}{9}{subsection.108}
-\contentsline {section}{\numberline {4.2}Classification}{9}{section.109}
-\contentsline {section}{\numberline {4.3}Scoring Algorithm}{9}{section.110}
-\contentsline {section}{\numberline {4.4}Ranking Algorithm}{10}{section.111}
-\contentsline {chapter}{\numberline {5}Implementation}{11}{chapter.112}
-\contentsline {section}{\numberline {5.1}Data Acquisition}{11}{section.113}
-\contentsline {subsection}{\numberline {5.1.1}Data Item Acquisition}{11}{subsection.114}
-\contentsline {chapter}{\numberline {6}Planning and Progress}{12}{chapter.115}
-\contentsline {section}{\numberline {6.1}A Section}{12}{section.116}
-\contentsline {subsection}{\numberline {6.1.1}A Subsection}{12}{subsection.117}
-\contentsline {section}{\numberline {6.2}Another Section}{12}{section.118}
-\contentsline {chapter}{\numberline {7}Testing Strategy and Results}{13}{chapter.119}
-\contentsline {section}{\numberline {7.1}A Section}{13}{section.120}
-\contentsline {subsection}{\numberline {7.1.1}A Subsection}{13}{subsection.121}
-\contentsline {section}{\numberline {7.2}Another Section}{13}{section.122}
-\contentsline {chapter}{\numberline {8}Critical Evaluation}{14}{chapter.123}
-\contentsline {section}{\numberline {8.1}A Section}{14}{section.124}
-\contentsline {subsection}{\numberline {8.1.1}A Subsection}{14}{subsection.125}
-\contentsline {section}{\numberline {8.2}Another Section}{14}{section.126}
-\contentsline {chapter}{\numberline {9}Conclusion}{15}{chapter.127}
-\contentsline {section}{\numberline {9.1}A Section}{15}{section.128}
-\contentsline {subsection}{\numberline {9.1.1}A Subsection}{15}{subsection.129}
-\contentsline {section}{\numberline {9.2}Another Section}{15}{section.130}
-\contentsline {chapter}{\numberline {10}Further Work}{16}{chapter.131}
-\contentsline {section}{\numberline {10.1}A Section}{16}{section.132}
-\contentsline {subsection}{\numberline {10.1.1}A Subsection}{16}{subsection.133}
-\contentsline {section}{\numberline {10.2}Another Section}{16}{section.134}
+\contentsline {subsection}{\numberline {2.3.3}Google Calendar}{6}{subsection.64}
+\contentsline {subsection}{\numberline {2.3.4}Google Tasks}{6}{subsection.72}
+\contentsline {subsection}{\numberline {2.3.5}Android SMS}{6}{subsection.75}
+\contentsline {section}{\numberline {2.4}Semantic Analysis}{7}{section.93}
+\contentsline {subsection}{\numberline {2.4.1}DatumBox API and usage}{7}{subsection.94}
+\contentsline {section}{\numberline {2.5}Context-Sensitive Scoring Algorithms}{8}{section.109}
+\contentsline {subsection}{\numberline {2.5.1}Relevance-based scoring formulae}{8}{subsection.110}
+\contentsline {subsection}{\numberline {2.5.2}IR-style relevance score}{8}{subsection.112}
+\contentsline {section}{\numberline {2.6}Ranking Algorithms}{8}{section.113}
+\contentsline {section}{\numberline {2.7}Data Persistence}{9}{section.114}
+\contentsline {chapter}{\numberline {3}Specification}{10}{chapter.115}
+\contentsline {section}{\numberline {3.1}Data sources}{10}{section.116}
+\contentsline {section}{\numberline {3.2}Scoring Algorithm}{10}{section.117}
+\contentsline {section}{\numberline {3.3}Ranking Algorithm}{10}{section.118}
+\contentsline {section}{\numberline {3.4}Android Demonstration}{10}{section.119}
+\contentsline {chapter}{\numberline {4}Algorithm Design}{11}{chapter.120}
+\contentsline {section}{\numberline {4.1}Data Acquisition}{11}{section.121}
+\contentsline {subsection}{\numberline {4.1.1}Data Item Acquisition}{11}{subsection.122}
+\contentsline {subsection}{\numberline {4.1.2}User Data Acquisition}{11}{subsection.123}
+\contentsline {section}{\numberline {4.2}Classification}{11}{section.124}
+\contentsline {section}{\numberline {4.3}Scoring Algorithm}{11}{section.125}
+\contentsline {section}{\numberline {4.4}Ranking Algorithm}{12}{section.126}
+\contentsline {chapter}{\numberline {5}Implementation}{13}{chapter.127}
+\contentsline {section}{\numberline {5.1}API Development}{13}{section.128}
+\contentsline {section}{\numberline {5.2}Android App Development}{13}{section.129}
+\contentsline {chapter}{\numberline {6}Planning and Progress}{14}{chapter.130}
+\contentsline {section}{\numberline {6.1}A Section}{14}{section.131}
+\contentsline {subsection}{\numberline {6.1.1}A Subsection}{14}{subsection.132}
+\contentsline {section}{\numberline {6.2}Another Section}{14}{section.133}
+\contentsline {chapter}{\numberline {7}Testing Strategy and Results}{15}{chapter.134}
+\contentsline {section}{\numberline {7.1}A Section}{15}{section.135}
+\contentsline {subsection}{\numberline {7.1.1}A Subsection}{15}{subsection.136}
+\contentsline {section}{\numberline {7.2}Another Section}{15}{section.137}
+\contentsline {chapter}{\numberline {8}Critical Evaluation}{16}{chapter.138}
+\contentsline {section}{\numberline {8.1}A Section}{16}{section.139}
+\contentsline {subsection}{\numberline {8.1.1}A Subsection}{16}{subsection.140}
+\contentsline {section}{\numberline {8.2}Another Section}{16}{section.141}
+\contentsline {chapter}{\numberline {9}Conclusion}{17}{chapter.142}
+\contentsline {section}{\numberline {9.1}A Section}{17}{section.143}
+\contentsline {subsection}{\numberline {9.1.1}A Subsection}{17}{subsection.144}
+\contentsline {section}{\numberline {9.2}Another Section}{17}{section.145}
+\contentsline {chapter}{\numberline {10}Further Work}{18}{chapter.146}
+\contentsline {section}{\numberline {10.1}A Section}{18}{section.147}
+\contentsline {subsection}{\numberline {10.1.1}A Subsection}{18}{subsection.148}
+\contentsline {section}{\numberline {10.2}Another Section}{18}{section.149}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{17}{appendix.135}
+\contentsline {chapter}{\numberline {A}An Appendix}{19}{appendix.150}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{18}{dummy.136}
+\contentsline {chapter}{Bibliography}{20}{dummy.151}

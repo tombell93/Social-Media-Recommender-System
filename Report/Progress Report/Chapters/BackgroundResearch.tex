@@ -73,7 +73,6 @@ for (Status status : statuses) {
 
 Twitter4J provides sufficient documentation, support and features making it suitable for retrieving a users Twitter feed.  
 
-\subsection{Android API}
 \subsection{Google Calendar}
 Calendars from a users Google account can be retrieved on the Android platform using the Calendar Provider. This is a repository of a user's calendar events which can be queried.
 
@@ -101,7 +100,6 @@ SMS messages can be recieved in Android applications using a BroadcastReveiver w
 
 \lstset{language=Java, caption=Android SMS example, label=AndroidSMSExample}
 \begin{lstlisting}
-
 public class receiver extends BroadcastReceiver {
       public String str = "";
         @Override
@@ -118,21 +116,56 @@ public class receiver extends BroadcastReceiver {
             }
         }
     }
-
 \end{lstlisting}
 
 This example shows a BroadcastReceiver which collects SMS messages when they're received and adds then to an array of SmsMessage objects for processing. 
 
 \section{Semantic Analysis}
 
-This project requires topic analysis of items of mobile data, in order to compare them to the user's preference and ascribe relevance to them. Other semantic analysis capabilities would prove beneficial for increasing the range of criteria by which relevaance may be judged and to elliminate irrelevant data as early on as possible. These include readability, gender, subjectivity and language detection. The DatumBox API is chosen for semantic analysis for its coverage of these requirements, its ease of implementation and the fact that its use is free. 
+This project requires topic analysis of items of mobile data, in order to compare them to the user's preference and ascribe relevance to them. Other semantic analysis capabilities would prove beneficial for increasing the range of criteria by which relevance may be judged and to elliminate irrelevant data as early on as possible. These include readability, gender, subjectivity and language detection. The DatumBox API is chosen for semantic analysis for its coverage of these requirements; its ease of implementation and the fact that its use is free. 
 
 \subsection{DatumBox API and usage}
 
+Each feature provided by DatumBox has a POST Request URL and is retrieved in code by setting up the request headers and URL parameters (including the API key and text), and waiting for the asyncronous response as a JSON object \ref{DBTopicClassificationExample}.
+
+\lstset{language=Java, caption=DatumBox Topic Classification example, label=DBTopicClassificationExample}
+\begin{lstlisting}
+//Request URL
+http://api.datumbox.com:80/1.0/TopicClassification.json
+
+//Request headers
+{"Content-Type":"application/json; charset=UTF-8"}
+
+//Response body
+{
+  "output": {
+    "status": 1,
+    "result": "Computers & Technology"
+  }
+}
+\end{lstlisting}
+This example is for 'Topic Classification', but the process for requesting other available featuers is similar and will be simplified by creating a 'Semantic Analysis API' which retrieves the response for each of the different requests. 
+
 \section{Context-Sensitive Scoring Algorithms}
 
-This is some sample text.
+In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring may be considered a form of classification, in which an item of data is classified as belonging to a particular cluster within a data set, represented as a set of data points in a feature vector. Scoring may be done using supervised machine-learning approaches or using an unsupervised scoring function. 
+
+\subsection{Topic-classification-based scoring formulae}
+
+Scoring functions typically combine key-term statistics into a single score as a measure of the similarity between a query and a document.
+Term frequency is the most frequently used and widely explored approach to understanding the relevance of a text. Term rank scoring formulae are comprised of a base forumla (typically Okapi BM25 \ref{OkapiBM25}) and a multiplicative or additive range variance term R.
+
+\begin{equation}\label{OkapiBM25}
+	\sum\limits_{t\in d \bigcap q} \ln{\frac{N-df+0.5}{df+0.5}}\centerdot \frac{tf}{0.5+1.5 \centerdot \frac{dl}{avdl}+tf} \centerdot R
+\end{equation}
+
+Here $df$ is the document frequency (documents in a collection) and $tf$ is simply the term frequency (to occurrences of a term in a particular document). $avdl$ is the average document length and $R$ is a component which limits the range over which the term rank has an effect. 
+
+\subsection{IR-style relevance score}
 
 \section{Ranking Algorithms}
 
 Insertion sort etc.
+
+\section{Data Persistence}
+
