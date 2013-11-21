@@ -46,7 +46,6 @@ public class DataContextBuilder {
         
         for(DataItem dataItem: dataItems){
             DataContext dataContext = new DataContext();  
-            FeaturesList featuresList = new FeaturesList();
             //TODO: Include more text for this and generate more accurate score
             //TODO: Get category of different text fields and assign score and category to each
             String text = dataItem.getDetail();
@@ -59,44 +58,44 @@ public class DataContextBuilder {
                 //Subjectivity detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.SubjectivityAnalysis(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setIsSubjective(("objective".equals(object.get("result").toString())?false:true));
+                dataContext.setIsSubjective(("objective".equals(object.get("result").toString())?false:true));
                 
                 //Gender detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.GenderDetection(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setGender(object.get("result").toString());
+                dataContext.setGender(object.get("result").toString());
                 
                 //Spam detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.SpamDetection(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setIsSpam(("nospam".equals(object.get("result").toString())?false:true));
+                dataContext.setIsSpam(("nospam".equals(object.get("result").toString())?false:true));
                 
                 //Adult content detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.AdultContentDetection(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setIsAdult(("noadult".equals(object.get("result").toString())?false:true));
+                dataContext.setIsAdult(("noadult".equals(object.get("result").toString())?false:true));
                 
                 //Readability detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setIsReadable(("advanced".equals(object.get("result").toString())?false:true));
+                dataContext.setIsReadable(("advanced".equals(object.get("result").toString())?false:true));
                 
                 //Commercial detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setIsCommercial(("commercial".equals(object.get("result").toString())?true:false));
+                dataContext.setIsCommercial(("commercial".equals(object.get("result").toString())?true:false));
                 
                 //Educational detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.EducationalDetection(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setIsEducational(("educational".equals(object.get("result").toString())?true:false));
+                dataContext.setIsEducational(("educational".equals(object.get("result").toString())?true:false));
                     
                 //Educational detection
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.TopicClassification(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                featuresList.setTopic(object.get("result").toString());
+                dataContext.setTopic(object.get("result").toString());
             }
-            
+            dataItem.setDataContext(dataContext);
         }
                 
         return dataItemsWithContext;

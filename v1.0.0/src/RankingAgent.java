@@ -2,6 +2,8 @@
 import com.alchemyapi.api.AlchemyAPI;
 import com.alchemyapi.api.AlchemyAPI_CategoryParams;
 import com.alchemyapi.api.AlchemyAPI_Params;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,11 @@ import org.w3c.dom.Document;
 import java.io.*;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -28,9 +34,12 @@ public class RankingAgent {
     private List<DataItem> sortedDataItems = new ArrayList<DataItem>();
     private List<DataItem> unsortedDataItems = new ArrayList<DataItem>();
     private DataItem addedDataItem = new DataItem();
-    private Scorer scorer = new Scorer();
-    private UserContext userContext = new UserContext();
+    private Scorer scorer;
+    private UserContext userContext;
     private DataContextBuilder dataContextBuilder = new DataContextBuilder();
+    private static String[] categories = {"Arts", "News", 
+        "Computers & Technology", "Business & Economy", "Reference & Education", 
+        "Health", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
     
     /**
      * TODO: Figure out how to remove old and irrelevant DataItems from list
@@ -46,14 +55,12 @@ public class RankingAgent {
         this.unsortedDataItems = unsortedDataItems;
     }
     
-    public RankingAgent() {
-        initialiseRankingAgent();
+    public RankingAgent(UserContext userContext) {
+        //initialiseRankingAgent();
+        this.userContext = userContext;
+        scorer = new Scorer(userContext);
     }
-    
-    private void initialiseRankingAgent() {
-        //TODO: Load UserContext
-    }
-    
+        
     /**
      * Accepts new DataItems and returns the most recent ranked list
      * @param addedDataItems
@@ -153,5 +160,33 @@ public class RankingAgent {
             updatedShownTimesDataItems.add(dataItemToUpdate);
         }
         return;
+    }
+    
+    private void initialiseRankingAgent() {
+        //TODO: Load UserContext
+        UserContext userContext = new UserContext();
+        userContext.setGender(null);
+        userContext.setGender("male");
+        userContext.setWantsAdult(Boolean.FALSE);
+        userContext.setWantsCommercial(Boolean.TRUE);
+        userContext.setWantsEducational(Boolean.TRUE);
+        userContext.setOnlyReadable(Boolean.TRUE);
+        userContext.setWantsSpam(Boolean.TRUE);
+        userContext.setWantsSubjective(Boolean.TRUE);
+        userContext.setLanguage("en");
+        userContext.setSentiment("neutral");
+        userContext.setTopic("News");
+        Map<String, Double> featuresMap = new HashMap<String, Double>();
+        for(int i = 0; i < categories.length; i++){
+            featuresMap.put(categories[i], 5.0);
+        }
+        userContext.setFeaturesMap(featuresMap);
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        String json = gson.toJson(userContext);  
+        try {
+            FileManager.writeFile("testData/UserContext.txt", json);
+        } catch (IOException ex) {
+            Logger.getLogger(RankingAgent.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

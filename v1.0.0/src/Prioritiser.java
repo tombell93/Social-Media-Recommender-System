@@ -1,4 +1,6 @@
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,8 +73,11 @@ public class Prioritiser {
     
     public static void runRankingAgent() throws IOException, SAXException, ParserConfigurationException, XPathExpressionException{
         System.out.println("Load test data and proceed.");
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        String userContextText = FileManager.readFile("testData/UserContext.txt");
+        UserContext userContext = gson.fromJson(userContextText, UserContext.class);
         List<DataItem> dataItems = TestDataManager.loadData();
-        rankingAgent = new RankingAgent(); 
+        rankingAgent = new RankingAgent(userContext); 
         rankedDataItems = rankingAgent.update(dataItems);
     }
 }

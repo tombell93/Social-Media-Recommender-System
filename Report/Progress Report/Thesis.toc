@@ -1,19 +1,19 @@
-\contentsline {chapter}{Abstract}{ii}{dummy.1}
+\contentsline {chapter}{Abstract}{i}{dummy.1}
 \vspace {1em}
-\contentsline {chapter}{Acknowledgements}{iii}{dummy.2}
+\contentsline {chapter}{Acknowledgements}{ii}{dummy.2}
 \vspace {1em}
-\contentsline {chapter}{List of Figures}{vii}{dummy.4}
-\contentsline {chapter}{List of Tables}{viii}{dummy.6}
-\contentsline {chapter}{Abbreviations}{ix}{dummy.8}
-\contentsline {chapter}{Physical Constants}{x}{dummy.11}
-\contentsline {chapter}{Symbols}{xi}{dummy.14}
+\contentsline {chapter}{List of Figures}{vi}{dummy.4}
+\contentsline {chapter}{List of Tables}{vii}{dummy.6}
+\contentsline {chapter}{Abbreviations}{viii}{dummy.8}
+\contentsline {chapter}{Physical Constants}{ix}{dummy.11}
+\contentsline {chapter}{Symbols}{x}{dummy.14}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.17}
 \contentsline {section}{\numberline {1.1}The Problem}{1}{section.18}
 \contentsline {section}{\numberline {1.2}Project Objective}{1}{section.19}
 \contentsline {section}{\numberline {1.3}Goals}{1}{section.20}
 \contentsline {section}{\numberline {1.4}Unique Features}{2}{section.33}
-\contentsline {chapter}{\numberline {2}Background Research}{3}{chapter.34}
+\contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.34}
 \contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{3}{section.35}
 \contentsline {paragraph}{Google Now}{3}{section*.36}
 \contentsline {paragraph}{ViralHeat}{3}{section*.37}
@@ -33,46 +33,48 @@
 \contentsline {section}{\numberline {2.4}Semantic Analysis}{7}{section.93}
 \contentsline {subsection}{\numberline {2.4.1}DatumBox API and usage}{7}{subsection.94}
 \contentsline {section}{\numberline {2.5}Context-Sensitive Scoring Algorithms}{8}{section.109}
-\contentsline {subsection}{\numberline {2.5.1}Relevance-based scoring formulae}{8}{subsection.110}
-\contentsline {subsection}{\numberline {2.5.2}IR-style relevance score}{8}{subsection.112}
-\contentsline {section}{\numberline {2.6}Ranking Algorithms}{8}{section.113}
-\contentsline {section}{\numberline {2.7}Data Persistence}{9}{section.114}
-\contentsline {chapter}{\numberline {3}Specification}{10}{chapter.115}
-\contentsline {section}{\numberline {3.1}Data sources}{10}{section.116}
-\contentsline {section}{\numberline {3.2}Scoring Algorithm}{10}{section.117}
-\contentsline {section}{\numberline {3.3}Ranking Algorithm}{10}{section.118}
-\contentsline {section}{\numberline {3.4}Android Demonstration}{10}{section.119}
-\contentsline {chapter}{\numberline {4}Algorithm Design}{11}{chapter.120}
-\contentsline {section}{\numberline {4.1}Data Acquisition}{11}{section.121}
-\contentsline {subsection}{\numberline {4.1.1}Data Item Acquisition}{11}{subsection.122}
-\contentsline {subsection}{\numberline {4.1.2}User Data Acquisition}{11}{subsection.123}
-\contentsline {section}{\numberline {4.2}Classification}{11}{section.124}
-\contentsline {section}{\numberline {4.3}Scoring Algorithm}{11}{section.125}
-\contentsline {section}{\numberline {4.4}Ranking Algorithm}{12}{section.126}
-\contentsline {chapter}{\numberline {5}Implementation}{13}{chapter.127}
-\contentsline {section}{\numberline {5.1}API Development}{13}{section.128}
-\contentsline {section}{\numberline {5.2}Android App Development}{13}{section.129}
-\contentsline {chapter}{\numberline {6}Planning and Progress}{14}{chapter.130}
-\contentsline {section}{\numberline {6.1}A Section}{14}{section.131}
-\contentsline {subsection}{\numberline {6.1.1}A Subsection}{14}{subsection.132}
-\contentsline {section}{\numberline {6.2}Another Section}{14}{section.133}
-\contentsline {chapter}{\numberline {7}Testing Strategy and Results}{15}{chapter.134}
-\contentsline {section}{\numberline {7.1}A Section}{15}{section.135}
-\contentsline {subsection}{\numberline {7.1.1}A Subsection}{15}{subsection.136}
-\contentsline {section}{\numberline {7.2}Another Section}{15}{section.137}
-\contentsline {chapter}{\numberline {8}Critical Evaluation}{16}{chapter.138}
-\contentsline {section}{\numberline {8.1}A Section}{16}{section.139}
-\contentsline {subsection}{\numberline {8.1.1}A Subsection}{16}{subsection.140}
-\contentsline {section}{\numberline {8.2}Another Section}{16}{section.141}
-\contentsline {chapter}{\numberline {9}Conclusion}{17}{chapter.142}
-\contentsline {section}{\numberline {9.1}A Section}{17}{section.143}
-\contentsline {subsection}{\numberline {9.1.1}A Subsection}{17}{subsection.144}
-\contentsline {section}{\numberline {9.2}Another Section}{17}{section.145}
-\contentsline {chapter}{\numberline {10}Further Work}{18}{chapter.146}
-\contentsline {section}{\numberline {10.1}A Section}{18}{section.147}
-\contentsline {subsection}{\numberline {10.1.1}A Subsection}{18}{subsection.148}
-\contentsline {section}{\numberline {10.2}Another Section}{18}{section.149}
+\contentsline {subsection}{\numberline {2.5.1}Topic-classification scoring formulae}{8}{subsection.110}
+\contentsline {subsection}{\numberline {2.5.2}Weighted Scoring Rules}{8}{subsection.112}
+\contentsline {section}{\numberline {2.6}Sorting Algorithms}{10}{section.119}
+\contentsline {section}{\numberline {2.7}Data Sources and Persistence}{10}{section.120}
+\contentsline {chapter}{\numberline {3}Algorithm Design}{12}{chapter.138}
+\contentsline {section}{\numberline {3.1}Data Acquisition}{12}{section.139}
+\contentsline {subsection}{\numberline {3.1.1}Data Item Acquisition}{12}{subsection.140}
+\contentsline {subsection}{\numberline {3.1.2}User Data Acquisition}{12}{subsection.141}
+\contentsline {section}{\numberline {3.2}Classification}{12}{section.142}
+\contentsline {section}{\numberline {3.3}Scoring Algorithm}{12}{section.143}
+\contentsline {section}{\numberline {3.4}Ranking Algorithm}{13}{section.144}
+\contentsline {chapter}{\numberline {4}Design Detail and Specification}{14}{chapter.145}
+\contentsline {section}{\numberline {4.1}Data sources}{14}{section.146}
+\contentsline {section}{\numberline {4.2}Scoring Algorithm}{14}{section.147}
+\contentsline {section}{\numberline {4.3}Ranking Algorithm}{14}{section.148}
+\contentsline {section}{\numberline {4.4}Android Demonstration}{14}{section.149}
+\contentsline {chapter}{\numberline {5}Implementation}{15}{chapter.150}
+\contentsline {section}{\numberline {5.1}API Development}{15}{section.151}
+\contentsline {section}{\numberline {5.2}Android App Development}{15}{section.152}
+\contentsline {chapter}{\numberline {6}Planning and Progress}{16}{chapter.153}
+\contentsline {section}{\numberline {6.1}Planning}{16}{section.154}
+\contentsline {subsection}{\numberline {6.1.1}Skills Audit}{16}{subsection.155}
+\contentsline {section}{\numberline {6.2}Time Schedule}{16}{section.156}
+\contentsline {section}{\numberline {6.3}Progress}{16}{section.157}
+\contentsline {section}{\numberline {6.4}Risk Analysis and Contingency Planning}{16}{section.158}
+\contentsline {chapter}{\numberline {7}Testing Strategy and Results}{17}{chapter.159}
+\contentsline {section}{\numberline {7.1}A Section}{17}{section.160}
+\contentsline {subsection}{\numberline {7.1.1}A Subsection}{17}{subsection.161}
+\contentsline {section}{\numberline {7.2}Another Section}{17}{section.162}
+\contentsline {chapter}{\numberline {8}Critical Evaluation}{18}{chapter.163}
+\contentsline {section}{\numberline {8.1}A Section}{18}{section.164}
+\contentsline {subsection}{\numberline {8.1.1}A Subsection}{18}{subsection.165}
+\contentsline {section}{\numberline {8.2}Another Section}{18}{section.166}
+\contentsline {chapter}{\numberline {9}Conclusion}{19}{chapter.167}
+\contentsline {section}{\numberline {9.1}A Section}{19}{section.168}
+\contentsline {subsection}{\numberline {9.1.1}A Subsection}{19}{subsection.169}
+\contentsline {section}{\numberline {9.2}Another Section}{19}{section.170}
+\contentsline {chapter}{\numberline {10}Further Work}{20}{chapter.171}
+\contentsline {section}{\numberline {10.1}A Section}{20}{section.172}
+\contentsline {subsection}{\numberline {10.1.1}A Subsection}{20}{subsection.173}
+\contentsline {section}{\numberline {10.2}Another Section}{20}{section.174}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{19}{appendix.150}
+\contentsline {chapter}{\numberline {A}An Appendix}{21}{appendix.175}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{20}{dummy.151}
+\contentsline {chapter}{Bibliography}{22}{dummy.176}

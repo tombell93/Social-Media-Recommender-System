@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -13,6 +15,7 @@ public class FeaturesList {
         "Health", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
 
     private List<Feature> features = new ArrayList<Feature>();
+    private Map<String, Double> featuresMap = new HashMap<String, Double>();
     
     private String sentiment;
     private Boolean isSubjective;
