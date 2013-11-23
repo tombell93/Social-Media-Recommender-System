@@ -146,60 +146,6 @@ http://api.datumbox.com:80/1.0/TopicClassification.json
 \end{lstlisting}
 This example is for 'Topic Classification', but the process for requesting other available features is similar and will be simplified by creating a 'Semantic Analysis API' which retrieves the response for each of the different requests. 
 
-\section{Context-Sensitive Scoring Algorithms}
-
-In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring may be considered a form of classification, in which an item of data is classified as belonging to a particular cluster within a data set, represented as a set of data points in a feature vector. Scoring may be done using supervised machine-learning approaches or using an unsupervised scoring function. 
-
-\subsection{Topic-classification scoring formulae}
-
-Scoring functions typically combine key-term statistics into a single score as a measure of the similarity between a query and a document.
-Term frequency is the most frequently used and widely explored approach to understanding the relevance of a text. Term rank scoring formulae are comprised of a base formula (typically Okapi BM25 \ref{OkapiBM25}) and a multiplicative or additive range variance term R \cite{OkapiBM25Paper}.
-
-\begin{equation}\label{OkapiBM25}
-	\sum\limits_{t\in d \bigcap q} \ln{\frac{N-df+0.5}{df+0.5}}\centerdot \frac{tf}{0.5+1.5 \centerdot \frac{dl}{avdl}+tf} \centerdot R
-\end{equation}
-
-Here $df$ is the document frequency (documents in a collection) and $tf$ is simply the term frequency (to occurrences of a term in a particular document). $avdl$ is the average document length and $R$ is a component which limits the range over which the term rank has an effect. 
-
-\subsection{Weighted Scoring Rules}
-
-Having classified an item of data, a scoring algorithm must assign a value to a tuple where each entry specifies a weight of a relevant attribute. A scoring rule must be used to combines several scores of individual attributes into an overall score for a particular item of data. 
-Fagin and Wimmers \cite{FaginWimmers1} detail a formula for incorporating weights into scoring rule, no matter the nature of the scoring rule. It takes a function $f$ which describes an unweighted rule for applying a score to a tuple of $n$ entries (attributes in our case) and gives a weighted rule based on $f$ which is compatible with any rule. 
-
-They take a set $\Theta = (\theta_1,\theta_2,\dotsc,\theta_n)$ of weights which relate the effect of an entry $x$ on the score of the tuple $ X = (x_1, x_2, \dots, x_n)$. If $f(X)$ is the unweighted scoring rule, then for a tuple of $m$ entries
-
-\begin{equation}\label{WeightedRule}	
-	f_\Theta (X) = \left(\sum_{i=1}^{m-1} i\centerdot (\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})\centerdot f(X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\})\right) + m \centerdot \theta_\sigma{(m)} \centerdot f(X)
-\end{equation}
-
-Here $X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\}$ is a restriction of $X$ to the domain of a bijection $\sigma$ which orders the weightings to match the order of entries in the tuple. In our case this bijection would be a mapping from each attribute of an item of data to the weighting associated with that attribute. The weighting $\Theta$ would be dependent upon a complementary tuple describing the user, i.e. their attribute preferences. The term $(\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})$ is the difference between the weightings of two consecutive entries. 
-
-Fagin and Wimmers' equation allows me to include weighed relationships between attributes' sub-scores and the total score of the item of data. An item of data is represented as a tuple $ D = (d_1, d_2, \dots, d_n)$ where each entry $d_n$ is an attribute of the item of data. Given the context-sensitive nature of this project, attributes must affect the score of the tuple with differing degrees according to how well they match the preferences of the user. 
-
-This idea of weighting will be an analogy for the users preferences, such that the greater the user's preference of an attribute, the greater the weighting will be. Thus the set of weights $\Theta$ becomes a tuple of entries $ U = (u_1, u_2, \dots, u_n)$ whereby $U$ represents the tuple of attributes depicting the user's preferences. This leads us the following result, showing a general solution for context-sensitive (weighted) scoring rule, for any unweighted rule $f(D)$.
-
-\begin{equation}\label{OurWeightedRule}	
-	f_U (D) = \left(\sum_{i=1}^{m-1} i\centerdot (u_{\sigma{(i)}} - u_{\sigma{(i+1)}})\centerdot f(D\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\})\right) + m \centerdot u_\sigma{(m)} \centerdot f(D)
-\end{equation}
-
-Let us take the simple unweighted scoring rule whereby we compute the average of the the $i$ attributes $d_j$ in a tuple $D$.
-
-$$f(D) = \frac{\sum_{i=1}^{i} u_i}{n}$$
-
-Using the weighting formula (Eqn. \ref{OurWeightedRule}) the weighted equivalent is
-
-\begin{align}\label{OurWeightedRuleDerivation}
-f_U (D) &= \left(\sum_{n=1}^{M-1} n\centerdot (u_{\sigma{(n)}} - u_{\sigma{(n+1)}})\centerdot \frac{\sum_{i=1}^{n} u_i}{n}\right) + M \centerdot u_\sigma{(M)} \centerdot \frac{\sum_{i=1}^{n} u_i}{n} 
-\\ &= (u_1-u_2)d_1 + 2(u_2-u_3)\frac{x_1+x_2}{2} + 3u_3\frac{x_1+x_2+x_3}{3}
-\\ &= u_1d_1 + u_2d_2 + \dots + u_Md_M
-\end{align}
-
-We are lead therefore to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{BasicScoringRule}).
-
-\begin{equation}\label{BasicScoringRule}
-f_U (D) = \sum_{k=1}^{m-1} u_kd_k
-\end{equation}
-
 \section{Sorting Algorithms}
 
 Sorting is required for ordering scored items of data into a list whereby the topmost items are the most relevant and the bottommost are the least relevant. Since we are only dealing with relatively small sets of data, efficiency is not paramount in terms of maximising accuracy or usability. Despite this, some consideration is made to using the most appropriate sorting algorithms. 
