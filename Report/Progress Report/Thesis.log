@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  23 NOV 2013 14:08
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  23 NOV 2013 17:36
 entering extended mode
 **Thesis.tex
 
@@ -687,30 +687,25 @@ Chapter 3.
 Package natbib Warning: Citation `FaginWimmers1' on page 11 undefined on input 
 line 39.
 
-[11]
-
-LaTeX Warning: Reference `AverageUnweightedRule' on page 12 undefined on input 
-line 57.
-
-[12])
+[11] [12] [13])
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/Specification.tex" [13]
+ters/Specification.tex" [14]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Design Detail and Specification
 ------------------------------------------------------------------------------
-[14
+[15
 
 ])
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/Implementation.tex" [15]
+ters/Implementation.tex" [16]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Implementation
 ------------------------------------------------------------------------------
 )
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/PlanningAndProgress.tex" [16
+ters/PlanningAndProgress.tex" [17
 
 ]
 Chapter 6.
@@ -719,7 +714,7 @@ Chapter 6.
 ------------------------------------------------------------------------------
 )
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/TestingStrategyAndResults.tex" [17
+ters/TestingStrategyAndResults.tex" [18
 
 ]
 Chapter 7.
@@ -728,7 +723,7 @@ Chapter 7.
 ------------------------------------------------------------------------------
 )
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/CriticalEvaluation.tex" [18
+ters/CriticalEvaluation.tex" [19
 
 ]
 Chapter 8.
@@ -737,7 +732,7 @@ Chapter 8.
 ------------------------------------------------------------------------------
 )
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/Conclusion.tex" [19
+ters/Conclusion.tex" [20
 
 ]
 Chapter 9.
@@ -746,7 +741,7 @@ Chapter 9.
 ------------------------------------------------------------------------------
 )
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/FurtherWork.tex" [20
+ters/FurtherWork.tex" [21
 
 ]
 Chapter 10.
@@ -755,14 +750,14 @@ Chapter 10.
 ------------------------------------------------------------------------------
 )
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Appe
-ndices/AppendixA.tex" [21
+ndices/AppendixA.tex" [22
 
 ]
 Appendix A.
 ------------------------------------------------------------------------------
  A An Appendix
 ------------------------------------------------------------------------------
-) [22
+) [23
 
 ]
 ------------------------------------------------------------------------------
@@ -775,7 +770,7 @@ is.bbl")
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
-[23
+[24
 
 
 ]
@@ -792,113 +787,110 @@ Package rerunfilecheck Warning: File `Thesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: B51F4E3773E133B0C73B284E8EF74935;11629
-(rerunfilecheck)             After:  27E47C8CFB8E17F75AACB4AE69EB971A;11629.
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Before: 27E47C8CFB8E17F75AACB4AE69EB971A;11629
+(rerunfilecheck)             After:  5CC19CB69F8644AB86A76A5B82CD096B;11958.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 13250 strings out of 493921
- 190614 string characters out of 3144882
- 282062 words of memory out of 3000000
+ 13254 strings out of 493921
+ 190654 string characters out of 3144882
+ 282114 words of memory out of 3000000
  16090 multiletter control sequences out of 15000+200000
  13167 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  49i,12n,45p,13211b,1697s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{dummy.176} has been referenced but does not exist
+pdfTeX warning (dest): name{dummy.177} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{appendix.175} has been referenced but does not exis
+pdfTeX warning (dest): name{appendix.176} has been referenced but does not exis
 t, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.174} has been referenced but does not exist
+pdfTeX warning (dest): name{section.175} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.173} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.174} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.172} has been referenced but does not exist
+pdfTeX warning (dest): name{section.173} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter.171} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter.172} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{section.170} has been referenced but does not exist
+pdfTeX warning (dest): name{section.171} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.169} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.170} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.168} has been referenced but does not exist
+pdfTeX warning (dest): name{section.169} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter.167} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter.168} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{section.166} has been referenced but does not exist
+pdfTeX warning (dest): name{section.167} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.165} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.166} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.164} has been referenced but does not exist
+pdfTeX warning (dest): name{section.165} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter.163} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter.164} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{section.162} has been referenced but does not exist
+pdfTeX warning (dest): name{section.163} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.161} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.162} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.160} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter.160} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter.159} has been referenced but does not exist
+pdfTeX warning (dest): name{section.159} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{section.156} has been referenced but does not exist
+pdfTeX warning (dest): name{section.157} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.155} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.156} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.154} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter.151} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter.153} has been referenced but does not exist
+pdfTeX warning (dest): name{section.150} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{section.151} has been referenced but does not exist
+pdfTeX warning (dest): name{section.149} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter.150} has been referenced but does not exist
+pdfTeX warning (dest): name{section.148} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{section.147} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.144} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.147} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.143} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.142} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.140} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.133} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.146} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.145} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.143} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.142} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.141} has been referenced but does not exist
+, replaced by a fixed one
 
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
@@ -920,9 +912,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX
 fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Thesis.pdf (35 pages, 360921 bytes).
+Output written on Thesis.pdf (36 pages, 363915 bytes).
 PDF statistics:
- 817 PDF objects out of 1000 (max. 8388607)
- 248 named destinations out of 1000 (max. 500000)
+ 825 PDF objects out of 1000 (max. 8388607)
+ 252 named destinations out of 1000 (max. 500000)
  601 words of extra memory for PDF output out of 10000 (max. 10000000)
 

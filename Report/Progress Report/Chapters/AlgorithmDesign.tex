@@ -80,7 +80,7 @@ This weighting may be implemented using
 
 The simplest of the two is the former, whereby an item of data (with a deadline in less than $t_threshold$ minutes) would be flagged as time-relevant and ranked at the top of the ordered list. 
 
-The second implementation would be the preferable choice, since as the deadline approached, the item of data would creep up the ordered list until it reached the top at $t_threshold$ minutes before the deadline. 
+The second implementation would be the preferable choice, since as the deadline approached, the item of data would creep up the ordered list until it reached the top at $t_threshold$ minutes before the deadline. There would clearly need to be a second threshold time even in this case, to specify the time at which continuous time-relevance is measured, which would prevent every appointment in the users calendar being scored with each update. The ideal solution would use the users pre-set reminder times as indicators about when the user should be reminded about an appointment. 
 
 
 \section{Lexical Analysis and Integration}
