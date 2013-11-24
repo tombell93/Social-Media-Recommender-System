@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.23)  23 NOV 2013 23:19
+=======
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  23 NOV 2013 17:36
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 entering extended mode
 **Thesis.tex
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Thesis.tex"
@@ -679,8 +683,13 @@ Package natbib Warning: Citation `FaginWimmers1' on page 11 undefined on input
 line 39.
 
 [11] [12] [13])
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/Specifi
 cation.tex" [14]
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/Specification.tex" [14]
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Design Detail and Specification
@@ -688,15 +697,25 @@ Chapter 4.
 [15
 
 ])
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/Impleme
 ntation.tex" [16]
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/Implementation.tex" [16]
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Implementation
 ------------------------------------------------------------------------------
 )
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/Plannin
 gAndProgress.tex" [17
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/PlanningAndProgress.tex" [17
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 
 ]
 Chapter 6.
@@ -704,8 +723,13 @@ Chapter 6.
  6 Planning and Progress
 ------------------------------------------------------------------------------
 )
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/Testing
 StrategyAndResults.tex" [18
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/TestingStrategyAndResults.tex" [18
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 
 ]
 Chapter 7.
@@ -713,8 +737,13 @@ Chapter 7.
  7 Testing Strategy and Results
 ------------------------------------------------------------------------------
 )
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/Critica
 lEvaluation.tex" [19
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/CriticalEvaluation.tex" [19
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 
 ]
 Chapter 8.
@@ -722,8 +751,13 @@ Chapter 8.
  8 Critical Evaluation
 ------------------------------------------------------------------------------
 )
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/Conclus
 ion.tex" [20
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/Conclusion.tex" [20
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 
 ]
 Chapter 9.
@@ -731,8 +765,13 @@ Chapter 9.
  9 Conclusion
 ------------------------------------------------------------------------------
 )
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/Further
 Work.tex" [21
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/FurtherWork.tex" [21
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 
 ]
 Chapter 10.
@@ -740,8 +779,13 @@ Chapter 10.
  10 Further Work
 ------------------------------------------------------------------------------
 )
+<<<<<<< HEAD
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Appendices/Appen
 dixA.tex" [22
+=======
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Appe
+ndices/AppendixA.tex" [22
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 
 ]
 Appendix A.
@@ -783,7 +827,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
  13254 strings out of 493921
+<<<<<<< HEAD
  189148 string characters out of 3147287
+=======
+ 190654 string characters out of 3144882
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
  282114 words of memory out of 3000000
  16090 multiletter control sequences out of 15000+200000
  13167 words of font info for 49 fonts, out of 3000000 for 9000
@@ -879,6 +927,7 @@ pdfTeX warning (dest): name{section.142} has been referenced but does not exist
 pdfTeX warning (dest): name{section.141} has been referenced but does not exist
 , replaced by a fixed one
 
+<<<<<<< HEAD
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTe
@@ -898,6 +947,28 @@ sfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
 >
+=======
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/symbols/msam10.pfb>
+>>>>>>> ea3b9ba6aca68387dccd0a79adb8503510a9888b
 Output written on Thesis.pdf (36 pages, 363915 bytes).
 PDF statistics:
  825 PDF objects out of 1000 (max. 8388607)

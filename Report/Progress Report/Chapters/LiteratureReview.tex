@@ -4,7 +4,7 @@ A progressive project in the sphere of cross-platform relevance-based intelligen
 
 \section{Existing Data-Ranking Implementations}
 
-A good number of content aggregators exist at present in various forms, yet all distinctly lack the complementary relationship between social media (and others) and context-sensitive text-analytics for relevance-based ranking. The following is a summary to the key players in this space at present.
+A good number of content aggregators exist at present in various forms, yet all distinctly lack the complementary relationship between social media (and others) and relevance-based ranking. The following is a summary to the key players in this space at present.
 
 \paragraph{Google Now}
 Google Now is a mobile app which combines Google's search feature with useful information which is deemed relevant to the user's environment such as weather, a map to get them home after a night out or nearby events.
@@ -20,16 +20,10 @@ This app aggregates Facebook content and tweets, but performs no topic/sentiment
 There are a good number of existing text analytics services available to the end user and the developer for a range of different types of analytics. These services include sentiment analysis, text categorisation, contextual targeting and a range of others. This section highlights some which are relevant to this study.
 
 \paragraph{AlchemyAPI}
-Alchemy provides an API which performs entity extraction, sentiment analysis, concept tagging, relation extraction and most notably, text categorisation (among others). It provides a free licence for up to 1,000 API calls per day. It provides all the core features which this project requires in terms of text analytics, however the text categorisation did not produce strong results for short amounts of text (such as tweets) and often failed to make any categorisation.
+Alchemy provides an API which performs sentiment analysis and text categorisation (among others). It provides a free licence for up to 1,000 API calls per day. It provides all the core features which this project requires in terms of text analytics, however the text categorisation did not produce strong results for short amounts of text (such as tweets) and often failed to make any categorisation.
 
 \paragraph{Semantria}
 The best solution for sentiment analysis appears to be semantria. It gave consistently precise and accurate sentiment analysis for text containing more than 5 words. 
-
-\paragraph{Saplo}
-Saplo was distinguished in its contextual analysis feature which allowed me to define a personalised textual context which could be matched against any type of text. This could have allowed me to define user-specific textual contexts against which to match data items, however it only allows users 2000 API calls per month on their free account.
-
-\paragraph{Wingify}
-This is a beta-stage contextual targeting API which can categorise text from a web page and extract key concepts. The online demo provided accurate results, yet there is not yet a public API available.
 
 \paragraph{DatumBox}
 DatumBox is a free machine learning API which performs sentiment analysis, subjectivity analysis, topic classification, language detection, readability detection, educational detection, document similarity analysis, and gender detection. Many of these features may be useful for ranking text based upon its relevance to a particular individual. It has a simple API using http POST requests and a JSON response. 
@@ -154,27 +148,7 @@ For nearly sorted lists such as scenarios where single or small numbers of data 
 
 \section{Data Sources and Persistence}
 
-This project attempts to develop a framework for use in a wide range of software applications and as such will require complete flexibility in terms of its data sources. For the purposes of research, development and initial testing, JSON (JavaScript Object Notation) objects in text files are considered the best solution for long-term storage of test data. They are simple to create, read, update and delete; flexible in terms of multi-device usability and fully interchangeable with Java objects. Thus they are suitable for storing items of test data to be loaded into the API. UserContext objects may also be stored as such. Listing \ref{JSONExample} shows an example of a JSON DataItem representation.
-
-\lstset{language=Java, caption=JSON test data example, label=JSONExample}
-\begin{lstlisting}
-//Example JSON DataItem
-{
-	"id":0,
-	"title":null,
-	"detail":"",
-	"type":"Tweet",	
-	"score":0,
-	"link":null,
-	"date":null,
-	"author":"test",
-	"location":null,
-	"from":null,
-	"to":null,
-	"hashtag":"#test",
-	"priority":0
-}
-\end{lstlisting}
+This project attempts to develop a framework for use in a wide range of software applications and as such will require complete flexibility in terms of its data sources. For the purposes of research, development and initial testing, JSON (JavaScript Object Notation) objects in text files are considered the best solution for long-term storage of test data. They are simple to create, read, update and delete; flexible in terms of multi-device usability and fully interchangeable with Java objects. Thus they are suitable for storing items of test data to be loaded into the API. UserContext objects may also be stored as such.
 
 Android provides a range of ways to save persistent application data. Data storage options include: shared preferences, internal storage, external storage, SQLite databases or on an external server accessed remotely \cite{BeginningAndroidDataPersistence}. Any number of these could be used to store information about the user, such as their preferences and UserContext which is required by the ranking agent. 
 Internal storage will store text files in the file system. They are private the user and other applications and can be used to store JSON objects. A database may be used to store test data and user-related data, but this would require classes for managing a database connection and parsing the data fields into their original objects. Either internal or database storage would be perfectly adequate.
@@ -188,17 +162,10 @@ Recommendation system problems may be solved using two common approaches: collab
 Collaborative filtering methods use information about the behaviour and activity of various users, and use their similarity to other users to predict which other users will like the same content. It does not rely upon understanding complex characteristics of items and is therefore more accurate for complex items which are hard to machine analyse to extract characteristics. They are, however, dependent upon existing data on a user and difficult to scale. 
 Collaborative filtering systems do not have to understand the item, but only the similarity between users. Pattern recognition algorithms such as 'k-nearest neighbours' is commonly used to measure the similarity between users or items in recommender systems. They are used by applications such as Amazon's recommender, Last.fm and social networks. 
 
-
 \subsection{Content-based Filtering}
 
 Content-based approaches use characteristics of the items to be recommended to match them to items similar to those the user has liked in the last. Content-based filtering uses an item profile (a tuple of discrete attributes) characterising the item of data. The weight of each attribute denotes the extent to which each feature describes the item. The most basic methods use average values of the attributes to denote importance. Most complex systems use Bayesian classifiers, cluster analysis, or decision trees, among others.
 
 \subsection{Hybrid Recommender Systems}
 
-This is some text.
-
-
-
-
-
-
+Hybrid recommender systems combine the two approaches by combining the results of each; adding capabilities from one to the other; or by attempting to unify the ideas behind both into a single model. 
