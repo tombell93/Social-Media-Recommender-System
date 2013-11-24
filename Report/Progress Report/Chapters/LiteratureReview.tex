@@ -178,3 +178,27 @@ This project attempts to develop a framework for use in a wide range of software
 
 Android provides a range of ways to save persistent application data. Data storage options include: shared preferences, internal storage, external storage, SQLite databases or on an external server accessed remotely \cite{BeginningAndroidDataPersistence}. Any number of these could be used to store information about the user, such as their preferences and UserContext which is required by the ranking agent. 
 Internal storage will store text files in the file system. They are private the user and other applications and can be used to store JSON objects. A database may be used to store test data and user-related data, but this would require classes for managing a database connection and parsing the data fields into their original objects. Either internal or database storage would be perfectly adequate.
+
+\section{Recommender Systems}
+
+Recommendation system problems may be solved using two common approaches: collaborative filtering or content-based filtering. Collaborative filtering recommends items to the user using information about others who like that item with similar preferences. Content-based approaches however, use information about the characteristics of an item. 
+
+\subsection{Collaborative Filtering}
+
+Collaborative filtering methods use information about the behaviour and activity of various users, and use their similarity to other users to predict which other users will like the same content. It does not rely upon understanding complex characteristics of items and is therefore more accurate for complex items which are hard to machine analyse to extract characteristics. They are, however, dependent upon existing data on a user and difficult to scale. 
+Collaborative filtering systems do not have to understand the item, but only the similarity between users. Pattern recognition algorithms such as 'k-nearest neighbours' is commonly used to measure the similarity between users or items in recommender systems. They are used by applications such as Amazon's recommender, Last.fm and social networks. 
+
+
+\subsection{Content-based Filtering}
+
+Content-based approaches use characteristics of the items to be recommended to match them to items similar to those the user has liked in the last. Content-based filtering uses an item profile (a tuple of discrete attributes) characterising the item of data. The weight of each attribute denotes the extent to which each feature describes the item. The most basic methods use average values of the attributes to denote importance. Most complex systems use Bayesian classifiers, cluster analysis, or decision trees, among others.
+
+\subsection{Hybrid Recommender Systems}
+
+This is some text.
+
+
+
+
+
+
