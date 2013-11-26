@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  26 NOV 2013 16:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  26 NOV 2013 09:20
 entering extended mode
 **Thesis.tex
 
@@ -580,36 +580,89 @@ is.out")
 
 ]
 ------------------------------------------------------------------------------
+ Acknowledgements
+------------------------------------------------------------------------------
+[2
+
+]
+------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
 
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Thes
 is.toc"
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2
+) [3
 
 
-])
+] [4])
 \tf@toc=\write5
- [3]
+
+[5]
+------------------------------------------------------------------------------
+ List of Figures
+------------------------------------------------------------------------------
+
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Thes
+is.lof")
+\tf@lof=\write6
+ [6
+
+
+]
+------------------------------------------------------------------------------
+ List of Tables
+------------------------------------------------------------------------------
+
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Thes
+is.lot")
+\tf@lot=\write7
+ [7
+
+
+]
+------------------------------------------------------------------------------
+ Abbreviations
+------------------------------------------------------------------------------
+[8
+
+
+
+]
+------------------------------------------------------------------------------
+ Physical Constants
+------------------------------------------------------------------------------
+[9
+
+
+
+]
+------------------------------------------------------------------------------
+ Symbols
+------------------------------------------------------------------------------
+[10
+
+
+
+]
 ------------------------------------------------------------------------------
  Dedicatory
 ------------------------------------------------------------------------------
-[4
+[11
 
 ]
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/ProjectGoals.tex"
+ters/Introduction.tex"
 Chapter 1.
 ------------------------------------------------------------------------------
- 1 Project Goals
+ 1 Introduction
 ------------------------------------------------------------------------------
 [1
 
@@ -617,112 +670,185 @@ Chapter 1.
 
 ])
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/BackgroundAndReportOfLiteratureSearch.tex" [2]
+ters/LiteratureReview.tex" [2]
 Chapter 2.
 ------------------------------------------------------------------------------
- 2 Background and Report of Literature Review
+ 2 Literature Review
 ------------------------------------------------------------------------------
+
+Package hyperref Warning: Difference (3) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 10.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 13.
+
 [3
 
-] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+]
+
+Package hyperref Warning: Difference (3) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 23.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 26.
+
+[4] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 29.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 41.
 
-[4] [5] [6] [7] [8] [9] [10] [11] [12]
+[5] [6] [7]
 
-Package caption Warning: \label without proper \caption on input line 272.
+Package natbib Warning: Citation `CollaborativeRecommenderGoldberg' on page 8 u
+ndefined on input line 162.
+
+[8]
+
+Package natbib Warning: Citation `ContentRecommenderPazzani' on page 9 undefine
+d on input line 167.
+
+
+Package natbib Warning: Citation `ReferralWeb' on page 9 undefined on input lin
+e 173.
+
+
+Package natbib Warning: Citation `SenTagommender' on page 9 undefined on input 
+line 173.
+
+[9])
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/AlgorithmDesign.tex" [10]
+Chapter 3.
+------------------------------------------------------------------------------
+ 3 Algorithm Design
+------------------------------------------------------------------------------
+[11
+
+]
+
+Package natbib Warning: Citation `FaginWimmers1' on page 12 undefined on input 
+line 43.
+
+[12] [13] [14]
+
+Package caption Warning: \label without proper \caption on input line 101.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `BetaLookup' on page 13 undefined on input line 270.
+LaTeX Warning: Reference `BetaLookup' on page 15 undefined on input line 99.
 
-[13])
+[15])
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/ReportOnTechnicalProgress.tex" [14] [15]
-Chapter 3.
-------------------------------------------------------------------------------
- 3 Report on Technical Progress
-------------------------------------------------------------------------------
-)
-("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
-ters/PlanOfRemainingWork.tex" [16
-
-]
+ters/Specification.tex" [16]
 Chapter 4.
 ------------------------------------------------------------------------------
- 4 Plan of Remaining Work
+ 4 Design Detail and Specification
 ------------------------------------------------------------------------------
 [17
 
-] <images/gantt2.pdf, id=481, 597.55246pt x 845.07718pt>
-File: images/gantt2.pdf Graphic file (type pdf)
-
-<use images/gantt2.pdf>
-Package pdftex.def Info: images/gantt2.pdf used on input line 30.
-(pdftex.def)             Requested size: 542.71625pt x 767.59012pt.
-
-
-LaTeX Warning: Float too large for page by 104.61703pt on input line 32.
-
+])
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/Implementation.tex" [18]
+Chapter 5.
+------------------------------------------------------------------------------
+ 5 Implementation
+------------------------------------------------------------------------------
 )
-("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Appe
-ndices/AppendixA.tex" [18] [19 <C:/Users/tom/Documents/Individual Project/Proje
-ct/Report/Progress Report/images/gantt2.pdf>]
-Appendix A.
-------------------------------------------------------------------------------
- A Project Brief
-------------------------------------------------------------------------------
-
-Package hyperref Warning: Difference (4) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4.
-
-
-Package hyperref Warning: Difference (3) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 7.
-
-[20
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/PlanningAndProgress.tex" [19
 
 ]
+Chapter 6.
+------------------------------------------------------------------------------
+ 6 Planning and Progress
+------------------------------------------------------------------------------
+)
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/TestingStrategyAndResults.tex" [20
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 19.
+]
+Chapter 7.
+------------------------------------------------------------------------------
+ 7 Testing Strategy and Results
+------------------------------------------------------------------------------
+)
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/CriticalEvaluation.tex" [21
 
-) [21]
+]
+Chapter 8.
+------------------------------------------------------------------------------
+ 8 Critical Evaluation
+------------------------------------------------------------------------------
+)
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/Conclusion.tex" [22
+
+]
+Chapter 9.
+------------------------------------------------------------------------------
+ 9 Conclusion
+------------------------------------------------------------------------------
+)
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Chap
+ters/FurtherWork.tex" [23
+
+]
+Chapter 10.
+------------------------------------------------------------------------------
+ 10 Further Work
+------------------------------------------------------------------------------
+)
+("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Appe
+ndices/AppendixA.tex" [24
+
+]
+Appendix A.
+------------------------------------------------------------------------------
+ A An Appendix
+------------------------------------------------------------------------------
+) [25
+
+]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
 
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Thes
 is.bbl")
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 132.
- [22
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
+[26
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 132.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
 
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Progress Report\Thes
 is.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 132.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 132.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F69AAFE3320E3398BE7EAF3A9CD1C958;8836.
+(rerunfilecheck)             Checksum: 7AECAA2A63A2D7A46FF6917AEFF6DDD4;13151.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 132.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
  ) 
 Here is how much of TeX's memory you used:
- 13428 strings out of 493921
- 191938 string characters out of 3144882
- 288356 words of memory out of 3000000
- 16355 multiletter control sequences out of 15000+200000
+ 13515 strings out of 493921
+ 193870 string characters out of 3144882
+ 295282 words of memory out of 3000000
+ 16374 multiletter control sequences out of 15000+200000
  15167 words of font info for 58 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 49i,21n,45p,13211b,1697s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,21n,45p,13211b,1037s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
@@ -744,9 +870,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2
 onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Thesis.pdf (27 pages, 544513 bytes).
+Output written on Thesis.pdf (38 pages, 389531 bytes).
 PDF statistics:
- 619 PDF objects out of 1000 (max. 8388607)
- 173 named destinations out of 1000 (max. 500000)
- 398 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 827 PDF objects out of 1000 (max. 8388607)
+ 219 named destinations out of 1000 (max. 500000)
+ 649 words of extra memory for PDF output out of 10000 (max. 10000000)
 

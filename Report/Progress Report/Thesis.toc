@@ -1,81 +1,53 @@
 \contentsline {chapter}{Abstract}{i}{dummy.1}
 \vspace {1em}
-\contentsline {chapter}{Acknowledgements}{ii}{dummy.2}
-\vspace {1em}
-\contentsline {chapter}{List of Figures}{vi}{dummy.4}
-\contentsline {chapter}{List of Tables}{vii}{dummy.6}
-\contentsline {chapter}{Abbreviations}{viii}{dummy.8}
-\contentsline {chapter}{Physical Constants}{ix}{dummy.11}
-\contentsline {chapter}{Symbols}{x}{dummy.14}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.17}
-\contentsline {section}{\numberline {1.1}The Problem}{1}{section.18}
-\contentsline {section}{\numberline {1.2}Project Objective}{1}{section.19}
-\contentsline {section}{\numberline {1.3}Goals}{1}{section.20}
-\contentsline {section}{\numberline {1.4}Unique Features}{2}{section.33}
-\contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.34}
-\contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{3}{section.35}
-\contentsline {paragraph}{Google Now}{3}{section*.36}
-\contentsline {paragraph}{ViralHeat}{3}{section*.37}
-\contentsline {paragraph}{StreamLife}{4}{section*.38}
-\contentsline {section}{\numberline {2.2}Text analytics libraries}{4}{section.39}
-\contentsline {paragraph}{AlchemyAPI}{4}{section*.40}
-\contentsline {paragraph}{Semantria}{4}{section*.41}
-\contentsline {paragraph}{Saplo}{4}{section*.42}
-\contentsline {paragraph}{Wingify}{4}{section*.43}
-\contentsline {paragraph}{DatumBox}{4}{section*.44}
-\contentsline {section}{\numberline {2.3}Data-mining}{5}{section.45}
-\contentsline {subsection}{\numberline {2.3.1}Facebook}{5}{subsection.46}
-\contentsline {subsection}{\numberline {2.3.2}Twitter}{5}{subsection.55}
-\contentsline {subsection}{\numberline {2.3.3}Google Calendar}{6}{subsection.64}
-\contentsline {subsection}{\numberline {2.3.4}Google Tasks}{6}{subsection.72}
-\contentsline {subsection}{\numberline {2.3.5}Android SMS}{6}{subsection.75}
-\contentsline {section}{\numberline {2.4}Semantic Analysis}{7}{section.93}
-\contentsline {subsection}{\numberline {2.4.1}DatumBox API and usage}{7}{subsection.94}
-\contentsline {section}{\numberline {2.5}Sorting Algorithms}{8}{section.109}
-\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{8}{section.110}
-\contentsline {chapter}{\numberline {3}Algorithm Design}{10}{chapter.128}
-\contentsline {section}{\numberline {3.1}Scoring Rule}{10}{section.129}
-\contentsline {subsection}{\numberline {3.1.1}Topic-classification scoring formulae}{10}{subsection.130}
-\contentsline {subsection}{\numberline {3.1.2}Unweighted Scoring Rule}{11}{subsection.132}
-\contentsline {subsection}{\numberline {3.1.3}Weighted Scoring Rule}{11}{subsection.134}
-\contentsline {subsection}{\numberline {3.1.4}Weighted Scoring Rule using Multiple Weights}{13}{subsection.141}
-\contentsline {section}{\numberline {3.2}Lexical Analysis and Integration}{14}{section.144}
-\contentsline {section}{\numberline {3.3}Ranking Algorithm}{14}{section.145}
-\contentsline {chapter}{\numberline {4}Design Detail and Specification}{15}{chapter.146}
-\contentsline {section}{\numberline {4.1}Data Sources and Acquisition}{15}{section.147}
-\contentsline {subsection}{\numberline {4.1.1}Data Acquisition}{15}{subsection.148}
-\contentsline {subsection}{\numberline {4.1.2}Data Item Conversion}{15}{subsection.149}
-\contentsline {subsection}{\numberline {4.1.3}User Profile Acquisition}{15}{subsection.150}
-\contentsline {section}{\numberline {4.2}Scoring Algorithm}{15}{section.151}
-\contentsline {section}{\numberline {4.3}Ranking Algorithm}{16}{section.152}
-\contentsline {section}{\numberline {4.4}Android Demonstration}{16}{section.153}
-\contentsline {chapter}{\numberline {5}Implementation}{17}{chapter.154}
-\contentsline {section}{\numberline {5.1}API Development}{17}{section.155}
-\contentsline {section}{\numberline {5.2}Android App Development}{17}{section.156}
-\contentsline {chapter}{\numberline {6}Planning and Progress}{18}{chapter.157}
-\contentsline {section}{\numberline {6.1}Planning}{18}{section.158}
-\contentsline {subsection}{\numberline {6.1.1}Skills Audit}{18}{subsection.159}
-\contentsline {section}{\numberline {6.2}Time Schedule}{18}{section.160}
-\contentsline {section}{\numberline {6.3}Progress}{18}{section.161}
-\contentsline {section}{\numberline {6.4}Risk Analysis and Contingency Planning}{18}{section.162}
-\contentsline {chapter}{\numberline {7}Testing Strategy and Results}{19}{chapter.163}
-\contentsline {section}{\numberline {7.1}A Section}{19}{section.164}
-\contentsline {subsection}{\numberline {7.1.1}A Subsection}{19}{subsection.165}
-\contentsline {section}{\numberline {7.2}Another Section}{19}{section.166}
-\contentsline {chapter}{\numberline {8}Critical Evaluation}{20}{chapter.167}
-\contentsline {section}{\numberline {8.1}A Section}{20}{section.168}
-\contentsline {subsection}{\numberline {8.1.1}A Subsection}{20}{subsection.169}
-\contentsline {section}{\numberline {8.2}Another Section}{20}{section.170}
-\contentsline {chapter}{\numberline {9}Conclusion}{21}{chapter.171}
-\contentsline {section}{\numberline {9.1}A Section}{21}{section.172}
-\contentsline {subsection}{\numberline {9.1.1}A Subsection}{21}{subsection.173}
-\contentsline {section}{\numberline {9.2}Another Section}{21}{section.174}
-\contentsline {chapter}{\numberline {10}Further Work}{22}{chapter.175}
-\contentsline {section}{\numberline {10.1}A Section}{22}{section.176}
-\contentsline {subsection}{\numberline {10.1.1}A Subsection}{22}{subsection.177}
-\contentsline {section}{\numberline {10.2}Another Section}{22}{section.178}
+\contentsline {chapter}{\numberline {1}Project Goals}{1}{chapter.3}
+\contentsline {section}{\numberline {1.1}The Problem}{1}{section.4}
+\contentsline {section}{\numberline {1.2}Project Objective}{1}{section.5}
+\contentsline {section}{\numberline {1.3}Goals}{1}{section.6}
+\contentsline {section}{\numberline {1.4}Unique Features}{2}{section.18}
+\contentsline {chapter}{\numberline {2}Background and Report of Literature Review}{3}{chapter.19}
+\contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{3}{section.20}
+\contentsline {section}{\numberline {2.2}Text analytics libraries}{3}{section.21}
+\contentsline {section}{\numberline {2.3}Data-mining}{4}{section.22}
+\contentsline {subsection}{\numberline {2.3.1}Facebook}{4}{subsection.23}
+\contentsline {subsection}{\numberline {2.3.2}Twitter}{5}{subsection.32}
+\contentsline {subsection}{\numberline {2.3.3}Google Calendar}{5}{subsection.41}
+\contentsline {subsection}{\numberline {2.3.4}Google Tasks}{5}{subsection.49}
+\contentsline {subsection}{\numberline {2.3.5}Android SMS}{6}{subsection.52}
+\contentsline {section}{\numberline {2.4}Semantic Analysis}{6}{section.70}
+\contentsline {subsection}{\numberline {2.4.1}DatumBox API and usage}{6}{subsection.71}
+\contentsline {section}{\numberline {2.5}Sorting Algorithms}{7}{section.86}
+\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{7}{section.87}
+\contentsline {section}{\numberline {2.7}Recommender Systems}{8}{section.88}
+\contentsline {subsection}{\numberline {2.7.1}Collaborative Filtering}{8}{subsection.89}
+\contentsline {subsection}{\numberline {2.7.2}Content-based Filtering}{8}{subsection.90}
+\contentsline {subsection}{\numberline {2.7.3}Hybrid Recommender Systems}{9}{subsection.91}
+\contentsline {subsection}{\numberline {2.7.4}The Utility Matrix}{9}{subsection.92}
+\contentsline {subsubsection}{\numberline {2.7.4.1}Populating the Utility Matrix}{9}{subsubsection.93}
+\contentsline {section}{\numberline {2.8}User Profile}{9}{section.96}
+\contentsline {section}{\numberline {2.9}Scoring Rule}{10}{section.97}
+\contentsline {subsection}{\numberline {2.9.1}Topic-classification scoring formulae}{10}{subsection.98}
+\contentsline {subsection}{\numberline {2.9.2}Unweighted Scoring Rule}{11}{subsection.100}
+\contentsline {subsection}{\numberline {2.9.3}Weighted Scoring Rule}{11}{subsection.102}
+\contentsline {subsection}{\numberline {2.9.4}Time-Relevance and Item removal}{13}{subsection.109}
+\contentsline {section}{\numberline {2.10}Lexical Analysis and Preprocessing}{14}{section.116}
+\contentsline {section}{\numberline {2.11}Ranking Algorithm}{14}{section.117}
+\contentsline {chapter}{\numberline {3}Report on Technical Progress}{16}{chapter.119}
+\contentsline {section}{\numberline {3.1}A Section}{16}{section.120}
+\contentsline {subsection}{\numberline {3.1.1}A Subsection}{16}{subsection.121}
+\contentsline {section}{\numberline {3.2}Another Section}{16}{section.122}
+\contentsline {chapter}{\numberline {4}Plan of Remaining Work}{17}{chapter.123}
+\contentsline {section}{\numberline {4.1}Remaining work}{17}{section.124}
+\contentsline {subsection}{\numberline {4.1.1}Algorithm and Java API Implementation}{17}{subsection.125}
+\contentsline {subsection}{\numberline {4.1.2}Demonstration Application}{17}{subsection.126}
+\contentsline {section}{\numberline {4.2}Planning and Contingency}{18}{section.127}
+\contentsline {subsection}{\numberline {4.2.1}Algorithm and Java API Implementation}{18}{subsection.128}
+\contentsline {subsection}{\numberline {4.2.2}Demonstration Application}{18}{subsection.129}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{23}{appendix.179}
+\contentsline {chapter}{\numberline {A}Project Brief}{20}{appendix.131}
+\contentsline {paragraph}{Problem}{20}{section*.132}
+\contentsline {paragraph}{Goals}{20}{section*.133}
+\contentsline {paragraph}{Scope}{21}{section*.134}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{24}{dummy.180}
+\contentsline {chapter}{Bibliography}{22}{dummy.135}

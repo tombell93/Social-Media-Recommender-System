@@ -1,0 +1,3 @@
+Insertion sort is ideal for the requirements of this project. It is fast for small, largely
+sorted lists and easy to implement. The following insertion sort algorithm will sort items
+according the their score (Algorithm 3.4.1).

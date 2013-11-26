@@ -1,3 +1,23 @@
-\chapter{An Appendix}
+\chapter{Project Brief}\label{projectBrief}
 
-This is an appendix.
+\paragraph{Problem}
+Social media, productivity tools and internet-based information are abundant on mobile devices leading to users being overwhelmed with information, despite only a small amount of it having any interest to a particular individual at any given moment.
+
+\paragraph{Goals}
+The goal of this project is to provide a generalised ranking agent to order this vast range of information according to its context-specific relevance, given the user's personality, click-history and environment at any instance. This project will endeavour to abstract away a new extensible ranking agent into a Java API for use in a variety of applications on a range of devices.
+
+Existing ranking, sentiment analysis and data fusion algorithms will be investigated, employed or adapted in order to produce a scalable and highly modular context-sensitive mobile-content relevance-based ranking agent.
+
+ A personality profile and historical data will be used to maintain a user-context, which will behave like a search query. Topic analysis will be used to determine the data-context of a variety of available items of data, to be matched for relevance against the user-context. A stable context-sensitive ranking algorithm will be proposed and implemented to order data according to its context-specific relevance.
+
+The Facebook and Twitter API's will be investigated to ensure data-object compatability and the Android, Spring MVC and Java Swing frameworks will be explored, to ensure compatability with Java mobile, web-based and desktop applications respectively. 
+
+Realistic test data will be used throughout the development stages in a comprehensive variety of configurations. 
+The primary deliverable will be a modular Java API. For the purpose of demonstration a mobile, web or desktop application will be designed and implemented, to showcase the ranking agent's capabilities. 
+
+\paragraph{Scope}
+For the purpose of allowing this project to focus on its main goals, it will not intend to improve upon existing sentiment/topic analysis algorithms at the outset, but rather use existing tools. 
+
+Compatible items of data within the initial scope of this project include Facebook statuses/notifications, tweets, calendar appointments, tasks, emails and SMS messages and will allow for additional types of data to be added later.
+
+The project will focus primarily on the ranking agent, designed to rank the items of data using modified algorithms on a specific set of feature vectors.
