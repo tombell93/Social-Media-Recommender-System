@@ -54,3 +54,6 @@ The user profile may also include requirements for the filter to remove items wh
 
 \section{Implementation Progress}
 
+In terms of implementing the algorithm as an API, I've created a test environment for entering test data from the command line and storing them in files as JSON objects. It loads them from files into DataItem objects to be used by the ranking agent. It allows me to chose which types of items are loaded at any point. 
+
+I have implemented classes which sort items of scored data; get the topic (among other features) of items; store the users profile; store the item's attribute characteristics and score items according to how well they match the users profile. 
