@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.23)  27 NOV 2013 13:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.23)  27 NOV 2013 21:09
 entering extended mode
 **Thesis.tex
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Thesis.tex"
@@ -577,12 +577,12 @@ LaTeX Info: Redefining \nameref on input line 19.
  Table of Contents
 ------------------------------------------------------------------------------
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Thesis.toc"
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -619,37 +619,37 @@ LaTeX Warning: Reference `exampleCode' on page 4 undefined on input line 21.
 LaTeX Warning: Reference `DBTopicClassificationExample' on page 4 undefined on 
 input line 35.
 
-[4] [5] [6] [7])
+[4] [5] [6])
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/ReportO
-nTechnicalProgress.tex" [8]
+nTechnicalProgress.tex" [7]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Report on Technical Progress
 ------------------------------------------------------------------------------
-[9
+[8
 
-] [10])
+] [9])
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Chapters/PlanOfR
-emainingWork.tex" [11]
+emainingWork.tex" [10]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Plan of Remaining Work
 ------------------------------------------------------------------------------
-[12
+[11
 
-] <images/gantt2.pdf, id=311, 597.55246pt x 845.07718pt>
+] <images/gantt2.pdf, id=307, 597.55246pt x 845.07718pt>
 File: images/gantt2.pdf Graphic file (type pdf)
 
 <use images/gantt2.pdf>
 Package pdftex.def Info: images/gantt2.pdf used on input line 31.
-(pdftex.def)             Requested size: 542.71625pt x 767.59012pt.
+(pdftex.def)             Requested size: 589.69188pt x 834.02425pt.
 
 
-LaTeX Warning: Float too large for page by 104.61703pt on input line 33.
+LaTeX Warning: Float too large for page by 171.05116pt on input line 33.
 
 )
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Appendices/Appen
-dixA.tex" [13] [14 <C:/Users/Tom/Documents/GitHub/Project/Report/Progress Repor
+dixA.tex" [12] [13 <C:/Users/Tom/Documents/GitHub/Project/Report/Progress Repor
 t/images/gantt2.pdf>]
 Appendix A.
 ------------------------------------------------------------------------------
@@ -663,21 +663,20 @@ Package hyperref Warning: Difference (4) between bookmark levels is greater
 Package hyperref Warning: Difference (3) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 7.
 
-[15
-
-]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 19.
 
-) [16]
+[14
+
+]) [15]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
 ("C:\Users\Tom\Documents\GitHub\Project\Report\Progress Report\Thesis.bbl")
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
 
-[17
+[16
 
 
 ]
@@ -691,12 +690,15 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 13142 strings out of 493921
- 186955 string characters out of 3147287
- 254250 words of memory out of 3000000
+ 13141 strings out of 493921
+ 186948 string characters out of 3147287
+ 255250 words of memory out of 3000000
  16159 multiletter control sequences out of 15000+200000
  12780 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -717,9 +719,9 @@ onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/symbols/msam10.pfb>
-Output written on Thesis.pdf (21 pages, 464729 bytes).
+Output written on Thesis.pdf (20 pages, 464018 bytes).
 PDF statistics:
- 425 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
  294 words of extra memory for PDF output out of 10000 (max. 10000000)
 
