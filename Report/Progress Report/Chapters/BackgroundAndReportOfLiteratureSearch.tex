@@ -18,88 +18,13 @@ DatumBox is a free machine learning API which performs sentiment analysis, subje
 
 \section{Data-mining}
 
-Outline: Facebook and Twitter API (phone, web and desktop), Android API, Android Calendar, Android Tasks, Android SMS, Android Sensors, Google Calendar and Tasks (web-based and desktop API).
+I've explored a variety Facebook, Twitter and Android APIs and have written up how to this (see Appendix \ref{exampleCode}). 
 
-\subsection{Facebook}
-The Facebook statuses of a users friends can be fetched either using the Facebook API, or through wrapper libraries which simplify common Facebook API usage. The Facebook API is full-featured and well documented, yet for the purposes of demonstrating this ranking agent it's not necessary. 
-Facebook4J is a Java Facebook wrapper API which simplifies the most common Facebook API features into a more minimal library. 
+Facebook4J is a Java Facebook wrapper API which simplifies the most common Facebook API features into a more minimal library. Simlar to Facebook, Twitter provides an API which is freely available yet overly complex for this project. Twitter4J is a free API which simplifies the Twitter API.
 
-\lstset{language=Java, caption=Facebook4J example \cite{Facebook4JExample} }
-\begin{lstlisting}
-Facebook facebook = new FacebookFactory().getInstance();
-facebook.setOAuthAppId(appId, appSecret);
-facebook.setOAuthPermissions(commaSeparetedPermissions);
-facebook.setOAuthAccessToken(new AccessToken(accessToken, null));
-facebook.postStatusMessage("This is my status.");
-//Gets a list of the users feed (friend's status updates)
-ResponseList<Post> feed = facebook.getHome();
-\end{lstlisting}
+Calendars from a user's Google account can be retrieved on the Android platform using the Calendar Provider. This is a repository of a user's calendar events which can be queried. Tasks can be retrieved from a Google account using the Google Tasks API.
 
-This library provides the capability to public messages and links, getting the users news feed, 'liking' a post, publishing a comment, searching for users, groups, events, places or locations and others. It supports pagination and reading options. Altogether it fulfills the needs of this project adequately. 
-
-\subsection{Twitter}
-
-Simlar to Facebook, Twitter provides an API which is freely available yet overly complex for this project. Twitter4J is a free API which simplifies the Twitter API.
-
-\lstset{language=Java, caption=Twitter4J example \cite{Twitter4JExample} }
-\begin{lstlisting}
-Twitter twitter = TwitterFactory.getSingleton();
-//Gets and prints the users timeline
-List<Status> statuses = twitter.getHomeTimeline();
-for (Status status : statuses) {
-    System.out.println(status.getUser().getName() + ":" +
-                       status.getText());
-}
-\end{lstlisting}
-
-Twitter4J provides sufficient documentation, support and features making it suitable for retrieving a users Twitter feed.  
-
-\subsection{Google Calendar}
-Calendars from a users Google account can be retrieved on the Android platform using the Calendar Provider. This is a repository of a user's calendar events which can be queried.
-
-\lstset{language=Java, caption=Calendar Provider example }
-\begin{lstlisting}
-    Cursor cursor = context.getContentResolver()
-            .query(
-                    Uri.parse("content://com.android.calendar/events"),
-                    new String[] { "calendar_id", "title", "description",
-                            "dtstart", "dtend", "eventLocation" }, null,
-                    null, null);
-\end{lstlisting}
-
-This query returns a list of events which can be freely processed and sorted as required. 
-\subsection{Google Tasks}
-In Android, Tasks can be retrieved from a Google account using the Google Tasks API by prompting the user for their account credentials, retrieving an AuthenticationToken to create a GoogleCredential and using the Tasks Builder to create a Tasks Service. This is demonstrated in Listing ~\ref{GoogleTasksExample}.
-
-\lstset{language=Java, caption=Google Tasks example, label=GoogleTasksExample}
-\begin{lstlisting}
-    	List<Task> tasks = service.tasks().list("@default").execute().getItems();
-\end{lstlisting}
-
-\subsection{Android SMS}
 SMS messages can be received in Android applications using a BroadcastReveiver which collects incoming SMS messages.
-
-\lstset{language=Java, caption=Android SMS example, label=AndroidSMSExample}
-\begin{lstlisting}
-public class receiver extends BroadcastReceiver {
-      public String str = "";
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Bundle bundle = intent.getExtras();
-            SmsMessage[] msgs = null;
-            if (bundle != null) {
-                Object[] pdus = (Object[]) bundle.get("pdus");
-                msgs = new SmsMessage[pdus.length];
-                for (int i = 0; i < msgs.length; i++) 
-                {
-                    msgs[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
-                }
-            }
-        }
-    }
-\end{lstlisting}
-
-This example shows a BroadcastReceiver which collects SMS messages when they're received and adds then to an array of SmsMessage objects for processing. 
 
 \section{Semantic Analysis}
 
@@ -109,29 +34,30 @@ This project requires topic analysis of items of mobile data, in order to compar
 
 Each feature provided by DatumBox has a POST Request URL and is retrieved in code by setting up the request headers and URL parameters (including the API key and text), and waiting for the asynchronous response as a JSON object \ref{DBTopicClassificationExample}.
 
-\lstset{language=Java, caption=DatumBox Topic Classification example, label=DBTopicClassificationExample}
-\begin{lstlisting}
-//Request URL
-http://api.datumbox.com:80/1.0/TopicClassification.json
-
-//Request headers
-{"Content-Type":"application/json; charset=UTF-8"}
-
-//Response body
-{
-  "output": {
-    "status": 1,
-    "result": "Computers & Technology"
-  }
-}
-\end{lstlisting}
-This example is for 'Topic Classification', but the process for requesting other available features is similar and will be simplified by creating a 'Semantic Analysis API' which retrieves the response for each of the different requests. 
-
 \section{Sorting Algorithms}
 
 Sorting is required for ordering scored items of data into a list whereby the topmost items are the most relevant and the bottommost are the least relevant. Since we are only dealing with relatively small sets of data, efficiency is not paramount in terms of maximising accuracy or usability. Despite this, some consideration is made to using the most appropriate sorting algorithms. 
 Merge sort which uses a divide-and-conquer approach is one of the most suitable for initial scoring of larger numbers of items. It is stable and due to its constant performance of $O(nlogn)$, predictable in terms of execution time. 
 For nearly sorted lists such as scenarios where single or small numbers of data items (<10) may be added to an ordered list, insertion sort is superior in speed and simplicity to others and will have a performance of $O(n)$.
+
+Insertion sort is ideal for the requirements of this project. It is fast for small, largely sorted lists and easy to implement. The following insertion sort algorithm will sort items according the their score (Algorithm \ref{InsertionSort}).
+
+\begin{pseudocode}{InsertionSort}{A}
+	\label{InsertionSort}
+	\COMMENT{Sort the array of items of data $D$}\\
+	\FOR i\GETS 1 \TO length(D)-1 \DO
+	\BEGIN
+		key \GETS D[i]\\
+		j \GETS i\\
+		\WHILE j > 0 \AND score < D[j-1] \DO
+		\BEGIN
+			D[j] \GETS D[j - 1]\\
+			j \GETS j - 1\\
+		\END \\
+		D[j] \GETS key \\
+	\END	
+		
+\end{pseudocode}
 
 \section{Data Sources and Persistence}
 
@@ -172,133 +98,3 @@ The Utility Matrix is required to be accurate for accurate recommendations and t
   \item asking the users to rate items/attributes explicitly, or
   \item inferring the user's preferences implicitly from their behaviour
 \end{enumerate}
-
-\section{User Profile}
-
-As mentioned above, in order for items to be scored according to their user-specific relevance, a user profile must be used to specify the user's item attribute preferences. In our case the algorithm must be independent of the process of updating the user profile. It should be done explicitly at first, by asking the user to score attributes and may be updated implicitly through analysing the user's behaviour. The user profile is a tuple $U$ whereby each entry $u_n$ is a weight for the user's preference of its corresponding attribute.
-
-\section{Scoring Rule}
-
-In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring uses a recommendation system in which an item of data is allocated a tuple of attribute scores. These are compared to the users profile to given the item a score. 
-
-The word 'importance' is used to describe the non-user-specific likely relevance of an item of data. 'Relevance' signifies a user-specific importance of an item of data.
-
-\subsection{Unweighted Scoring Rule}
-
-Having performed topic-classification on an item of data, a scoring algorithm must assign to it a value which is a measure of its relevance. Let us first consider the case of an unweighted rule which scores an item of data. 
-
-A classified item of data (that is, one which has been assigned a score for each attribute according to how well that attribute describes the topic of the text), without considering the users preferences, has an important topic if the sum of the scores of each attribute is large. This is related to the average score of an attribute being large. Consequently, the importance of an item of data may be given as the average of the attribute scores
-
-\begin{equation}\label{AverageUnweightedRule}	
-	f(D) = \frac{\sum_{i=1}^{i} d_i}{n}
-\end{equation}
-
-where $D$ is our item of data, and the elements $d_i$ are its topic-attributes. 
-
-\subsection{Weighted Scoring Rule}
-
-Let us now move on to consider the user-specific case, or weighted case. Relevance is defined here as the extent to which the score of each attribute of an item of data, matches the preference score of the user for that attribute. Attribute-specific scores are found by comparing the complementary user and data-item attributes according to a given rule. A final scoring rule must be used to combine scores of individual attributes into an overall score for a particular item of data, to given its relevance.
-Fagin and Wimmers \cite{FaginWimmers1} detail a formula for incorporating weights into scoring rule, no matter the nature of the scoring rule. It takes a function $f$ which describes an unweighted rule for applying a score to a tuple of $n$ entries (attributes in our case) and gives a weighted rule based on $f$ which is compatible with any rule. 
-
-They take a set $\Theta = (\theta_1,\theta_2,\dotsc,\theta_n)$ of weights which relate the effect of an entry $x$ on the score of the tuple $ X = (x_1, x_2, \dots, x_n)$. If $f(X)$ is the unweighted scoring rule, then for a tuple of $m$ entries
-
-\begin{equation}\label{WeightedRule}	
-	f_\Theta (X) = \left(\sum_{i=1}^{m-1} i\centerdot (\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})\centerdot f(X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\})\right) + m \centerdot \theta_\sigma{(m)} \centerdot f(X)
-\end{equation}
-
-Here $X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\}$ is a restriction of $X$ to the domain of a bijection $\sigma$ which orders the weightings to match the order of entries in the tuple. In our case this bijection would be a mapping from each attribute of an item of data to the weighting associated with that attribute. The weighting $\Theta$ would be dependent upon a complementary tuple describing the user, i.e. their attribute preferences. The term $(\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})$ is the difference between the weightings of two consecutive entries. 
-
-Fagin and Wimmers' equation allows me to include weighed relationships between attributes' sub-scores and the total score of the item of data. An item of data is represented as a tuple $ D = (d_1, d_2, \dots, d_n)$ where each entry $d_n$ is an attribute of the item of data. Given the context-sensitive nature of this project, attributes must affect the score of the tuple with differing degrees according to how well they match the preferences of the user. 
-
-This idea of weighting will be an analogy for the users preferences, such that the greater the user's preference of an attribute, the greater the weighting will be. Thus the set of weights $\Theta$ becomes a tuple of entries $ U = (u_1, u_2, \dots, u_n)$ whereby $U$ represents the tuple of attributes depicting the user's preferences. This leads us the following result, showing a general solution for context-sensitive (weighted) scoring rule, for any unweighted rule $f(D)$.
-
-\begin{equation}\label{OurWeightedRule}	
-	f_U (D) = \left(\sum_{i=1}^{m-1} i\centerdot (u_{\sigma{(i)}} - u_{\sigma{(i+1)}})\centerdot f(D\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\})\right) + m \centerdot u_\sigma{(m)} \centerdot f(D)
-\end{equation}
-
-Let us take the simple unweighted scoring rule whereby we compute the average of the the $i$ attributes $d_j$ in a tuple $D$ (Eqn. \ref{AverageUnweightedRule}). Using the weighting formula (Eqn. \ref{OurWeightedRule}) the weighted equivalent is
-
-\begin{align}\label{OurWeightedRuleDerivation}
-f_U (D) &= \left(\sum_{n=1}^{M-1} n\centerdot (u_{\sigma{(n)}} - u_{\sigma{(n+1)}})\centerdot \frac{\sum_{i=1}^{n} d_i}{n}\right) + M \centerdot u_\sigma{(M)} \centerdot \frac{\sum_{i=1}^{n} d_i}{n} 
-\\ &= (u_1-u_2)d_1 + 2(u_2-u_3)\frac{d_1+d_2}{2} + 3u_3\frac{d_1+d_2+d_3}{3}
-\\ &= u_1d_1 + u_2d_2 + \dots + u_Md_M
-\end{align}
-
-We are lead therefore to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{BasicScoringRule}).
-
-\begin{equation}\label{BasicScoringRule}
-f_U (D) = \sum_{k=1}^{m-1} u_kd_k
-\end{equation}
-
-\subsection{Time-Relevance and Item removal}
-
-As items are received, they are scored and ordered, but an item may be relevant in terms of topic, but not in terms of time. It may have been created a long time ago and thus needs removing to make way for new items. Here, I add an item-removal term ${\mathrm{e}}^{-\alpha t(d)}$ where $t(d)$ is the minutes lapsed since the receiving of item $d$ and $\alpha$ is a delay coefficient. As time increases, the item-removal term tends to 0. This give us
-
-\begin{equation}\label{BasicScoringRule2}
-	f_U (D) = {\mathrm{e}}^{-\alpha t(d)} \centerdot \sum_{k=1}^{m-1} u_kd_k
-\end{equation}
-
-In contrast to social information, the relevance of productivity related information is not usually based upon its topic, for example the relevance of a calendar appointment for a meeting or a dentist appointment cannot be assessed according to the principles used above. Its topic-classification is not useful in commenting on its relevance. This situation calls for a weighting which is based not upon topic-relevance, but upon time-relevance. It must complement topic-relevance so as not to affect the ranking order of non-time-specific items of data. 
-
-This weighting may be implemented using 
-\begin{enumerate}
-  \item a discrete binary decision (relevant at this point in time or not), or 
-  \item a continuous function of increasing time-relevance as a deadline approaches
-\end{enumerate}
-
-The simplest of the two is the former, whereby an item of data (with a deadline in less than $t_threshold$ minutes) would be flagged as time-relevant and ranked at the top of the ordered list. The second implementation would be the preferable choice, since as the deadline approached, the item of data would creep up the ordered list until it reached the top at $t_threshold$ minutes before the deadline. 
-
-Time-relevant data is scored differently to topic-relevant data. Time scoring may be done using a continuous increasing term who's value is related to the time before a deadline approaches. $t_{threshold}$ is the time at which time-related scoring begins, $t_{tillDue}(D)$ is the time until item D is due and $\beta$ is a normalisation parameter. It must be set such that at the point at which D is time-relevant, $f_{time}(D)$ is greater than the maximum non-time-related score. This gives us
-
-\begin{equation}\label{BasicTimeScoringRule}
-	f_{time} (D) = {\mathrm{e}}^{\beta (t_{threshold}-t_{tillDue}(D))}
-\end{equation}
-
-Here I introduce a parameter $\gamma$ to control the relative weight between the topic-scoring term and the time-based scoring term. A static look-up matrix may be used to find the value of $\gamma$ such that score is derived from the correct term given the nature of the item's relevance to the user (See table \ref{BetaLookup}).
-
-\begin{table}\label{BetaLookup}
-\begin{center}
-	\begin{tabular}{l*{6}{c}r}
-		Item type        & $\gamma$ \\
-		\hline
-		Facebook status  & 0 \\
-		Tweet            & 0 \\
-		SMS          	 & 0 \\
-		Email    		 & 0 \\
-		Appointment      & 1 \\
-		Task		     & 1 \\
-	\end{tabular}
-	\caption{$\gamma$ lookup table}
-\end{center}
-\end{table}
-
-This gives us a weighted scoring function incorporating both topic-relevance and time-relevance into a single equation (Eqn \ref{BasicScoringRule3}).
-
-\begin{equation}\label{BasicScoringRule3}
-	f_U (D) = \left[{\mathrm{e}}^{-\alpha t(d)} \centerdot (1-\gamma) \sum_{k=1}^{m-1} u_kd_k \right] + \gamma{\mathrm{e}}^{\ (t_{threshold}-t_{tillDue}(D))}
-\end{equation}
-
-\section{Lexical Analysis and Preprocessing}
-
-The user profile may also include requirements for the filter to remove items which fall under certain criteria. These include readability, sentiment, spam removal, adult content removal, language detection and gender detection. The preprocessor will eliminate items which are excluded by the user profile, before being scored. 
-
-\section{Ranking Algorithm}
-
-Insertion sort is ideal for the requirements of this project. It is fast for small, largely sorted lists and easy to implement. The following insertion sort algorithm will sort items according the their score (Algorithm \ref{InsertionSort}).
-
-\begin{pseudocode}{InsertionSort}{A}
-	\label{InsertionSort}
-	\COMMENT{Sort the array of items of data $D$}\\
-	\FOR i\GETS 1 \TO length(D)-1 \DO
-	\BEGIN
-		key \GETS D[i]\\
-		j \GETS i\\
-		\WHILE j > 0 \AND score < D[j-1] \DO
-		\BEGIN
-			D[j] \GETS D[j - 1]\\
-			j \GETS j - 1\\
-		\END \\
-		D[j] \GETS key \\
-	\END	
-		
-\end{pseudocode}

@@ -1,0 +1,75 @@
+\chapter{API Code Examples}\label{exampleCode}
+
+\lstset{language=Java, caption=Facebook4J example \cite{Facebook4JExample} }
+\begin{lstlisting}
+Facebook facebook = new FacebookFactory().getInstance();
+facebook.setOAuthAppId(appId, appSecret);
+facebook.setOAuthPermissions(commaSeparetedPermissions);
+facebook.setOAuthAccessToken(new AccessToken(accessToken, null));
+facebook.postStatusMessage("This is my status.");
+//Gets a list of the users feed (friend's status updates)
+ResponseList<Post> feed = facebook.getHome();
+\end{lstlisting}
+
+\lstset{language=Java, caption=Twitter4J example \cite{Twitter4JExample} }
+\begin{lstlisting}
+Twitter twitter = TwitterFactory.getSingleton();
+//Gets and prints the users timeline
+List<Status> statuses = twitter.getHomeTimeline();
+for (Status status : statuses) {
+    System.out.println(status.getUser().getName() + ":" +
+                       status.getText());
+}
+\end{lstlisting}
+
+\lstset{language=Java, caption=Calendar Provider example }
+\begin{lstlisting}
+    Cursor cursor = context.getContentResolver()
+            .query(
+                    Uri.parse("content://com.android.calendar/events"),
+                    new String[] { "calendar_id", "title", "description",
+                            "dtstart", "dtend", "eventLocation" }, null,
+                    null, null);
+\end{lstlisting}
+
+\lstset{language=Java, caption=Google Tasks example, label=GoogleTasksExample}
+\begin{lstlisting}
+    	List<Task> tasks = service.tasks().list("@default").execute().getItems();
+\end{lstlisting}
+
+\lstset{language=Java, caption=Android SMS example, label=AndroidSMSExample}
+\begin{lstlisting}
+public class receiver extends BroadcastReceiver {
+      public String str = "";
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Bundle bundle = intent.getExtras();
+            SmsMessage[] msgs = null;
+            if (bundle != null) {
+                Object[] pdus = (Object[]) bundle.get("pdus");
+                msgs = new SmsMessage[pdus.length];
+                for (int i = 0; i < msgs.length; i++) 
+                {
+                    msgs[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
+                }
+            }
+        }
+    }
+\end{lstlisting}
+
+\lstset{language=Java, caption=DatumBox Topic Classification example, label=DBTopicClassificationExample}
+\begin{lstlisting}
+//Request URL
+http://api.datumbox.com:80/1.0/TopicClassification.json
+
+//Request headers
+{"Content-Type":"application/json; charset=UTF-8"}
+
+//Response body
+{
+  "output": {
+    "status": 1,
+    "result": "Computers & Technology"
+  }
+}
+\end{lstlisting}

@@ -1,1 +1,56 @@
 \chapter{Report on Technical Progress}
+
+This chapter highlights my progress so far, by explaining my theoretical findings and highlighting my implementation progress. 
+
+\section{Research Progress}
+
+I've chosen to model a user's preferences as a tuple $U$ of attributes $u_k$ which given the users preference for each topic. This is the user profile.
+
+In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring uses a recommendation system in which an item of data is allocated a tuple of attribute scores. These are compared to the users profile to given the item a score.
+
+Using the unweighted scoring rule
+
+\begin{equation}\label{AverageUnweightedRule}	
+	f(D) = \frac{\sum_{i=1}^{i} d_i}{n}
+\end{equation}
+
+where $D$ is our item of data, and the elements $d_i$ are its topic-attributes, I used Fagin and Wimmers' \cite{FaginWimmers1} conversion to a weighted rule to give 
+
+\begin{align}\label{OurWeightedRuleDerivation}
+f_U (D) &= \left(\sum_{n=1}^{M-1} n\centerdot (u_{\sigma{(n)}} - u_{\sigma{(n+1)}})\centerdot \frac{\sum_{i=1}^{n} d_i}{n}\right) + M \centerdot u_\sigma{(M)} \centerdot \frac{\sum_{i=1}^{n} d_i}{n} 
+\\ &= (u_1-u_2)d_1 + 2(u_2-u_3)\frac{d_1+d_2}{2} + 3u_3\frac{d_1+d_2+d_3}{3}
+\\ &= u_1d_1 + u_2d_2 + \dots + u_Md_M
+\end{align}
+
+Here $X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\}$ is a restriction of $X$ to the domain of a bijection $\sigma$ which orders the weightings to match the order of entries in the tuple. In our case this bijection would be a mapping from each attribute of an item of data to the weighting associated with that attribute. The weighting $\Theta$ would be dependent upon a complementary tuple describing the user, i.e. their attribute preferences. The term $(\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})$ is the difference between the weightings of two consecutive entries. 
+
+This lead me to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{BasicScoringRule}).
+
+\begin{equation}\label{BasicScoringRule}
+f_U (D) = \sum_{k=1}^{m-1} u_kd_k
+\end{equation}
+
+As items are received, they are scored and ordered, but an item may be relevant in terms of topic, but not in terms of age since its creation. It may have been created a long time ago and thus needs removing to make way for new items. Here, I add an item-removal term ${\mathrm{e}}^{-\alpha t(d)}$ where $t(d)$ is the minutes lapsed since the receiving of item $d$ and $\alpha$ is a delay coefficient. As time increases, the item-removal term tends to 0. This give us
+
+\begin{equation}\label{BasicScoringRule2}
+	f_U (D) = {\mathrm{e}}^{-\alpha t(d)} \centerdot \sum_{k=1}^{m-1} u_kd_k
+\end{equation}
+
+Time-relevant data is scored differently to topic-relevant data. Time scoring may be done using a continuous increasing term who's value is related to the time before a deadline approaches. $t_{threshold}$ is the time at which time-related scoring begins, $t_{tillDue}(D)$ is the time until item D is due and $\beta$ is a normalisation parameter. It must be set such that at the point at which D becomes relevant in time, $f_{time}(D)$ is greater than the maximum non-time-related score. This gives us
+
+\begin{equation}\label{BasicTimeScoringRule}
+	f_{time} (D) = {\mathrm{e}}^{\beta (t_{threshold}-t_{tillDue}(D))}
+\end{equation}
+
+This gives us a weighted scoring function incorporating both topic-relevance and time-relevance into a single equation (Eqn. \ref{BasicScoringRule3}).
+
+\begin{equation}\label{BasicScoringRule3}
+	f_U (D) = \left[{\mathrm{e}}^{-\alpha t(d)} \centerdot (1-\gamma) \sum_{k=1}^{m-1} u_kd_k \right] + \gamma{\mathrm{e}}^{\ (t_{threshold}-t_{tillDue}(D))}
+\end{equation}
+
+\subsection{Lexical Analysis and Preprocessing}
+
+The user profile may also include requirements for the filter to remove items which fall under certain criteria. These include readability, sentiment, spam removal, adult content removal, language detection and gender detection. The preprocessor will eliminate items which are excluded by the user profile, before being scored. 
+
+\section{Implementation Progress}
+
