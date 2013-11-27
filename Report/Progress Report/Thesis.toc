@@ -12,12 +12,18 @@
 \contentsline {section}{\numberline {2.4}Semantic Analysis}{4}{section.23}
 \contentsline {subsection}{\numberline {2.4.1}DatumBox API and usage}{5}{subsection.24}
 \contentsline {section}{\numberline {2.5}Sorting Algorithms}{5}{section.25}
+<<<<<<< HEAD
 \contentsline {section}{\numberline {2.6}Data Sources and Persistence}{6}{section.27}
 \contentsline {section}{\numberline {2.7}Recommender Systems}{6}{section.28}
+=======
+\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{5}{section.27}
+\contentsline {section}{\numberline {2.7}Recommendation Systems}{6}{section.28}
+>>>>>>> 7a87d0fc6ff51e59423326c6f6150e0df269d89f
 \contentsline {subsection}{\numberline {2.7.1}Collaborative Filtering}{6}{subsection.29}
 \contentsline {subsection}{\numberline {2.7.2}Content-based Filtering}{7}{subsection.30}
 \contentsline {subsection}{\numberline {2.7.3}Hybrid Recommender Systems}{7}{subsection.31}
 \contentsline {subsection}{\numberline {2.7.4}The Utility Matrix}{7}{subsection.32}
+<<<<<<< HEAD
 \contentsline {subsubsection}{\numberline {2.7.4.1}Populating the Utility Matrix}{8}{subsubsection.33}
 \contentsline {chapter}{\numberline {3}Report on Technical Progress}{9}{chapter.36}
 \contentsline {section}{\numberline {3.1}Research Progress}{9}{section.37}
@@ -38,3 +44,24 @@
 \contentsline {paragraph}{Scope}{16}{section*.60}
 \vspace {2em}
 \contentsline {chapter}{Bibliography}{17}{dummy.61}
+=======
+\contentsline {chapter}{\numberline {3}Report on Technical Progress}{8}{chapter.35}
+\contentsline {section}{\numberline {3.1}Research Progress}{8}{section.36}
+\contentsline {subsection}{\numberline {3.1.1}Lexical Analysis and Preprocessing}{10}{subsection.45}
+\contentsline {section}{\numberline {3.2}Implementation Progress}{10}{section.46}
+\contentsline {chapter}{\numberline {4}Plan of Remaining Work}{11}{chapter.47}
+\contentsline {section}{\numberline {4.1}Remaining work}{11}{section.48}
+\contentsline {subsection}{\numberline {4.1.1}Algorithm and Java API Implementation}{11}{subsection.49}
+\contentsline {subsection}{\numberline {4.1.2}Demonstration Application}{11}{subsection.50}
+\contentsline {section}{\numberline {4.2}Planning and Contingency}{12}{section.51}
+\contentsline {subsection}{\numberline {4.2.1}Algorithm and Java API Implementation}{12}{subsection.52}
+\contentsline {subsection}{\numberline {4.2.2}Demonstration Application}{12}{subsection.53}
+\vspace {2em}
+\contentsline {chapter}{\numberline {A}Project Brief}{14}{appendix.55}
+\contentsline {paragraph}{Problem}{14}{section*.56}
+\contentsline {paragraph}{Goals}{14}{section*.57}
+\contentsline {paragraph}{Scope}{15}{section*.58}
+\contentsline {chapter}{\numberline {B}API Code Examples}{16}{appendix.59}
+\vspace {2em}
+\contentsline {chapter}{Bibliography}{18}{dummy.116}
+>>>>>>> 7a87d0fc6ff51e59423326c6f6150e0df269d89f
