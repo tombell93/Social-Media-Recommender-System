@@ -3,6 +3,22 @@ The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
 Name 1 in "S. Sen, J. Vig, and J. Riedl" has a comma at the end for entry SenTagommender
 while executing---line 1233 of file unsrtnat.bst
+Warning--empty author in GoogleNow
+Warning--empty journal in GoogleNow
+Warning--empty year in GoogleNow
+Warning--empty year in GoogleNow
+Warning--empty author in ViralHeat
+Warning--empty journal in ViralHeat
+Warning--empty year in ViralHeat
+Warning--empty year in ViralHeat
+Warning--empty author in Semantria
+Warning--empty journal in Semantria
+Warning--empty year in Semantria
+Warning--empty year in Semantria
+Warning--empty author in DatumBox
+Warning--empty journal in DatumBox
+Warning--empty year in DatumBox
+Warning--empty year in DatumBox
 Warning--empty author in Facebook4JExample
 Warning--empty journal in Facebook4JExample
 Warning--empty year in Facebook4JExample

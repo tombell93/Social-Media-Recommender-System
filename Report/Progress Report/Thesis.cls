@@ -200,7 +200,10 @@
       \smallskip
       {\LARGE \authornames \par}
       \vfill
-      {\large A project report submitted for the award of  \par}
+      {\large Project supervisor: Prof. Mark Nixon \par}
+      {\large Second examiner: Dr. Markus Brede \par}
+      \vfill
+      {\large A project progress report submitted for the award of  \par}
       {\large MEng Electronic Engineering \par}
       \bigskip
       \bigskip
