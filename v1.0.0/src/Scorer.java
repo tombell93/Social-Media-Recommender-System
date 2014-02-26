@@ -51,7 +51,7 @@ public class Scorer {
             score = r.nextDouble();            
         }else{
             //Check if initial conditions are met
-            if((userContext.getOnlyReadable() && !dataContext.getIsReadable())
+            if(         (userContext.getOnlyReadable() && !dataContext.getIsReadable())
                     || (!userContext.getWantsAdult() && dataContext.getIsAdult())
                     || (!userContext.getWantsCommercial() && dataContext.getIsCommercial())
                     || (!userContext.getWantsEducational() && dataContext.getIsEducational())

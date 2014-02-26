@@ -50,7 +50,7 @@
 \usepackage{vmargin}
 \setmarginsrb           { 1.5in}  % left margin
                         { 0.6in}  % top margin
-                        { 1.0in}  % right margin
+                        { 1.5in}  % right margin
                         { 0.8in}  % bottom margin
                         {  20pt}  % head height
                         {0.25in}  % head sep
@@ -200,7 +200,10 @@
       \smallskip
       {\LARGE \authornames \par}
       \vfill
-      {\large A project report submitted for the award of  \par}
+      {\large Project supervisor: Prof. Mark Nixon \par}
+      {\large Second examiner: Dr. Markus Brede \par}
+      \vfill
+      {\large A project final report submitted for the award of  \par}
       {\large MEng Electronic Engineering \par}
       \bigskip
       \bigskip

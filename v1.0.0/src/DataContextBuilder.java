@@ -56,6 +56,7 @@ public class DataContextBuilder {
                 JSONObject object;
                 
                 //Subjectivity detection
+                System.out.println("Subjectivity detection");  
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.SubjectivityAnalysis(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
                 dataContext.setIsSubjective(("objective".equals(object.get("result").toString())?false:true));
@@ -76,6 +77,7 @@ public class DataContextBuilder {
                 dataContext.setIsAdult(("noadult".equals(object.get("result").toString())?false:true));
                 
                 //Readability detection
+                System.out.println("Readability detection");  
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
                 dataContext.setIsReadable(("advanced".equals(object.get("result").toString())?false:true));
@@ -90,7 +92,8 @@ public class DataContextBuilder {
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
                 dataContext.setIsEducational(("educational".equals(object.get("result").toString())?true:false));
                     
-                //Educational detection
+                //Topic detection
+                System.out.println("Topic detection");  
                 temp = (JSONObject) JSONValue.parse(sentimentAPI.TopicClassification(text));
                 object = (JSONObject) JSONValue.parse(temp.get("output").toString());
                 dataContext.setTopic(object.get("result").toString());

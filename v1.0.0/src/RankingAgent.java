@@ -71,21 +71,22 @@ public class RankingAgent {
             ParserConfigurationException, XPathExpressionException{
         List<DataItem> dataItemsWithContext = new ArrayList<DataItem>();
         
+        System.out.println("Building data contexts");   
         dataItemsWithContext = 
                 dataContextBuilder.buildDataContexts(addedDataItems);
         
         //TODO: Implement 3rd
         //Score new DataItems before sorting
+        System.out.println("Scoring data");  
         List<DataItem> newScoredDataItems = 
                 scorer.scoreDataItems(dataItemsWithContext);
         
         //Adds new scored DataItems to ranked list in correct place
+        System.out.println("Building data contexts");  
         sortedDataItems = sortNewScoredDataItems(newScoredDataItems);
         
-        //TODO: Implement 4th        
-        if(needMaintenance()){
-            runMaintenance();
-        }
+        //TODO: Implement 4th  
+        //runMaintenance();
         
         System.out.println("End of program");        
         return sortedDataItems;
@@ -135,13 +136,6 @@ public class RankingAgent {
             return (int)((o1.getScore() - o2.getScore())*ACCURACY);
         }
     };
-
-    private boolean needMaintenance() {
-        updateShownTimes();
-        //Check if it's time for a maintenance check or if too many in list
-        
-        return false;
-    }
 
     private void runMaintenance() {
         //Maintain sortedDataItems by reviewing the relevance of each

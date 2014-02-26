@@ -1,0 +1,39 @@
+\chapter{Project Goals}
+
+Recommender systems are forms of information filtering systems which remove unwanted information and predict that which the user is likely to want to read. They can be useful for ranking social media according to a users preference. This report describes an agent for the classifying, scoring and ranking of data according to its user-specific and time-specific relevance. This project description is based upon my initial project brief (Appendix \ref{projectBrief}).
+
+\section{The Problem}
+
+Social media, productivity tools and internet-based information are abundant on mobile devices, leading to users being overwhelmed with information, despite only a small amount of it being of any interest to a particular individual at any given moment. This calls for a means by which such data can be ranked or filtered according to its importance, interest or relevance.
+
+\section{Project Objective}
+
+The objective of this project is to produce a scalable and modular relevance-based ranking agent, to order social media, productivity and other web-based information according to its time- and topic-relevance to a user.
+
+\section{Goals}
+
+The following are core goals which this project sets out to achieve.
+
+\begin{enumerate}
+	\item Develop a scoring algorithm by which to judge the relevance of an item of data based upon a user's
+	\begin{enumerate}
+		\item Personality profile
+		\item Time-related factors
+	\end{enumerate}
+	\item To perform automatic remote topic analysis to judge the topic of an item of data
+	\item Develop a sorting/ranking algorithm to sort or insert scored items of data efficiently, into an ordered list
+	\item Develop a stable and robust data fusion technique to combine a range of data into a user profile and data profile
+	\item Abstract away this agent into an extensible Java API for use in
+	\begin{enumerate}
+		\item Smartphone apps (Android)
+		\item Web-apps (Spring MVC)
+		\item Desktop applications (Java Swing etc.)
+	\end{enumerate}
+	\item To develop an application to demonstrate the working API which automatically ranks a user's data according to its relevance
+\end{enumerate}
+
+These are the criteria by which the extent of this project's success will be evaluated.
+
+\section{Unique Features}
+
+Recommender systems have been applied to social media before, but never with time-specific relevance factored in. This is the first approach which scores social and productivity related items according to the users context. This project is unique in its endeavour to combine recommendation techniques with user- and time-relevant scoring in the development of an API, and a verified prototype.

@@ -1,0 +1,1 @@
+{"id":0,"title":null,"detail":"","type":"FacebookStatus","score":0,"link":null,"date":{"year":2013,"month":10,"dayOfMonth":14,"hourOfDay":22,"minute":10,"second":24},"author":"tombell93","location":null,"from":null,"to":null,"hashtag":"#chilly #ferreroroche","priority":0}

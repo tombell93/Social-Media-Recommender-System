@@ -1,10 +1,24 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Thesis.aux
 The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
-Too many commas in name 1 of "S E Robertson, S Walker, S Jones, M M Hancock-Beaulieu, M Gatford" for entry OkapiBM25Paper
+Name 1 in "S. Sen, J. Vig, and J. Riedl" has a comma at the end for entry SenTagommender
 while executing---line 1233 of file unsrtnat.bst
-Too many commas in name 1 of "S E Robertson, S Walker, S Jones, M M Hancock-Beaulieu, M Gatford" for entry OkapiBM25Paper
-while executing---line 1233 of file unsrtnat.bst
+Warning--empty author in GoogleNow
+Warning--empty journal in GoogleNow
+Warning--empty year in GoogleNow
+Warning--empty year in GoogleNow
+Warning--empty author in ViralHeat
+Warning--empty journal in ViralHeat
+Warning--empty year in ViralHeat
+Warning--empty year in ViralHeat
+Warning--empty author in Semantria
+Warning--empty journal in Semantria
+Warning--empty year in Semantria
+Warning--empty year in Semantria
+Warning--empty author in DatumBox
+Warning--empty journal in DatumBox
+Warning--empty year in DatumBox
+Warning--empty year in DatumBox
 Warning--empty author in Facebook4JExample
 Warning--empty journal in Facebook4JExample
 Warning--empty year in Facebook4JExample
@@ -13,13 +27,9 @@ Warning--empty author in Twitter4JExample
 Warning--empty journal in Twitter4JExample
 Warning--empty year in Twitter4JExample
 Warning--empty year in Twitter4JExample
-Too many commas in name 1 of "S E Robertson, S Walker, S Jones, M M Hancock-Beaulieu, M Gatford" for entry OkapiBM25Paper
-while executing---line 1315 of file unsrtnat.bst
-Too many commas in name 1 of "S E Robertson, S Walker, S Jones, M M Hancock-Beaulieu, M Gatford" for entry OkapiBM25Paper
-while executing---line 1315 of file unsrtnat.bst
-Too many commas in name 1 of "S E Robertson, S Walker, S Jones, M M Hancock-Beaulieu, M Gatford" for entry OkapiBM25Paper
-while executing---line 1315 of file unsrtnat.bst
-Too many commas in name 1 of "S E Robertson, S Walker, S Jones, M M Hancock-Beaulieu, M Gatford" for entry OkapiBM25Paper
-while executing---line 1315 of file unsrtnat.bst
 Warning--empty journal in BeginningAndroidDataPersistence
-(There were 6 error messages)
+Name 1 in "S. Sen, J. Vig, and J. Riedl" has a comma at the end for entry SenTagommender
+while executing---line 1315 of file unsrtnat.bst
+Name 1 in "S. Sen, J. Vig, and J. Riedl" has a comma at the end for entry SenTagommender
+while executing---line 1315 of file unsrtnat.bst
+(There were 3 error messages)

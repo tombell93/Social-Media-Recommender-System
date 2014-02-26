@@ -21,7 +21,7 @@ public class Prioritiser {
      */
     public static void main(String[] args) 
             throws IOException, SAXException, ParserConfigurationException, XPathExpressionException
- {     
+    {     
         int commandSet = 0;
         
         do{
@@ -44,26 +44,6 @@ public class Prioritiser {
                 commandSet = 1;
             }
         } while(!(commandSet==1));
-        
-         /* 
-+         * 1. Load test data into list of raw data objects
-+         * 2. Parse them one by one into:
-+         *      a. Parse into DataItem object
-+         *          i. Parse data fields from raw data object into DataItem
-+         *          ii. Perform topic analysis
-+         *          iii. Store topic data in Relevance object
-+         *      b. Persist ContextRelevance object
-+         *          i. Includes:
-+         *              - Time of day
-+         *              - Matrix describing users topcic priorities 
-+         *              - Matrix describing learned data about users priorities
-+         *      c. Perform ranking using good ranking matrix-based algorithm
-+         *          i. Give each DataItem a score 
-+         *              - Based upon how well Relevance and ContextRelevance
-+         *                  objects match
-+         *          ii. Maintain unsorted DataItems in List<DataItem>
-+         *      d. Place new DataItem into list according to score
-+         */
     }
     
     private static void createTestData() throws IOException{

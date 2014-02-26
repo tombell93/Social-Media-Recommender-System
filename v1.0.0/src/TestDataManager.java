@@ -252,6 +252,41 @@ public class TestDataManager {
         return 0;
     }
     
+    private static int addContextItem(String dataType) throws IOException {
+        System.out.println("Adding " + dataType);
+        Scanner reader = new Scanner(System.in);
+        Random rand = new Random();
+        int uniqueFilePath = rand.nextInt(10000000);
+        
+        String filePath = "testData/" + dataType + "/" 
+                + Integer.toString(uniqueFilePath) + ".txt";
+        
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        DataItem dataItem = new DataItem(dataType);
+        
+        //Types: Appointment  Email  FacebookStatus  SMS  Task  Tweet
+        if(dataType.equals("Appointment")){
+            System.out.println("Enter title:");
+            dataItem.setTitle(reader.nextLine());
+
+            System.out.println("Enter content:");
+            dataItem.setDetail(reader.nextLine());
+            
+            System.out.println("Enter location:");
+            dataItem.setLocation(reader.nextLine());
+
+            //Asks them for a date
+            System.out.println("Set a date (y/n)?");
+            if(reader.nextLine().equals("y")){
+                dataItem.setDate(setTestDate());
+            }
+        }
+        
+        String json = gson.toJson(dataItem);  
+        FileManager.writeFile(filePath, json);
+        return 0;
+    }
+    
     private static Calendar setTestDate(){
         Scanner reader = new Scanner(System.in);
         int year, month, date, hourOfDay, minute;

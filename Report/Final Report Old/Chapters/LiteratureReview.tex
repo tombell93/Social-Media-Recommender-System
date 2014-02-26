@@ -1,0 +1,187 @@
+\chapter{Literature Review}
+
+A progressive project in the sphere of cross-platform relevance-based intelligent ranking agents, using text analysis and a mathematically rigorous scoring algorithms, requires research in a range of areas across the entire spectrum of low- to high-level computational theory and existing product research. The following summarises the research undertaken before and during the research and design phases.
+
+\section{Existing Data-Ranking Implementations}
+
+A good number of content aggregators exist at present in various forms, yet all distinctly lack the complementary relationship between social media (and others) and relevance-based ranking. The following is a summary to the key players in this space at present.
+
+\paragraph{Google Now}
+Google Now is a mobile app which combines Google's search feature with useful information which is deemed relevant to the user's environment such as weather, a map to get them home after a night out or nearby events.
+
+\paragraph{ViralHeat}
+ViralHeat is a web-based social media content aggregator and filter, used for commercial uses of social media. It allows the user to filter content from twitter, Facebook and others according to its sentiment (positive/negative). It's not available as a non-commercial social media aggregator and does not perform topic analysis for ranking.
+
+\paragraph{StreamLife}
+This app aggregates Facebook content and tweets, but performs no topic/sentiment analysis or ranking, and provides no capability for including tasks, calendar appointments, SMS messages or emails.
+
+\section{Text analytics libraries}
+
+There are a good number of existing text analytics services available to the end user and the developer for a range of different types of analytics. These services include sentiment analysis, text categorisation, contextual targeting and a range of others. This section highlights some which are relevant to this study.
+
+\paragraph{AlchemyAPI}
+Alchemy provides an API which performs sentiment analysis and text categorisation (among others). It provides a free licence for up to 1,000 API calls per day. It provides all the core features which this project requires in terms of text analytics, however the text categorisation did not produce strong results for short amounts of text (such as tweets) and often failed to make any categorisation.
+
+\paragraph{Semantria}
+The best solution for sentiment analysis appears to be semantria. It gave consistently precise and accurate sentiment analysis for text containing more than 5 words. 
+
+\paragraph{DatumBox}
+DatumBox is a free machine learning API which performs sentiment analysis, subjectivity analysis, topic classification, language detection, readability detection, educational detection, document similarity analysis, and gender detection. Many of these features may be useful for ranking text based upon its relevance to a particular individual. It has a simple API using http POST requests and a JSON response. 
+
+\section{Data-mining}
+
+Outline: Facebook and Twitter API (phone, web and desktop), Android API, Android Calendar, Android Tasks, Android SMS, Android Sensors, Google Calendar and Tasks (web-based and desktop API).
+
+\subsection{Facebook}
+The Facebook statuses of a users friends can be fetched either using the Facebook API, or through wrapper libraries which simplify common Facebook API usage. The Facebook API is full-featured and well documented, yet for the purposes of demonstrating this ranking agent it's not necessary. 
+Facebook4J is a Java Facebook wrapper API which simplifies the most common Facebook API features into a more minimal library. 
+
+\lstset{language=Java, caption=Facebook4J example \cite{Facebook4JExample} }
+\begin{lstlisting}
+Facebook facebook = new FacebookFactory().getInstance();
+facebook.setOAuthAppId(appId, appSecret);
+facebook.setOAuthPermissions(commaSeparetedPermissions);
+facebook.setOAuthAccessToken(new AccessToken(accessToken, null));
+facebook.postStatusMessage("This is my status.");
+//Gets a list of the users feed (friend's status updates)
+ResponseList<Post> feed = facebook.getHome();
+\end{lstlisting}
+
+
+This library provides the capability to public messages and links, getting the users news feed, 'liking' a post, publishing a comment, searching for users, groups, events, places or locations and others. It supports pagination and reading options. Altogether it fulfills the needs of this project adequately. 
+
+\subsection{Twitter}
+
+Simlar to Facebook, Twitter provides an API which is freely available yet overly complex for this project. Twitter4J is a free API which simplifies the Twitter API.
+
+\lstset{language=Java, caption=Twitter4J example \cite{Twitter4JExample} }
+\begin{lstlisting}
+Twitter twitter = TwitterFactory.getSingleton();
+//Gets and prints the users timeline
+List<Status> statuses = twitter.getHomeTimeline();
+for (Status status : statuses) {
+    System.out.println(status.getUser().getName() + ":" +
+                       status.getText());
+}
+\end{lstlisting}
+
+Twitter4J provides sufficient documentation, support and features making it suitable for retrieving a users Twitter feed.  
+
+\subsection{Google Calendar}
+Calendars from a users Google account can be retrieved on the Android platform using the Calendar Provider. This is a repository of a user's calendar events which can be queried.
+
+\lstset{language=Java, caption=Calendar Provider example }
+\begin{lstlisting}
+    Cursor cursor = context.getContentResolver()
+            .query(
+                    Uri.parse("content://com.android.calendar/events"),
+                    new String[] { "calendar_id", "title", "description",
+                            "dtstart", "dtend", "eventLocation" }, null,
+                    null, null);
+\end{lstlisting}
+
+This query returns a list of events which can be freely processed and sorted as required. 
+\subsection{Google Tasks}
+In Android, Tasks can be retrieved from a Google account using the Google Tasks API by prompting the user for their account credentials, retrieving an AuthenticationToken to create a GoogleCredential and using the Tasks Builder to create a Tasks Service. This is demonstrated in Listing ~\ref{GoogleTasksExample}.
+
+\lstset{language=Java, caption=Google Tasks example, label=GoogleTasksExample}
+\begin{lstlisting}
+    	List<Task> tasks = service.tasks().list("@default").execute().getItems();
+\end{lstlisting}
+
+\subsection{Android SMS}
+SMS messages can be received in Android applications using a BroadcastReveiver which collects incoming SMS messages.
+
+\lstset{language=Java, caption=Android SMS example, label=AndroidSMSExample}
+\begin{lstlisting}
+public class receiver extends BroadcastReceiver {
+      public String str = "";
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Bundle bundle = intent.getExtras();
+            SmsMessage[] msgs = null;
+            if (bundle != null) {
+                Object[] pdus = (Object[]) bundle.get("pdus");
+                msgs = new SmsMessage[pdus.length];
+                for (int i = 0; i < msgs.length; i++) 
+                {
+                    msgs[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
+                }
+            }
+        }
+    }
+\end{lstlisting}
+
+This example shows a BroadcastReceiver which collects SMS messages when they're received and adds then to an array of SmsMessage objects for processing. 
+
+\section{Semantic Analysis}
+
+This project requires topic analysis of items of mobile data, in order to compare them to the user's preference and ascribe relevance to them. Other semantic analysis capabilities would prove beneficial for increasing the range of criteria by which relevance may be judged and to eliminate irrelevant data as early on as possible. These include readability, gender, subjectivity and language detection. The DatumBox API is chosen for semantic analysis for its coverage of these requirements; its ease of implementation and the fact that its use is free. 
+
+\subsection{DatumBox API and usage}
+
+Each feature provided by DatumBox has a POST Request URL and is retrieved in code by setting up the request headers and URL parameters (including the API key and text), and waiting for the asynchronous response as a JSON object \ref{DBTopicClassificationExample}.
+
+\lstset{language=Java, caption=DatumBox Topic Classification example, label=DBTopicClassificationExample}
+\begin{lstlisting}
+//Request URL
+http://api.datumbox.com:80/1.0/TopicClassification.json
+
+//Request headers
+{"Content-Type":"application/json; charset=UTF-8"}
+
+//Response body
+{
+  "output": {
+    "status": 1,
+    "result": "Computers & Technology"
+  }
+}
+\end{lstlisting}
+This example is for 'Topic Classification', but the process for requesting other available features is similar and will be simplified by creating a 'Semantic Analysis API' which retrieves the response for each of the different requests. 
+
+\section{Sorting Algorithms}
+
+Sorting is required for ordering scored items of data into a list whereby the topmost items are the most relevant and the bottommost are the least relevant. Since we are only dealing with relatively small sets of data, efficiency is not paramount in terms of maximising accuracy or usability. Despite this, some consideration is made to using the most appropriate sorting algorithms. 
+Merge sort which uses a divide-and-conquer approach is one of the most suitable for initial scoring of larger numbers of items. It is stable and due to its constant performance of $O(nlogn)$, predictable in terms of execution time. 
+For nearly sorted lists such as scenarios where single or small numbers of data items (<10) may be added to an ordered list, insertion sort is superior in speed and simplicity to others and will have a performance of $O(n)$.
+
+\section{Data Sources and Persistence}
+
+This project attempts to develop a framework for use in a wide range of software applications and as such will require complete flexibility in terms of its data sources. For the purposes of research, development and initial testing, JSON (JavaScript Object Notation) objects in text files are considered the best solution for long-term storage of test data. They are simple to create, read, update and delete; flexible in terms of multi-device usability and fully interchangeable with Java objects. Thus they are suitable for storing items of test data to be loaded into the API. UserContext objects may also be stored as such.
+
+Android provides a range of ways to save persistent application data. Data storage options include: shared preferences, internal storage, external storage, SQLite databases or on an external server accessed remotely \cite{BeginningAndroidDataPersistence}. Any number of these could be used to store information about the user, such as their preferences and UserContext which is required by the ranking agent. 
+Internal storage will store text files in the file system. They are private the user and other applications and can be used to store JSON objects. A database may be used to store test data and user-related data, but this would require classes for managing a database connection and parsing the data fields into their original objects. Either internal or database storage would be perfectly adequate.
+
+\section{Recommender Systems}
+
+Recommendation systems aid users in finding relevant data and suggesting items (such as Tweets, appointments, news articles) which may be worth reading in more detail. This section explores the two types of filtering for recommendation and principles for exploiting them, with the mobile application particularly in view.
+
+\subsection{Collaborative Filtering}
+
+Collaborative filtering methods \cite{CollaborativeRecommenderGoldberg} use information about the behaviour and activity of various users, and use their similarity to other users to predict which other users will like the same content. It does not rely upon understanding complex characteristics of items and is therefore more accurate for complex items which are hard to machine analyse to extract characteristics. They are, however, dependent upon existing data on a user and difficult to scale. 
+Collaborative filtering systems do not have to understand the item, but only the similarity between users. Pattern recognition algorithms such as 'k-nearest neighbours' is commonly used to measure the similarity between users or items in recommender systems. They are used by applications such as Amazon's recommender, Last.fm and social networks. 
+
+\subsection{Content-based Filtering}
+
+Pazzani and Billisus discuss content-based approaches \cite{ContentRecommenderPazzani} which use characteristics of the items to be recommended to match them to items similar to those the user has liked in the past. Content-based filtering uses an item profile (a tuple of discrete attributes) characterising the item of data. The weight of each attribute denotes the extent to which each feature describes the item and is compared to a profile of the user's interests. The most basic methods use average values of the attributes to denote importance. Most complex systems use Bayesian classifiers, cluster analysis, or decision trees, among others.
+
+\subsection{Hybrid Recommender Systems}
+
+Hybrid recommender systems combine the two approaches by combining the results of each; adding capabilities from one to the other; or by attempting to unify the ideas behind both into a single model. 
+
+Due to the complexity of reasons why users may find an item relevance, many modern systems \cite{ReferralWeb} use collaborative filtering to incorporate social relationships. Sen et al. \cite{SenTagommender} among others use tags within content-based approaches to generate better rankings. 
+
+\subsection{The Utility Matrix}
+
+In typical recommendation systems a \textit{utility matrix} is a matrix which gives the user-item pair for each user's preference of each item. This is more common in collaborative filtering approaches where a user's recommendation of an item is based upon other users who viewed it. 
+
+In content-based approaches, it specifies the preference of the user, of each characteristic or attribute about a particular type of item, such that the item is then classified and scored by comparing the item profile with the user profile/utility matrix.
+
+\subsubsection{Populating the Utility Matrix}
+
+The Utility Matrix is required to be accurate for accurate recommendations and there are two primary approaches in populating them with their relevance to the user. These may be 
+\begin{enumerate}
+  \item asking the users to rate items/attributes explicitly, or
+  \item inferring the user's preferences implicitly from their behaviour
+\end{enumerate}
