@@ -1,12 +1,29 @@
 \chapter{Report on Technical Progress}
+ 
+This section reviews the state-of-the-art and explains my theoretical findings as a proposal for an algorithm to fulfil the specification of the project. 
 
-This chapter highlights my progress so far, by explaining my theoretical findings and highlighting my implementation progress. 
+\section{User Profile}
 
-\section{Research Progress}
+In order for items to be scored according to their user-specific relevance, a user profile must be used to specify the users item attribute preferences. A users preferences will be modelled as a tuple $U$ of attributes $u_k$ which gives the users preference for each topic. This is the user profile.
 
-A user's preferences will be modelled as a tuple $U$ of attributes $u_k$ which gives the users preference for each topic. This is the user profile.
+\section{Topic-classification scoring formulae}
 
-In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring uses a recommendation system in which an item of data is allocated a tuple of attribute scores. These are compared to the user's profile to give the item a score.
+Scoring functions typically combine key-term statistics into a single score as a measure of the similarity between a query and a document.
+Term frequency is the most frequently used and widely explored approach to understanding the relevance of a text. Term rank scoring formulae are comprised of a base formula (typically Okapi BM25, Eqn. \ref{OkapiBM25}) and a multiplicative or additive range variance term R \cite{OkapiBM25Paper}.
+
+\begin{equation}\label{OkapiBM25}
+	\sum\limits_{t\in d \bigcap q} \ln{\frac{N-df+0.5}{df+0.5}}\centerdot \frac{tf}{0.5+1.5 \centerdot \frac{dl}{avdl}+tf} \centerdot R
+\end{equation}
+
+Here $df$ is the document frequency (documents in a collection) and $tf$ is simply the term frequency (to occurrences of a term in a particular document). $avdl$ is the average document length and $R$ is a component which limits the range over which the term rank has an effect. 
+
+Topic classification is done remotely using a similar technique using multiple term frequency using weights which describe how closely each term relates to the specified topic. This classification provides us with information about our item of data which can be used to rank it according to its relevance. 
+
+\section{Scoring Rule}
+
+In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring uses a recommendation system in which an item of data is allocated a tuple of attribute scores. These are compared to the users profile to give the item a score.
+
+Relevance is defined here as the extent to which the score of each attribute of an item matches the preference score of the user for that attribute. Attribute-specific scores are found by comparing the complementary user preference and data-item attributes according to a well defined scoring rule. 
 
 Using the unweighted scoring rule
 
@@ -37,6 +54,8 @@ This led to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{Ba
 f_U (D) = \sum_{k=1}^{M-1} u_kd_k
 \end{equation}
 
+\subsection{Time-Specific Relevance and Item Removal}
+
 As items are received, they are scored and ordered, however an item may be relevant in terms of topic, but not in terms of age since its creation. It may have been created a long time ago and thus needs removing to make way for new items. Here, an item-deletion term ${\mathrm{e}}^{-\alpha t(d)}$ is added, where $t(d)$ is the minutes lapsed since the receiving of item $d$ and $\alpha$ is a delay coefficient. As time increases, the item-removal term tends to zero. This gives us
 
 \begin{equation}\label{BasicScoringRule2}
@@ -44,7 +63,16 @@ As items are received, they are scored and ordered, however an item may be relev
 \end{equation}
 
 This exponential deletion function is used as it keeps new items at the top for longer. A polynomial could have been used with similar effects, but a linear decay would have cause the item to fall down the ranked list too quickly.
-Time-relevant data is scored differently to topic-relevant data. Time scoring may be done using a continuous increasing term whose value is related to the time before a deadline approaches. $t_{threshold}$ is the time at which time-related scoring begins, $t_{tillDue}(D)$ is the time until item D is due and $\beta$ is a normalisation parameter. It must be set such that at the point at which D becomes relevant in time, $f_{time}(D)$ is greater than the maximum non-time-related score. This gives us
+
+In contrast to social information, the relevance of productivity related information is not usually based upon its topic, for example the relevance of a calendar appointment for a meeting or a dentist appointment cannot be assessed according to the principles used above. Its topic-classification is not useful in commenting on its relevance. This situation calls for a weighting which is based not upon topic-relevance, but upon time-relevance. It must complement topic-relevance so as not to affect the ranking order of non-time-specific items of data. 
+
+This weighting may be implemented using 
+\begin{enumerate}
+  \item a discrete binary decision (relevant at this point in time or not), or 
+  \item a continuous function of increasing time-relevance as a deadline approaches
+\end{enumerate}
+
+Time scoring may better be done using a continuous increasing term whose value is related to the time before a deadline approaches, since a decaying relevance fits better with the concept of ordering items based upon their relevance. $t_{threshold}$ is the time at which time-related scoring begins, $t_{tillDue}(D)$ is the time until item D is due and $\beta$ is a normalisation parameter. It must be set such that at the point at which D becomes relevant in time, $f_{time}(D)$ is greater than the maximum non-time-related score. This gives us
 
 \begin{equation}\label{BasicTimeScoringRule}
 	f_{time} (D) = {\mathrm{e}}^{\beta (t_{threshold}-t_{tillDue}(D))}
@@ -80,8 +108,24 @@ This gives the normalised weighted scoring function, which incorporates both top
 
 The user profile may also include requirements for the filter to remove items which fall under certain criteria. These include readability, sentiment, spam removal, adult content removal, language detection and gender detection. The preprocessor will eliminate items which are excluded by the user profile, before being scored. 
 
-\section{Implementation Progress}
+\section{Ordering Algorithm}
 
-In terms of implementing the algorithm as an API, a test environment has been created for entering test data from the command line and storing them in files as JSON objects. It loads them from files into DataItem objects to be used by the ranking agent. It allows me to chose which types of items are loaded at any point. 
+Insertion sort is ideal for the requirements of this project. It is fast for small and mostly sorted lists and it easy to implement. The following insertion sort algorithm will sort items according the their score (Algorithm \ref{InsertionSort}).
 
-Classes have been implemented which sort items of scored data; get the topic (among other features) of items; store the user's profile; store the item's attribute characteristics and score items according to how well they match the user's profile. 
+\begin{pseudocode}{InsertionSort}{A}
+	\label{InsertionSort}
+	\COMMENT{Sort the array of items of data $D$}\\
+	\FOR i\GETS 1 \TO length(D)-1 \DO
+	\BEGIN
+		key \GETS D[i]\\
+		j \GETS i\\
+		\WHILE j > 0 \AND score < D[j-1] \DO
+		\BEGIN
+			D[j] \GETS D[j - 1]\\
+			j \GETS j - 1\\
+		\END \\
+		D[j] \GETS key \\
+	\END	
+		
+\end{pseudocode}
+

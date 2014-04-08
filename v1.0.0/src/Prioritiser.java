@@ -53,11 +53,34 @@ public class Prioritiser {
     
     public static void runRankingAgent() throws IOException, SAXException, ParserConfigurationException, XPathExpressionException{
         System.out.println("Load test data and proceed.");
-        Gson gson = new GsonBuilder().serializeNulls().create();
-        String userContextText = FileManager.readFile("testData/UserContext.txt");
-        UserContext userContext = gson.fromJson(userContextText, UserContext.class);
+//        Gson gson = new GsonBuilder().serializeNulls().create();
+//        String userContextText = FileManager.readFile("testData/UserContext.txt");
+//        UserContext userContext = gson.fromJson(userContextText, UserContext.class);
+        UserContext userContext = getUserContext();
         List<DataItem> dataItems = TestDataManager.loadData();
         rankingAgent = new RankingAgent(userContext); 
         rankedDataItems = rankingAgent.update(dataItems);
+    }
+    
+    private static UserContext getUserContext() throws IOException{
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Which UserContext do you want to load?");
+        System.out.println("Chose from the following: "
+                + "\n 1"
+                + "\n 2"
+                + "\n 3"
+                + "\n 4"
+                + "\n 5"
+                + "\n 6"
+                + "\n 7"
+                + "\n 8");
+        String userInput = reader.nextLine();
+        
+        String userContextText = FileManager.readFile("testData/UserContext" + userInput + ".txt");
+        UserContext userContext = gson.fromJson(userContextText, UserContext.class);
+        
+        return userContext;
     }
 }

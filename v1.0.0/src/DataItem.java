@@ -129,7 +129,7 @@ public class DataItem {
     }
 
     /**
-     * @param date the date to set
+     * @param date
      */
     public void setDate(Calendar date) {
         this.date = date;

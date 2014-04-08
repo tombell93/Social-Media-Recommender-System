@@ -1,6 +1,6 @@
 \contentsline {chapter}{Abstract}{i}{dummy.1}
 \vspace {1em}
-\contentsline {chapter}{\numberline {1}Project Goals}{1}{chapter.3}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.3}
 \contentsline {section}{\numberline {1.1}The Problem}{1}{section.4}
 \contentsline {section}{\numberline {1.2}Project Objective}{1}{section.5}
 \contentsline {section}{\numberline {1.3}Goals}{1}{section.6}
@@ -12,29 +12,50 @@
 \contentsline {section}{\numberline {2.4}Semantic Analysis}{4}{section.23}
 \contentsline {subsection}{\numberline {2.4.1}DatumBox API and Usage}{5}{subsection.24}
 \contentsline {section}{\numberline {2.5}Sorting Algorithms}{5}{section.25}
-\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{6}{section.27}
-\contentsline {section}{\numberline {2.7}Recommendation Systems}{6}{section.28}
+\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{5}{section.27}
+\contentsline {section}{\numberline {2.7}Recommender Systems}{6}{section.28}
 \contentsline {subsection}{\numberline {2.7.1}Collaborative Filtering}{6}{subsection.29}
-\contentsline {subsection}{\numberline {2.7.2}Content-Based Filtering}{7}{subsection.30}
+\contentsline {subsection}{\numberline {2.7.2}Content-Based Filtering}{6}{subsection.30}
 \contentsline {subsection}{\numberline {2.7.3}Hybrid Recommender Systems}{7}{subsection.31}
 \contentsline {subsection}{\numberline {2.7.4}The Utility Matrix}{7}{subsection.32}
-\contentsline {chapter}{\numberline {3}Report on Technical Progress}{8}{chapter.35}
-\contentsline {section}{\numberline {3.1}Research Progress}{8}{section.36}
-\contentsline {subsection}{\numberline {3.1.1}Lexical Analysis and Preprocessing}{11}{subsection.47}
-\contentsline {section}{\numberline {3.2}Implementation Progress}{11}{section.48}
-\contentsline {chapter}{\numberline {4}Plan of Remaining Work}{12}{chapter.49}
-\contentsline {section}{\numberline {4.1}Remaining work}{12}{section.50}
-\contentsline {subsection}{\numberline {4.1.1}Algorithm and Java API Implementation}{12}{subsection.51}
-\contentsline {subsection}{\numberline {4.1.2}Demonstration Application}{12}{subsection.52}
-\contentsline {section}{\numberline {4.2}Planning and Contingency}{13}{section.53}
-\contentsline {subsection}{\numberline {4.2.1}Algorithm and Java API Implementation}{13}{subsection.54}
-\contentsline {subsection}{\numberline {4.2.2}Demonstration Application}{13}{subsection.55}
-\contentsline {subsection}{\numberline {4.2.3}Contingency Planning}{13}{subsection.56}
+\contentsline {chapter}{\numberline {3}Algorithm Design}{8}{chapter.35}
+\contentsline {section}{\numberline {3.1}User Profile}{8}{section.36}
+\contentsline {section}{\numberline {3.2}Topic-classification scoring formulae}{8}{section.37}
+\contentsline {section}{\numberline {3.3}Scoring Rule}{9}{section.39}
+\contentsline {subsection}{\numberline {3.3.1}Time-Specific Relevance and Item Removal}{10}{subsection.46}
+\contentsline {subsection}{\numberline {3.3.2}Lexical Analysis and Preprocessing}{12}{subsection.53}
+\contentsline {chapter}{\numberline {4}Software Design and Implementation}{13}{chapter.54}
+\contentsline {section}{\numberline {4.1}Data Sources and Acquisition}{13}{section.55}
+\contentsline {subsection}{\numberline {4.1.1}Acquisition}{13}{subsection.56}
+\contentsline {subsection}{\numberline {4.1.2}DataItem Conversion and Structure}{14}{subsection.57}
+\contentsline {subsection}{\numberline {4.1.3}UserContext Acquisition and Structure}{14}{subsection.58}
+\contentsline {section}{\numberline {4.2}Structure of Implementation}{14}{section.59}
+\contentsline {subsection}{\numberline {4.2.1}Text Analysis}{14}{subsection.61}
+\contentsline {subsection}{\numberline {4.2.2}Scoring Algorithm}{15}{subsection.62}
+\contentsline {section}{\numberline {4.3}Design Considerations}{16}{section.63}
+\contentsline {subsection}{\numberline {4.3.1}Speed Considerations}{16}{subsection.64}
+\contentsline {subsection}{\numberline {4.3.2}Usability Considerations}{16}{subsection.65}
+\contentsline {chapter}{\numberline {5}Planning and Progress}{18}{chapter.82}
+\contentsline {section}{\numberline {5.1}Planning}{18}{section.83}
+\contentsline {section}{\numberline {5.2}Progress}{19}{section.85}
+\contentsline {chapter}{\numberline {6}Testing and Evaluation}{21}{chapter.87}
+\contentsline {section}{\numberline {6.1}Test Environment}{21}{section.88}
+\contentsline {section}{\numberline {6.2}Verification Strategy}{21}{section.89}
+\contentsline {subsection}{\numberline {6.2.1}Test data}{22}{subsection.90}
+\contentsline {subsection}{\numberline {6.2.2}Kendall's $\tau $ Coefficient for Agreement}{22}{subsection.91}
+\contentsline {subsection}{\numberline {6.2.3}Key assumptions and limitations}{23}{subsection.94}
+\contentsline {section}{\numberline {6.3}Kendall's $\tau $}{23}{section.95}
+\contentsline {chapter}{\numberline {7}Further Work}{26}{chapter.98}
+\contentsline {section}{\numberline {7.1}Productivity-Related Data Scoring}{26}{section.99}
+\contentsline {section}{\numberline {7.2}Social Media Scoring}{26}{section.100}
+\contentsline {section}{\numberline {7.3}Preference Learning}{27}{section.101}
+\contentsline {section}{\numberline {7.4}API Speed Improvements}{27}{section.102}
+\contentsline {chapter}{\numberline {8}Conclusions}{29}{chapter.103}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Project Brief}{15}{appendix.58}
-\contentsline {paragraph}{Problem}{15}{section*.59}
-\contentsline {paragraph}{Goals}{15}{section*.60}
-\contentsline {paragraph}{Scope}{16}{section*.61}
-\contentsline {chapter}{\numberline {B}API Code Examples}{17}{appendix.62}
+\contentsline {chapter}{\numberline {A}Project Brief}{30}{appendix.104}
+\contentsline {paragraph}{Problem}{30}{section*.105}
+\contentsline {paragraph}{Goals}{30}{section*.106}
+\contentsline {paragraph}{Scope}{31}{section*.107}
+\contentsline {chapter}{\numberline {B}API Code Examples}{32}{appendix.108}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{19}{dummy.119}
+\contentsline {chapter}{Bibliography}{34}{dummy.165}

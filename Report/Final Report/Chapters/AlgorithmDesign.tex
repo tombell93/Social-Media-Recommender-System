@@ -1,18 +1,12 @@
 \chapter{Algorithm Design}
-
-This section details the process of the development of our recommendation system's algorithm. It reviews the state-of-the-art and proposes an algorithm to fulfil the specification of this project. 
+ 
+This section reviews the state-of-the-art and explains my theoretical findings as a proposal for an algorithm to fulfil the specification of the project. 
 
 \section{User Profile}
 
-As mentioned above, in order for items to be scored according to their user-specific relevance, a user profile must be used to specify the user's item attribute preferences. In our case the algorithm must be independent of the process of updating the user profile. It should be done explicitly at first, by asking the user to score attributes and may be updated implicitly through analysing the user's behaviour. The user profile is a tuple $U$ whereby each entry $u_n$ is a weight for the user's preference of its corresponding attribute.
+In order for items to be scored according to their user-specific relevance, a user profile must be used to specify the users item attribute preferences. A users preferences will be modelled as a tuple $U$ of attributes $u_k$ which gives the users preference for each topic. This is the user profile.
 
-\section{Scoring Rule}
-
-In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring uses a recommendation system in which an item of data is allocated a tuple of attribute scores. These are compared to the users profile to given the item a score. 
-
-The word 'importance' is used to describe the non-user-specific likely relevance of an item of data. 'Relevance' signifies a user-specific importance of an item of data.
-
-\subsection{Topic-classification scoring formulae}
+\section{Topic-classification scoring formulae}
 
 Scoring functions typically combine key-term statistics into a single score as a measure of the similarity between a query and a document.
 Term frequency is the most frequently used and widely explored approach to understanding the relevance of a text. Term rank scoring formulae are comprised of a base formula (typically Okapi BM25, Eqn. \ref{OkapiBM25}) and a multiplicative or additive range variance term R \cite{OkapiBM25Paper}.
@@ -25,60 +19,50 @@ Here $df$ is the document frequency (documents in a collection) and $tf$ is simp
 
 Topic classification is done remotely using a similar technique using multiple term frequency using weights which describe how closely each term relates to the specified topic. This classification provides us with information about our item of data which can be used to rank it according to its relevance. 
 
-\subsection{Unweighted Scoring Rule}
+\section{Scoring Rule}
 
-Having performed topic-classification on an item of data, a scoring algorithm must assign to it a value which is a measure of its relevance. Let us first consider the case of an unweighted rule which scores an item of data. 
+In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring uses a recommendation system in which an item of data is allocated a tuple of attribute scores. These are compared to the users profile to give the item a score.
 
-A classified item of data (that is, one which has been assigned a score for each attribute according to how well that attribute describes the topic of the text), without considering the users preferences, has an important topic if the sum of the scores of each attribute is large. This is related to the average score of an attribute being large. Consequently, the importance of an item of data may be given as the average of the attribute scores
+Relevance is defined here as the extent to which the score of each attribute of an item matches the preference score of the user for that attribute. Attribute-specific scores are found by comparing the complementary user preference and data-item attributes according to a well defined scoring rule. 
+
+Using the unweighted scoring rule
 
 \begin{equation}\label{AverageUnweightedRule}	
 	f(D) = \frac{\sum_{i=1}^{i} d_i}{n}
 \end{equation}
 
-where $D$ is our item of data, and the elements $d_i$ are its topic-attributes. 
-
-\subsection{Weighted Scoring Rule}
-
-Let us now move on to consider the user-specific case, or weighted case. Relevance is defined here as the extent to which the score of each attribute of an item of data, matches the preference score of the user for that attribute. Attribute-specific scores are found by comparing the complementary user and data-item attributes according to a given rule. A final scoring rule must be used to combine scores of individual attributes into an overall score for a particular item of data, to given its relevance.
-Fagin and Wimmers \cite{FaginWimmers1} detail a formula for incorporating weights into scoring rule, no matter the nature of the scoring rule. It takes a function $f$ which describes an unweighted rule for applying a score to a tuple of $n$ entries (attributes in our case) and gives a weighted rule based on $f$ which is compatible with any rule. 
+where $D$ is our item of data, and the elements $d_i$ are its topic-attributes, Fagin and Wimmers' \cite{FaginWimmers1} conversion is used for incorporating weights into a scoring rule, no matter the nature of the scoring rule. It takes a function $f$ which describes an unweighted rule for applying a score to a tuple of $n$ entries (attributes in our case) and gives a weighted rule based on $f$ which is compatible with any rule. 
 
 They take a set $\Theta = (\theta_1,\theta_2,\dotsc,\theta_n)$ of weights which relate the effect of an entry $x$ on the score of the tuple $ X = (x_1, x_2, \dots, x_n)$. If $f(X)$ is the unweighted scoring rule, then for a tuple of $m$ entries
 
 \begin{equation}\label{WeightedRule}	
-	f_\Theta (X) = \left(\sum_{i=1}^{m-1} i\centerdot (\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})\centerdot f(X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\})\right) + m \centerdot \theta_\sigma{(m)} \centerdot f(X)
+	f_\Theta (X) = \left(\sum_{i=1}^{m-1} i(\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})\times f(X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\})\right) + m  \theta_\sigma{(m)}  f(X)
 \end{equation}
 
-Here $X\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\}$ is a restriction of $X$ to the domain of a bijection $\sigma$ which orders the weightings to match the order of entries in the tuple. In our case this bijection would be a mapping from each attribute of an item of data to the weighting associated with that attribute. The weighting $\Theta$ would be dependent upon a complementary tuple describing the user, i.e. their attribute preferences. The term $(\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})$ is the difference between the weightings of two consecutive entries. 
-
-Fagin and Wimmers' equation allows me to include weighed relationships between attributes' sub-scores and the total score of the item of data. An item of data is represented as a tuple $ D = (d_1, d_2, \dots, d_n)$ where each entry $d_n$ is an attribute of the item of data. Given the context-sensitive nature of this project, attributes must affect the score of the tuple with differing degrees according to how well they match the preferences of the user. 
-
-This idea of weighting will be an analogy for the users preferences, such that the greater the user's preference of an attribute, the greater the weighting will be. Thus the set of weights $\Theta$ becomes a tuple of entries $ U = (u_1, u_2, \dots, u_n)$ whereby $U$ represents the tuple of attributes depicting the user's preferences. This leads us the following result, showing a general solution for context-sensitive (weighted) scoring rule, for any unweighted rule $f(D)$.
-
-\begin{equation}\label{OurWeightedRule}	
-	f_U (D) = \left(\sum_{i=1}^{m-1} i\centerdot (u_{\sigma{(i)}} - u_{\sigma{(i+1)}})\centerdot f(D\upharpoonright\left\{\sigma(1),\dots,\sigma(i)\right\})\right) + m \centerdot u_\sigma{(m)} \centerdot f(D)
-\end{equation}
-
-Let us take the simple unweighted scoring rule whereby we compute the average of the the $i$ attributes $d_j$ in a tuple $D$ (Eqn. \ref{AverageUnweightedRule}). Using the weighting formula (Eqn. \ref{OurWeightedRule}) the weighted equivalent is
+Here $X\restriction\left\{\sigma(1),\dots,\sigma(i)\right\}$ is a restriction of $X$ to the domain of a bijection $\sigma$ which orders the weightings to match the order of entries in the tuple. In our case this bijection would be a mapping from each attribute of an item of data to the weighting associated with that attribute. The weighting $\Theta$ would be dependent upon a complementary tuple describing the user, i.e. their attribute preferences. The term $(\theta_{\sigma{(i)}} - \theta_{\sigma{(i+1)}})$ is the difference between the weightings of two consecutive entries. 
+Using this conversion, the following can be derived
 
 \begin{align}\label{OurWeightedRuleDerivation}
-f_U (D) &= \left(\sum_{n=1}^{M-1} n\centerdot (u_{\sigma{(n)}} - u_{\sigma{(n+1)}})\centerdot \frac{\sum_{i=1}^{n} d_i}{n}\right) + M \centerdot u_\sigma{(M)} \centerdot \frac{\sum_{i=1}^{n} d_i}{n} 
+f_U (D) &= \left(\sum_{n=1}^{M-1} n (u_{\sigma{(n)}} - u_{\sigma{(n+1)}})\times \frac{\sum_{i=1}^{n} d_i}{n}\right) + M \times u_\sigma{(M)} \times \frac{\sum_{i=1}^{n} d_i}{n} 
 \\ &= (u_1-u_2)d_1 + 2(u_2-u_3)\frac{d_1+d_2}{2} + 3u_3\frac{d_1+d_2+d_3}{3}
 \\ &= u_1d_1 + u_2d_2 + \dots + u_Md_M
 \end{align}
 
-We are lead therefore to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{BasicScoringRule}).
+This led to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{BasicScoringRule}).
 
 \begin{equation}\label{BasicScoringRule}
-f_U (D) = \sum_{k=1}^{m-1} u_kd_k
+f_U (D) = \sum_{k=1}^{M-1} u_kd_k
 \end{equation}
 
-\subsection{Time-Relevance and Item removal}
+\subsection{Time-Specific Relevance and Item Removal}
 
-As items are received, they are scored and ordered, but an item may be relevant in terms of topic, but not in terms of time. It may have been created a long time ago and thus needs removing to make way for new items. Here, I add an item-removal term ${\mathrm{e}}^{-\alpha t(d)}$ where $t(d)$ is the minutes lapsed since the receiving of item $d$ and $\alpha$ is a delay coefficient. As time increases, the item-removal term tends to 0. This give us
+As items are received, they are scored and ordered, however an item may be relevant in terms of topic, but not in terms of age since its creation. It may have been created a long time ago and thus needs removing to make way for new items. Here, an item-deletion term ${\mathrm{e}}^{-\alpha t(d)}$ is added, where $t(d)$ is the minutes lapsed since the receiving of item $d$ and $\alpha$ is a delay coefficient. As time increases, the item-removal term tends to zero. This gives us
 
 \begin{equation}\label{BasicScoringRule2}
-	f_U (D) = {\mathrm{e}}^{-\alpha t(d)} \centerdot \sum_{k=1}^{m-1} u_kd_k
+	f_U (D) = {\mathrm{e}}^{-\alpha t(d)} \times \sum_{k=1}^{m-1} u_kd_k
 \end{equation}
+
+This exponential deletion function is used as it keeps new items at the top for longer. A polynomial could have been used with similar effects, but a linear decay would have cause the item to fall down the ranked list too quickly.
 
 In contrast to social information, the relevance of productivity related information is not usually based upon its topic, for example the relevance of a calendar appointment for a meeting or a dentist appointment cannot be assessed according to the principles used above. Its topic-classification is not useful in commenting on its relevance. This situation calls for a weighting which is based not upon topic-relevance, but upon time-relevance. It must complement topic-relevance so as not to affect the ranking order of non-time-specific items of data. 
 
@@ -88,15 +72,14 @@ This weighting may be implemented using
   \item a continuous function of increasing time-relevance as a deadline approaches
 \end{enumerate}
 
-The simplest of the two is the former, whereby an item of data (with a deadline in less than $t_threshold$ minutes) would be flagged as time-relevant and ranked at the top of the ordered list. The second implementation would be the preferable choice, since as the deadline approached, the item of data would creep up the ordered list until it reached the top at $t_threshold$ minutes before the deadline. 
-
-Time-relevant data is scored differently to topic-relevant data. Time scoring may be done using a continuous increasing term who's value is related to the time before a deadline approaches. $t_{threshold}$ is the time at which time-related scoring begins, $t_{tillDue}(D)$ is the time until item D is due and $\beta$ is a normalisation parameter. It must be set such that at the point at which D is time-relevant, $f_{time}(D)$ is greater than the maximum non-time-related score. This gives us
+Time scoring may better be done using a continuous increasing term whose value is related to the time before a deadline approaches, since a decaying relevance fits better with the concept of ordering items based upon their relevance. $t_{threshold}$ is the time at which time-related scoring begins, $t_{tillDue}(D)$ is the time until item D is due and $\beta$ is a normalisation parameter. It must be set such that at the point at which D becomes relevant in time, $f_{time}(D)$ is greater than the maximum non-time-related score. This gives us
 
 \begin{equation}\label{BasicTimeScoringRule}
 	f_{time} (D) = {\mathrm{e}}^{\beta (t_{threshold}-t_{tillDue}(D))}
 \end{equation}
 
-Here I introduce a parameter $\gamma$ to control the relative weight between the topic-scoring term and the time-based scoring term. A static look-up matrix may be used to find the value of $\gamma$ such that score is derived from the correct term given the nature of the item's relevance to the user (See table \ref{BetaLookup}).
+The exponential decay rate, similar to that of entropy in information theory is used to cause the rate at which score increases to increase as the deadline approaches. 
+Here, a parameter $\gamma$ is introduced to control the relative weight between the topic-scoring term and the time-based scoring term. A static look-up matrix may be used to find the value of $\gamma$ such that score is derived from the correct term given the nature of the item's relevance to the user (See lookup table).
 
 \begin{table}\label{BetaLookup}
 \begin{center}
@@ -114,39 +97,13 @@ Here I introduce a parameter $\gamma$ to control the relative weight between the
 \end{center}
 \end{table}
 
-This gives us a weighted scoring function incorporating both topic-relevance and time-relevance into a single equation (Eqn \ref{BasicScoringRule3}).
+A normalisation constant is introduced in the topic-related term so ensure it is smaller than time-related scores. The maximum value of a topic-score is 10 and there are 12 topics, so the maximum score is 120. The maximum score of the time-related term is 1, giving us the normalisation constant of 1/120.
+This gives the normalised weighted scoring function, which incorporates both topic-relevance and time-relevance into a single equation (Eqn. \ref{BasicScoringRule3}).
 
 \begin{equation}\label{BasicScoringRule3}
-	f_U (D) = \left[{\mathrm{e}}^{-\alpha t(d)} \centerdot (1-\gamma) \sum_{k=1}^{m-1} u_kd_k \right] + \gamma{\mathrm{e}}^{\ (t_{threshold}-t_{tillDue}(D))}
+	f_U (D) = \left[\frac{{\mathrm{e}}^{-\alpha t(d)} \times (1-\gamma) \sum_{k=1}^{m-1} u_kd_k}{120} \right] + \gamma{\mathrm{e}}^{\ (t_{threshold}-t_{tillDue}(D))}
 \end{equation}
 
-\section{Lexical Analysis and Preprocessing}
+\subsection{Lexical Analysis and Preprocessing}
 
 The user profile may also include requirements for the filter to remove items which fall under certain criteria. These include readability, sentiment, spam removal, adult content removal, language detection and gender detection. The preprocessor will eliminate items which are excluded by the user profile, before being scored. 
-
-\section{Ranking Algorithm}
-
-Insertion sort is ideal for the requirements of this project. It is fast for small, largely sorted lists and easy to implement. The following insertion sort algorithm will sort items according the their score (Algorithm \ref{InsertionSort}).
-
-\begin{pseudocode}{InsertionSort}{A}
-	\label{InsertionSort}
-	\COMMENT{Sort the array of items of data $D$}\\
-	\FOR i\GETS 1 \TO length(D)-1 \DO
-	\BEGIN
-		key \GETS D[i]\\
-		j \GETS i\\
-		\WHILE j > 0 \AND score < D[j-1] \DO
-		\BEGIN
-			D[j] \GETS D[j - 1]\\
-			j \GETS j - 1\\
-		\END \\
-		D[j] \GETS key \\
-	\END	
-		
-\end{pseudocode}
-
-
-
-
-
-

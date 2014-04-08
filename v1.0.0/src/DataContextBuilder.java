@@ -55,42 +55,48 @@ public class DataContextBuilder {
                 JSONObject temp;
                 JSONObject object;
                 
-                //Subjectivity detection
-                System.out.println("Subjectivity detection");  
-                temp = (JSONObject) JSONValue.parse(sentimentAPI.SubjectivityAnalysis(text));
-                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                dataContext.setIsSubjective(("objective".equals(object.get("result").toString())?false:true));
-                
-                //Gender detection
-                temp = (JSONObject) JSONValue.parse(sentimentAPI.GenderDetection(text));
-                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                dataContext.setGender(object.get("result").toString());
-                
-                //Spam detection
-                temp = (JSONObject) JSONValue.parse(sentimentAPI.SpamDetection(text));
-                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                dataContext.setIsSpam(("nospam".equals(object.get("result").toString())?false:true));
-                
-                //Adult content detection
-                temp = (JSONObject) JSONValue.parse(sentimentAPI.AdultContentDetection(text));
-                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                dataContext.setIsAdult(("noadult".equals(object.get("result").toString())?false:true));
-                
-                //Readability detection
-                System.out.println("Readability detection");  
-                temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
-                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                dataContext.setIsReadable(("advanced".equals(object.get("result").toString())?false:true));
-                
-                //Commercial detection
-                temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
-                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                dataContext.setIsCommercial(("commercial".equals(object.get("result").toString())?true:false));
-                
-                //Educational detection
-                temp = (JSONObject) JSONValue.parse(sentimentAPI.EducationalDetection(text));
-                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
-                dataContext.setIsEducational(("educational".equals(object.get("result").toString())?true:false));
+//                //Subjectivity detection
+//                System.out.println("Subjectivity detection");  
+//                temp = (JSONObject) JSONValue.parse(sentimentAPI.SubjectivityAnalysis(text));
+//                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+//                dataContext.setIsSubjective(("objective".equals(object.get("result").toString())?false:true));
+//                
+//                //Gender detection
+//                 System.out.println("Gender detection");  
+//                temp = (JSONObject) JSONValue.parse(sentimentAPI.GenderDetection(text));
+//                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+//                dataContext.setGender(object.get("result").toString());
+//                
+//                //Spam detection
+//                 System.out.println("Spam detection");  
+//                temp = (JSONObject) JSONValue.parse(sentimentAPI.SpamDetection(text));
+//                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+//                dataContext.setIsSpam(("nospam".equals(object.get("result").toString())?false:true));
+//                
+//                //Adult content detection
+//                 System.out.println("Adult content detection");  
+//                temp = (JSONObject) JSONValue.parse(sentimentAPI.AdultContentDetection(text));
+//                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+//                dataContext.setIsAdult(("noadult".equals(object.get("result").toString())?false:true));
+//                
+//                //Readability detection
+//                System.out.println("Readability detection");  
+//                temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
+//                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+//                dataContext.setIsReadable(("advanced".equals(object.get("result").toString())?false:true));
+//                
+//                //Commercial detection
+//                 System.out.println("Commercial detection");  
+//                temp = (JSONObject) JSONValue.parse(sentimentAPI.ReadabilityAssessment(text));
+//                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+//                dataContext.setIsCommercial(("commercial".equals(object.get("result").toString())?true:false));
+//                
+//                //Educational detection
+//                 System.out.println("Educational detection");  
+//                temp = (JSONObject) JSONValue.parse(sentimentAPI.EducationalDetection(text));
+//                object = (JSONObject) JSONValue.parse(temp.get("output").toString());
+//                dataContext.setIsEducational(("educational".equals(object.get("result").toString())?true:false));
+//                dataContext.setIsSet(true);
                     
                 //Topic detection
                 System.out.println("Topic detection");  
@@ -99,6 +105,7 @@ public class DataContextBuilder {
                 dataContext.setTopic(object.get("result").toString());
             }
             dataItem.setDataContext(dataContext);
+            dataItemsWithContext.add(dataItem);
         }
                 
         return dataItemsWithContext;

@@ -17,7 +17,7 @@ public class DataContext{
     
     private static String[] categories = {"Arts", "News", 
         "Computers & Technology", "Business & Economy", "Reference & Education", 
-        "Health", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
+        "Health", "Science", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
     
     private Map<String, Double> featuresMap = new HashMap<String, Double>();
     
@@ -31,9 +31,10 @@ public class DataContext{
     private Boolean isEducational;
     private String gender;   
     private String topic;   
+    private Boolean isSet;
 
     public DataContext(){
-        
+        isSet = false;
     }
     
     /**
@@ -202,6 +203,20 @@ public class DataContext{
      */
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+    
+    /**
+     * @return the isSet
+     */
+    public Boolean getIsSet() {
+        return isSet;
+    }
+
+    /**
+     * @param set the isSet
+     */
+    public void setIsSet(Boolean isSet) {
+        this.isSet = isSet;
     }
         
 }

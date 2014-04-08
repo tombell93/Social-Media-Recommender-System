@@ -18,7 +18,7 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\contentsline {chapter}{Abstract}{i}{dummy.1}}
 \@writefile{toc}{\vspace  {1em}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Project Goals}{1}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}The Problem}{1}{section.4}}
@@ -43,70 +43,120 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}DatumBox API and Usage}{5}{subsection.24}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Sorting Algorithms}{5}{section.25}}
 \newlabel{InsertionSort}{{2.5.1}{5}{Sorting Algorithms}{pseudocode.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{5}{section.27}}
 \citation{BeginningAndroidDataPersistence}
 \citation{CollaborativeRecommenderGoldberg}
 \citation{ContentRecommenderPazzani}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{6}{section.27}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Recommendation Systems}{6}{section.28}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Recommender Systems}{6}{section.28}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.7.1}Collaborative Filtering}{6}{subsection.29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.2}Content-Based Filtering}{6}{subsection.30}}
 \citation{ReferralWeb}
 \citation{SenTagommender}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.2}Content-Based Filtering}{7}{subsection.30}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.7.3}Hybrid Recommender Systems}{7}{subsection.31}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.7.4}The Utility Matrix}{7}{subsection.32}}
+\citation{OkapiBM25Paper}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Algorithm Design}{8}{chapter.35}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}User Profile}{8}{section.36}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Topic-classification scoring formulae}{8}{section.37}}
+\newlabel{OkapiBM25}{{3.1}{8}{Topic-classification scoring formulae}{equation.38}{}}
 \citation{FaginWimmers1}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Report on Technical Progress}{8}{chapter.35}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Research Progress}{8}{section.36}}
-\newlabel{AverageUnweightedRule}{{3.1}{8}{Research Progress}{equation.37}{}}
-\newlabel{WeightedRule}{{3.2}{9}{Research Progress}{equation.38}{}}
-\newlabel{OurWeightedRuleDerivation}{{3.3}{9}{Research Progress}{equation.39}{}}
-\newlabel{BasicScoringRule}{{3.6}{9}{Research Progress}{equation.42}{}}
-\newlabel{BasicScoringRule2}{{3.7}{9}{Research Progress}{equation.43}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Scoring Rule}{9}{section.39}}
+\newlabel{AverageUnweightedRule}{{3.2}{9}{Scoring Rule}{equation.40}{}}
+\newlabel{WeightedRule}{{3.3}{9}{Scoring Rule}{equation.41}{}}
+\newlabel{OurWeightedRuleDerivation}{{3.4}{10}{Scoring Rule}{equation.42}{}}
+\newlabel{BasicScoringRule}{{3.7}{10}{Scoring Rule}{equation.45}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Time-Specific Relevance and Item Removal}{10}{subsection.46}}
+\newlabel{BasicScoringRule2}{{3.8}{10}{Time-Specific Relevance and Item Removal}{equation.47}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{BetaLookup}{{\caption@xref {BetaLookup}{ on input line 56}}{10}{Research Progress}{table.caption.45}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces $\gamma $ lookup table\relax }}{10}{table.caption.45}}
-\newlabel{BasicTimeScoringRule}{{3.8}{10}{Research Progress}{equation.44}{}}
-\newlabel{BasicScoringRule3}{{3.9}{10}{Research Progress}{equation.46}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Lexical Analysis and Preprocessing}{11}{subsection.47}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Implementation Progress}{11}{section.48}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Plan of Remaining Work}{12}{chapter.49}}
+\newlabel{BetaLookup}{{\caption@xref {BetaLookup}{ on input line 84}}{11}{Time-Specific Relevance and Item Removal}{table.caption.51}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces $\gamma $ lookup table\relax }}{11}{table.caption.51}}
+\newlabel{BasicTimeScoringRule}{{3.9}{11}{Time-Specific Relevance and Item Removal}{equation.50}{}}
+\newlabel{BasicScoringRule3}{{3.10}{11}{Time-Specific Relevance and Item Removal}{equation.52}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Lexical Analysis and Preprocessing}{12}{subsection.53}}
+\citation{Facebook4JExample}
+\citation{Twitter4JExample}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Software Design and Implementation}{13}{chapter.54}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Remaining work}{12}{section.50}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Algorithm and Java API Implementation}{12}{subsection.51}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Demonstration Application}{12}{subsection.52}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Planning and Contingency}{13}{section.53}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Algorithm and Java API Implementation}{13}{subsection.54}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Demonstration Application}{13}{subsection.55}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Contingency Planning}{13}{subsection.56}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Data Sources and Acquisition}{13}{section.55}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Acquisition}{13}{subsection.56}}
+\citation{DatumBox}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}DataItem Conversion and Structure}{14}{subsection.57}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}UserContext Acquisition and Structure}{14}{subsection.58}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Structure of Implementation}{14}{section.59}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Text Analysis}{14}{subsection.61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Class outlines showing instance variables and public methods\relax }}{15}{figure.caption.60}}
+\newlabel{classes}{{4.1}{15}{Class outlines showing instance variables and public methods\relax }{figure.caption.60}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Scoring Algorithm}{15}{subsection.62}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Design Considerations}{16}{section.63}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Speed Considerations}{16}{subsection.64}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Usability Considerations}{16}{subsection.65}}
+\newlabel{APIUsageExample}{{4.1}{16}{API usage example}{lstlisting.66}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}API usage example}{16}{lstlisting.66}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Planning and Progress}{18}{chapter.82}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Planning}{18}{section.83}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Gantt chart of planned work\relax }}{18}{figure.caption.84}}
+\newlabel{planningGantt}{{5.1}{18}{Gantt chart of planned work\relax }{figure.caption.84}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Progress}{19}{section.85}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Gantt chart of planned work\relax }}{19}{figure.caption.86}}
+\newlabel{finalGantt}{{5.2}{19}{Gantt chart of planned work\relax }{figure.caption.86}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Testing and Evaluation}{21}{chapter.87}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Test Environment}{21}{section.88}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Verification Strategy}{21}{section.89}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Test data}{22}{subsection.90}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Kendall's $\tau $ Coefficient for Agreement}{22}{subsection.91}}
+\newlabel{GeneralisedForm}{{6.1}{22}{Kendall's $\tau $ Coefficient for Agreement}{equation.92}{}}
+\newlabel{KendallsTau}{{6.2}{22}{Kendall's $\tau $ Coefficient for Agreement}{equation.93}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Key assumptions and limitations}{23}{subsection.94}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Kendall's $\tau $}{23}{section.95}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Kendall's $\tau $ distribution of all data types\relax }}{24}{figure.caption.96}}
+\newlabel{kendallsTauGraph}{{6.1}{24}{Kendall's $\tau $ distribution of all data types\relax }{figure.caption.96}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Kendall's $\tau $ distribution of social media\relax }}{24}{figure.caption.97}}
+\newlabel{kendallsTauGraph2}{{6.2}{24}{Kendall's $\tau $ distribution of social media\relax }{figure.caption.97}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Further Work}{26}{chapter.98}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Productivity-Related Data Scoring}{26}{section.99}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Social Media Scoring}{26}{section.100}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Preference Learning}{27}{section.101}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}API Speed Improvements}{27}{section.102}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusions}{29}{chapter.103}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\vspace  {2em}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Gantt Chart\relax }}{14}{figure.caption.57}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Project Brief}{15}{appendix.58}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Project Brief}{30}{appendix.104}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{projectBrief}{{A}{15}{Project Brief}{appendix.58}{}}
-\@writefile{toc}{\contentsline {paragraph}{Problem}{15}{section*.59}}
-\@writefile{toc}{\contentsline {paragraph}{Goals}{15}{section*.60}}
-\@writefile{toc}{\contentsline {paragraph}{Scope}{16}{section*.61}}
+\newlabel{projectBrief}{{A}{30}{Project Brief}{appendix.104}{}}
+\@writefile{toc}{\contentsline {paragraph}{Problem}{30}{section*.105}}
+\@writefile{toc}{\contentsline {paragraph}{Goals}{30}{section*.106}}
+\@writefile{toc}{\contentsline {paragraph}{Scope}{31}{section*.107}}
 \citation{Facebook4JExample}
 \citation{Facebook4JExample}
 \citation{Twitter4JExample}
 \citation{Twitter4JExample}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}API Code Examples}{17}{appendix.62}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}API Code Examples}{32}{appendix.108}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{exampleCode}{{B}{17}{API Code Examples}{appendix.62}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.1}Facebook4J example \cite  {Facebook4JExample}}{17}{lstlisting.63}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.2}Twitter4J example \cite  {Twitter4JExample}}{17}{lstlisting.71}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.3}Calendar Provider example}{17}{lstlisting.79}}
-\newlabel{GoogleTasksExample}{{B.4}{17}{Google Tasks example}{lstlisting.86}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.4}Google Tasks example}{17}{lstlisting.86}}
-\newlabel{AndroidSMSExample}{{B.5}{17}{Android SMS example}{lstlisting.88}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.5}Android SMS example}{17}{lstlisting.88}}
-\newlabel{DBTopicClassificationExample}{{B.6}{18}{DatumBox Topic Classification example}{lstlisting.105}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.6}DatumBox Topic Classification example}{18}{lstlisting.105}}
+\newlabel{exampleCode}{{B}{32}{API Code Examples}{appendix.108}{}}
+\newlabel{APIUsageExample}{{B.1}{32}{Facebook4J example \cite {Facebook4JExample}}{lstlisting.109}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.1}Facebook4J example \cite  {Facebook4JExample}}{32}{lstlisting.109}}
+\newlabel{APIUsageExample}{{B.2}{32}{Twitter4J example \cite {Twitter4JExample}}{lstlisting.117}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.2}Twitter4J example \cite  {Twitter4JExample}}{32}{lstlisting.117}}
+\newlabel{APIUsageExample}{{B.3}{32}{Calendar Provider example}{lstlisting.125}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.3}Calendar Provider example}{32}{lstlisting.125}}
+\newlabel{GoogleTasksExample}{{B.4}{32}{Google Tasks example}{lstlisting.132}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.4}Google Tasks example}{32}{lstlisting.132}}
+\newlabel{AndroidSMSExample}{{B.5}{32}{Android SMS example}{lstlisting.134}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.5}Android SMS example}{32}{lstlisting.134}}
+\newlabel{DBTopicClassificationExample}{{B.6}{33}{DatumBox Topic Classification example}{lstlisting.151}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {B.6}DatumBox Topic Classification example}{33}{lstlisting.151}}
 \@writefile{toc}{\vspace  {2em}}
 \bibstyle{unsrtnat}
 \bibdata{Bibliography}
@@ -122,5 +172,5 @@
 \bibcite{ReferralWeb}{{10}{1997}{{Kauts et~al.}}{{Kauts, Selman, and Shah}}}
 \bibcite{SenTagommender}{{11}{2009}{{S.~Sen and Riedl}}{{}}}
 \bibcite{FaginWimmers1}{{12}{2000}{{Fain and Wimmers}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{19}{dummy.119}}
-\newlabel{Bibliography}{{2}{19}{API Code Examples}{dummy.119}{}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{34}{dummy.165}}
+\newlabel{Bibliography}{{2}{34}{API Code Examples}{dummy.165}{}}

@@ -38,7 +38,7 @@ Sorting is required for ordering scored items of data into a list whereby the to
 Merge-sort which uses a divide-and-conquer approach is one of the most suitable for initial scoring of larger numbers of items. It is stable and due to its constant performance of $O(nlogn)$ and predictable in terms of execution time. 
 For nearly sorted lists such as scenarios where single or small numbers of data items (less than 10) may be added to an ordered list, insertion sort is superior in speed and simplicity to others and will have a performance of $O(n)$.
 
-Insertion sort is ideal for the requirements of this project. It is fast for small, largely sorted lists and easy to implement. The following insertion sort algorithm will sort items according to their score (Algorithm \ref{InsertionSort}).
+Insertion sort is ideal for the requirements of this project. It is fast for small and mostly sorted lists, and is basic to implement. The following insertion sort algorithm will sort items according to their score (Algorithm \ref{InsertionSort}).
 
 \begin{pseudocode}{InsertionSort}{A}
 	\label{InsertionSort}
@@ -63,9 +63,9 @@ This project requires flexibility in terms of its data sources. For the purposes
 
 Android data storage options include: shared preferences, internal storage, external storage, SQLite databases or on an external server accessed remotely \cite{BeginningAndroidDataPersistence}. Any number of these could be used to store information about the user, such as their preferences and UserContext which is required by the ranking agent. Internal storage will store text files in the file system. They are private to the user and other applications and can be used to store JSON objects. A database may be used to store test data and user-related data, but this would require extra code to manage this. Either internal or database storage would be perfectly adequate.
 
-\section{Recommendation Systems}
+\section{Recommender Systems}
 
-Recommendation systems aid users in finding relevant data and suggesting items which may be worth reading in more detail. This section explores the two types of filtering for recommendation and principles for exploiting them, with the mobile application particularly in view.
+Recommender systems aid users in finding relevant data and suggesting items which may be worth reading in more detail. This section explores the two types of filtering for recommendation and principles for exploiting them, with the mobile application particularly in view.
 
 \subsection{Collaborative Filtering}
 

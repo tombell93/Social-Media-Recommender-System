@@ -1,15 +1,29 @@
 \chapter{Further Work}
 
-This is some sample text.
+The primary aim of this project was to develop a recommender system ranking social media and productivity-related data according to its user- and time-specific relevance. There is significant room for future research and development of this idea in order both to satisfy the theoretical requirements of such a novel category  and to produce a fully operational API for personal or commercial applications. 
 
-\section{A Section}
+\section{Productivity-Related Data Scoring}
 
-This is some sample text.
+The current recommender system assumes that each task on a to-do list has both equal priority and takes an equal amount of time to prepare for. In addition, it does not account for tasks which have no due date set, but which may be important.
 
-\subsection{A Subsection}
+This problem requires the accommodation of variable-length reminders based upon the users specification, by adding a term into the exponent of the time-based scoring term, increasing the score above the threshold earlier for items which require earlier reminders. In addition, an avenue of research into the extent to which the priority of a task can be deduced purely from its content would be an interesting follow-up project.
 
-This is some sample text.
+\section{Social Media Scoring}
 
-\section{Another Section}
+One of the observations of this investigation has been the limited power that topic analysis has in determining the level of interest of an item of social media to a user. Preliminary investigations into the social reasons for this indicate that the relationship between the user and author of a particular item has a far greater influence on a user that the items topic. Consequently, the further development of the proposed algorithm is required to investigate the way that author-based scoring rather than topic-based scoring affects accuracy. 
 
-This is some sample text.
+This may be done using purely collaborative filtering methods to use information about the behaviour and activity of other users and their similarity to the user. Alternatively, a method of storing weights describing the relationship between the user and authors may be used, yet this would require significant amounts of prior information about the users personal relationships. 
+
+Furthermore, items of news, entertainment and blogs which derive their relevance largely from their topic may be introduced and scored using the existing topic-based scoring algorithm. 
+
+\section{Preference Learning}
+
+To adapt the algorithm for commercial applications in which a higher degree of flexibility of the range of data that can be used it required, a machine learning aspect is required. This would enable the score applied to future items to be based upon the level of interest the user has had for similar items in the past. 
+
+This could be implemented in a number of ways which could all be investigated, such as a linear feedback system, neural network or Bayesian network. Feedback would be sought from the users interaction with each item. This could be a positive interaction (click on item to select) or a negative reaction (swipe to remove). Each feedback indicator could be used to adjust a matrix of scoring weights which each correspond to a characteristic of the item interacted with. These characteristics may be the author, data-type or topic of the item and would later affect the score of future items with similar characteristics.  
+
+\section{API Speed Improvements}
+
+In order to improve the speed of the API and move towards a commercially viable prototype, the speed problem concerning the remote text analysis would need to be resolved. This may be done either by using a third party off-line text analytics library, or by manually implementing a custom textual analytics engine suited specifically for this task. This would have the further benefit of reducing internet connection costs for the user and in improving battery life for mobile applications which use the recommender system. 
+
+As discussed in the evaluation of the test results, a wider range of topics supported by the topic classification API used would be advantageous as it would provide more accurate information about the items which in turn increases the significance of a weight for each topic in the user profile. 

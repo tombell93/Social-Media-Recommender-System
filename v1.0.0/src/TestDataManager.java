@@ -73,48 +73,74 @@ public class TestDataManager {
     
     public static List<DataItem> loadData() throws IOException{
         List<DataItem> dataItems = new ArrayList<DataItem>();
-        
         Scanner reader = new Scanner(System.in);
-        System.out.println("Which data type do you want to load?");
-        System.out.println("Seperate by commas (no spaces): "
-                + "\n 1 - Appointment"
-                + "\n 2 - Email"
-                + "\n 3 - Facebook status"
-                + "\n 4 - SMS"
-                + "\n 5 - Task"
-                + "\n 6 - Tweet"
-                + "\n 7 - Cancel request");
+        System.out.println("What data do you want to load?");
+        System.out.println("Choose one: "
+                + "\n 1 - Data types"
+                + "\n 2 - Set of data");
         String userInput = reader.nextLine();
+        
+        if("1".equals(userInput)){
+            System.out.println("Which data type do you want to load?");
+            System.out.println("Seperate by commas (no spaces): "
+                    + "\n 1 - Appointment"
+                    + "\n 2 - Email"
+                    + "\n 3 - Facebook status"
+                    + "\n 4 - SMS"
+                    + "\n 5 - Task"
+                    + "\n 6 - Tweet"
+                    + "\n 7 - Cancel request");
+            userInput = reader.nextLine();
 
-        String dataTypes = "[" + userInput + "]";
-        String[] items = dataTypes.replaceAll("\\[", "").replaceAll("\\]", "").split(",");
-        List<Integer> results = new ArrayList<Integer>();
+            String dataTypes = "[" + userInput + "]";
+            String[] items = dataTypes.replaceAll("\\[", "").replaceAll("\\]", "").split(",");
+            List<Integer> results = new ArrayList<Integer>();
 
-        //Place each number into a list of integers representing data types
-        for (int i = 0; i < items.length; i++) {
-            try {
-                results.add(Integer.parseInt(items[i]));
-            } catch (NumberFormatException nfe) {}
+            //Place each number into a list of integers representing data types
+            for (int i = 0; i < items.length; i++) {
+                try {
+                    results.add(Integer.parseInt(items[i]));
+                } catch (NumberFormatException nfe) {}
+            }
+
+            if(results.contains(1)){
+                dataItems.addAll(loadTestData("Appointment"));
+            } 
+            if (results.contains(2)){
+                dataItems.addAll(loadTestData("Email"));
+            } 
+            if (results.contains(3)){
+                dataItems.addAll(loadTestData("FacebookStatus"));
+            } 
+            if (results.contains(4)){
+                dataItems.addAll(loadTestData("SMS"));
+            } 
+            if (results.contains(5)){
+                dataItems.addAll(loadTestData("Task"));
+            } 
+            if (results.contains(6)){
+                dataItems.addAll(loadTestData("Tweet"));
+            }
+        } else {
+            System.out.println("Which set do you want?");
+            System.out.println("Choose a set: "
+                    + "\n 1 - Set 1"
+                    + "\n 2 - Set 2"
+                    + "\n 3 - Set 3");
+            userInput = reader.nextLine();
+            
+            if ("1".equals(userInput)){
+                dataItems.addAll(loadSetOfTestData("1"));
+            } 
+            if ("2".equals(userInput)){
+                dataItems.addAll(loadSetOfTestData("2"));
+            } 
+            if ("3".equals(userInput)){
+                dataItems.addAll(loadSetOfTestData("3"));
+            }
         }
-
-        if(results.contains(1)){
-            dataItems.addAll(loadTestData("Appointment"));
-        } 
-        if (results.contains(2)){
-            dataItems.addAll(loadTestData("Email"));
-        } 
-        if (results.contains(3)){
-            dataItems.addAll(loadTestData("FacebookStatus"));
-        } 
-        if (results.contains(4)){
-            dataItems.addAll(loadTestData("SMS"));
-        } 
-        if (results.contains(5)){
-            dataItems.addAll(loadTestData("Task"));
-        } 
-        if (results.contains(6)){
-            dataItems.addAll(loadTestData("Tweet"));
-        }
+        
+        
         
         return dataItems;
         
@@ -311,6 +337,26 @@ public class TestDataManager {
         System.out.println("Loading " + dataType);
         DataItem dataItem = new DataItem();
         String location = "testData/" + dataType;
+        final File folder = new File(location);
+        List<String> files = TestDataManager.listFilesInFolder(folder);
+        
+        //TODO: Open each file in folder and load as DataItem to return
+        for(Iterator<String> i = files.iterator(); i.hasNext(); ) {
+            String file = folder.getPath() + "/" + i.next();
+            System.out.println("Loading " + file);
+            String fileContent = FileManager.readFile(file);
+            dataItem = gson.fromJson(fileContent, DataItem.class);
+            dataItems.add(dataItem);
+        }
+        return dataItems;
+    }
+    
+    private static List<DataItem> loadSetOfTestData(String setNumber) throws IOException {
+        List<DataItem> dataItems = new ArrayList<DataItem>();
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        System.out.println("Loading set number " + setNumber);
+        DataItem dataItem = new DataItem();
+        String location = "testData/setsOfTestData/" + setNumber;
         final File folder = new File(location);
         List<String> files = TestDataManager.listFilesInFolder(folder);
         

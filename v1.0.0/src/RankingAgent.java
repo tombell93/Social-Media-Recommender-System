@@ -1,14 +1,9 @@
-
-import com.alchemyapi.api.AlchemyAPI;
-import com.alchemyapi.api.AlchemyAPI_CategoryParams;
-import com.alchemyapi.api.AlchemyAPI_Params;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.xml.sax.SAXException;
-import org.w3c.dom.Document;
 import java.io.*;
 import java.util.Collections;
 import java.util.Comparator;
@@ -18,11 +13,6 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathExpressionException;
 
 /**
@@ -39,7 +29,7 @@ public class RankingAgent {
     private DataContextBuilder dataContextBuilder = new DataContextBuilder();
     private static String[] categories = {"Arts", "News", 
         "Computers & Technology", "Business & Economy", "Reference & Education", 
-        "Health", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
+        "Health", "Science", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
     
     /**
      * TODO: Figure out how to remove old and irrelevant DataItems from list
@@ -75,7 +65,6 @@ public class RankingAgent {
         dataItemsWithContext = 
                 dataContextBuilder.buildDataContexts(addedDataItems);
         
-        //TODO: Implement 3rd
         //Score new DataItems before sorting
         System.out.println("Scoring data");  
         List<DataItem> newScoredDataItems = 
@@ -113,16 +102,15 @@ public class RankingAgent {
     private List<DataItem> sortNewScoredDataItems(List<DataItem> unsortedDataItems) {
         List<DataItem> tempDataItems = sortedDataItems;
         tempDataItems.addAll(unsortedDataItems);
-        //Insert unsortedDataItems into tempDataItems
         
         for (DataItem dataItem : tempDataItems){
-            System.out.println("Before sorting on price: " + dataItem.getScore().toString());
+            System.out.println("Before sorting: " + dataItem.getScore().toString());
         }
         
         Collections.sort(tempDataItems, comparator);
 
         for (DataItem dataItem : tempDataItems){
-            System.out.println("After sorting on price: " + dataItem.getScore().toString());
+            System.out.println("After sorting: " + dataItem.getScore().toString() + " ID: " + dataItem.getId());
         }
         
         //When implemented return tempDataItems
@@ -136,11 +124,6 @@ public class RankingAgent {
             return (int)((o1.getScore() - o2.getScore())*ACCURACY);
         }
     };
-
-    private void runMaintenance() {
-        //Maintain sortedDataItems by reviewing the relevance of each
-        //Remove DataItems which have become irrelevant
-    }
 
     private void updateShownTimes() {
         List<DataItem> updatedShownTimesDataItems = new ArrayList();

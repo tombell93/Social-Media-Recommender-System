@@ -30,7 +30,7 @@ public class UserContext{
     
     private static String[] categories = {"Arts", "News", 
         "Computers & Technology", "Business & Economy", "Reference & Education", 
-        "Health", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
+        "Health", "Science", "Society", "Sports", "Home & Domestic Life", "Shopping", "Recreation & Activities"};
 
     private Map<String, Double> featuresMap = new HashMap<String, Double>();
     

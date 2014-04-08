@@ -1,31 +1,48 @@
-\chapter{Design Detail and Specification}
+\chapter{Software Design and Implementation}
 
-Describe the overall specification - what it should do.
+After conducting the required theoretical research, this project sought to implement a Java API for ordering a range different kinds of data, based upon the users topic preferences and time-of-day, for relevance. This section details the technical specification of the Java library and the important implementation considerations.
 
 \section{Data Sources and Acquisition}
 
-This is some sample text.
+A host of different kinds of data which are available to smart-phones, are to be used in this project. Their respective sources are available through social media and Google accounts. 
 
-\subsection{Data Acquisition}
+\subsection{Acquisition}
 
-This is some sample text.
+The API does not include the configuration up of the data sources, since these are implemented externally to the API for maximum flexibility as to the sources of data used. For reference, Facebook statuses \cite{Facebook4JExample} and Tweets \cite{Twitter4JExample} are acquired from their respective APIs, as discussed in the Literature review. The calendar is retrieved by querying Google's Android contentResolver; tasks are queried from the standard Android tasks service and SMS messages through using an intent which returns a Bundle of messages (Appendix \ref{exampleCode}).
 
-\subsection{Data Item Conversion}
+\subsection{DataItem Conversion and Structure}
 
-This is some sample text.
+A DataItem is a generalised representation of an item of data of any type. When the item is initially acquired on the device, the software using the API would instantiate a new DataItem and set its instance variables with the data from the source object (i.e. Facebook Status from the Facebook4J API). 
 
-\subsection{User Profile Acquisition}
+TODO: Specify DataItem structure
 
-This is some sample text.
+\subsection{UserContext Acquisition and Structure}
 
-\section{Scoring Algorithm}
+The UserContext is an object which represents the users topic preferences. There are 12 scores which are given a score between 1 and 10, where 10 indicates a high-priority topic preference. The UserContext should be instantiated outside of the RankingAgent and passed into its constructor. This gives the user of the API maximum flexibility in where to set up the UserContext. 
 
-This is some sample text.
+TODO: Specify UserContext structure
 
 \section{Ranking Algorithm}
 
-This is some sample text.
+DataItems are collected outside the RankingAgent and passed into its 'update' instance method as a List<DataItem>. Here they are be analysed, scored and ordered for relevance
 
-\section{Android Demonstration}
+\subsection{Text Analysis}
 
-This is some sample text.
+The DatumBox \cite{DatumBox} remote textual analytics API is used to collect data about the item of data. Most importantly it assigns the item with a topic and a score of how closely it matches that topic. 
+
+\subsection{Scoring Algorithm}
+
+The stages of the scoring algorithm were be implemented sequentially. Firstly, DataItems are analysed for their topic using the text analysis library DatumBox \cite{DatumBox}. They are analysed for a variety of exclusion criteria (such as 'Spam detection', 'Adult content detection' and 'Readability detection') which are also included in the DatumBox service API. This process instantiates a DataItemContext object and attaches it to the DataItem.
+Once the DataItem has a DataItemContext, it is scored by implementing the proposed novel algorithm \ref{BasicScoringRule3}. This 'Scorer' class returns a List<DataItem> of scored DataItems. The DataItem's are then sorted and returned to the parent class.
+
+\subsection{Speed Considerations}
+
+\section{Testing Environment}
+
+In order to efficiently create and manage test data, and to observe the output of the ranking algorithm a testing environment was implemented as a wrapper program around the API. This is a Java command-line application which enables test DataItems to be entered by hand and stored in an organised JSON object database.
+A file manager class ('FileManager') was developed to store static methods for reading to and writing from text files. A test data manager class ('TestDataManager') was created which manages customised test data creation for each of the available types of data items; directory scanning for finding subsets of the test data; the loading of test data items and of sets of data items. 
+
+
+
+
+

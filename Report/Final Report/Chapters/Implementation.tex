@@ -1,11 +1,80 @@
-\chapter{Implementation}
+\chapter{Software Design and Implementation}
 
-This is some sample text.
+After conducting the required theoretical research, this project sought to implement a Java API for ordering a range different kinds of data, based upon the users topic preferences and time-of-day, for relevance. This section details the technical specification of the Java library and the important implementation considerations.
 
-\section{API Development}
+\section{Data Sources and Acquisition}
 
-This is some sample text.
+A host of different kinds of data which are available to smart-phones, are to be used in this project. Their respective sources are available through social media and Google accounts. 
 
-\section{Android App Development}
+\subsection{Acquisition}
 
-This is some sample text.
+The API does not include the configuration up of the data sources, since these are implemented externally to the API for maximum flexibility as to the sources of data used. For reference, Facebook statuses \cite{Facebook4JExample} and Tweets \cite{Twitter4JExample} are acquired from their respective APIs, as discussed in the Literature review. The calendar is retrieved by querying Google's Android ContentResolver; tasks are queried from the standard Android tasks service and SMS messages through using an intent which returns a Bundle of messages (Appendix \ref{exampleCode}). 
+
+\subsection{DataItem Conversion and Structure}
+
+A DataItem is a generalised representation of an item of data of any type. When the item is initially acquired on the device, the software using the API would instantiate a new DataItem and set its instance variables (Figure \ref{classes}) with the data from the source object (i.e. Facebook Status from the Facebook4J API). 
+
+\subsection{UserContext Acquisition and Structure}
+
+The UserContext is an object which represents the users topic preferences (Figure \ref{classes}). There are 12 scores which are given a score between 1 and 10, where 10 indicates a high-priority topic preference. The UserContext should be instantiated outside of the RankingAgent and passed into its constructor. This gives the user of the API maximum flexibility in where to set up the UserContext. 
+
+\section{Structure of Implementation}
+
+The API is encapsulated in a RankingAgent class (classes referred to are outlines in Figure \ref{classes}). This class abstracts away the complexity of the main stages of the recommender algorithm. The RankingAgent contains a List of unsortedDataItems and the UserContext. The unsortedDataItems are passed into the DataContextBuilder which contructs a DataContext object which describes the relevant aspects of the item of data. The RankingAgent then passes the unsortedDataItems and the UserContext into the Scorer which is a class for assigning a score to a DataItem. A List of scored DataItem's is returned to the RankingAgent where they are ordered from least to greatest score. 
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=155mm]{images/ProjectClasses.png}
+	\caption{Class outlines showing instance variables and public methods}
+	\label{classes}
+\end{figure}
+
+\subsection{Text Analysis}
+
+The DatumBox \cite{DatumBox} remote textual analytics API is used to collect analytical information about the item of data. Most importantly it assigns the item with a topic and a score of how closely it matches that topic. The SentimentAPI class (outline in Figure \ref{classes}) was implemented to handle the connection of the API to the DatumBox server and detect specific features pertaining to the nature of the content of each item of data. These include the topic classification, spam detection and language detection features among others, which are included in the scoring algorithm. 
+The SentimentAPI is used by the DataContextBuilder in its construction of the DataContext for a DataItem. 
+
+\subsection{Scoring Algorithm}
+
+Once the DataItem has a DataItemContext, it is scored by implementing the proposed novel algorithm (Eqn. \ref{BasicScoringRule3}). DataItem objects may be scored as a List of DataItems, or as single DataItem's. 
+Inside the Scorer, the UserContext is compared to the DataContext. Within each there is a HashMap matching a Topic (String, Key) to a Score (Double, Value) called the featuresMap. This is a map of the score of each 'feature' or 'topic' which may describe the DataItem.
+If the DataItem is of a type such that the criterion that it should be scored by is its time-relevance (i.e. Appointment or Task), a score is applied based upon whether or not it has reached the time threshold of relevance. If the DataItem is of a type such that it should scored based upon its content, the FeaturesMap of the UserContext is compared for similarity to the featuresMap of the DataContext of the DataItem.
+Since the DatumBox API is limited to quantifying the relevance of only the most appropriate topic for the DataItem, the implementation of the recommender algorithm simply compares the relevance of that topic to the corresponding score of the UserContext for that topic. 
+This Scorer class returns a List of scored DataItem's. The DataItem's are then sorted and returned to the parent class.
+
+\section{Design Considerations}
+
+In the software implementation of the API, there were a number of design decisions which were made in order to maximise the functionality, efficiency and flexibility of the use of the API. 
+
+\subsection{Speed Considerations}
+
+Since the API uses a remote server to perform text analysis on the DataItem's, there is incurred a significant delay while waiting for the response to be returned. The DatumBox API is limited in accepting only one string of text per request and as such, text analysis cannot be done in a single POST request to the server. This could not be avoided without using a different text analysis service, however since this is an API for simply demonstrating the behaviour of the recommender system and not a commercially viable prototype, speed is not a huge concern. 
+A single request take approximately 1400 milliseconds, so in order to rank 10 DataItem's it takes around 15 seconds. When the other analysis features of the DatumBox API are used this is increased to around 98 seconds to account for the additional requests. 
+Computational delay was not considered as there is an insignificant amount of computational processing required for post-analysis scoring. 
+
+\subsection{Usability Considerations}
+
+The recommender system API has a single and simple function and consequently has been designed to have simple usage. 
+
+\lstset{language=Java, caption=API usage example, label=APIUsageExample}
+\begin{lstlisting}
+// Declare Ranking agent and the List of DataItems to store output
+public static RankingAgent rankingAgent;
+public static List<DataItem> rankedDataItems = new ArrayList<DataItem>();
+
+// Setup UserContext object from any source
+UserContext userContext = getUserContext();
+
+// Load source data from any source
+List<DataItem> dataItems = TestDataManager.loadData();
+
+// Instantiate RankingAgent with UserContext
+rankingAgent = new RankingAgent(userContext); 
+
+// Call 'update' method to add, analyse, score and sort dataItems
+rankedDataItems = rankingAgent.update(dataItems);
+\end{lstlisting}
+
+In the command-line application the Prioritiser class uses the RankingAgent API to demonstrate its usage (See Listing \ref{APIUsageExample}. A RankingAgent object is instantiated, as is a List of DataItem's to be used to store the ranked DataItem's. A UserContext is instantiated and initialised from a stored JSON file, however this can be initialised explicitly. It is passed into the constructor of the RankingAgent. The raw items of data are loaded from the JSON-file database and passed into the update method of the RankingAgent. This method returns an analysed, scored and ordered List of the most relevant DataItem objects to the user. 
+
+
