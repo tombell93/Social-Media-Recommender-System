@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  8 APR 2014 21:34
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  10 APR 2014 14:46
 entering extended mode
 **Thesis.tex
 
@@ -670,10 +670,6 @@ Chapter 2.
 ------------------------------------------------------------------------------
  2 Background and Report of Literature Review
 ------------------------------------------------------------------------------
-
-Package natbib Warning: Citation `StreamLife' on page 3 undefined on input line
- 9.
-
 [3
 
 ] [4] [5] [6])
@@ -683,10 +679,6 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Algorithm Design
 ------------------------------------------------------------------------------
-
-Package natbib Warning: Citation `OkapiBM25Paper' on page 8 undefined on input 
-line 12.
-
 [8
 
 ] [9] [10]) [11]
@@ -698,7 +690,7 @@ Chapter 4.
 ------------------------------------------------------------------------------
 [13
 
-] <images/ProjectClasses.png, id=453, 575.90157pt x 541.27219pt>
+] <images/ProjectClasses.png, id=468, 575.90157pt x 541.27219pt>
 File: images/ProjectClasses.png Graphic file (type png)
 
 <use images/ProjectClasses.png>
@@ -723,7 +715,7 @@ Chapter 5.
 ------------------------------------------------------------------------------
  5 Planning and Progress
 ------------------------------------------------------------------------------
-<images/planningGantt.png, id=498, 1204.5pt x 390.70969pt>
+<images/planningGantt.png, id=513, 1204.5pt x 390.70969pt>
 File: images/planningGantt.png Graphic file (type png)
 
 <use images/planningGantt.png>
@@ -733,7 +725,7 @@ Package pdftex.def Info: images/planningGantt.png used on input line 12.
 
  <C:/Users/tom/Documents/Individual Project/Project/Report/Final Report/images/
 planningGantt.png>]
-<images/finalGanttChart.png, id=506, 1090.82532pt x 743.02594pt>
+<images/finalGanttChart.png, id=521, 1090.82532pt x 743.02594pt>
 File: images/finalGanttChart.png Graphic file (type png)
 
 <use images/finalGanttChart.png>
@@ -752,53 +744,53 @@ Chapter 6.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 18.
+(hyperref)                removing `math shift' on input line 19.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 18.
+(hyperref)                removing `\tau' on input line 19.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 18.
+(hyperref)                removing `math shift' on input line 19.
 
 [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 42.
+(hyperref)                removing `math shift' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 42.
+(hyperref)                removing `\tau' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 42.
+(hyperref)                removing `math shift' on input line 45.
 
-<images/graph1.png, id=533, 959.08313pt x 608.2725pt>
+<images/graph1.png, id=547, 959.08313pt x 608.2725pt>
 File: images/graph1.png Graphic file (type png)
  <use images/graph1.png>
-Package pdftex.def Info: images/graph1.png used on input line 49.
+Package pdftex.def Info: images/graph1.png used on input line 52.
 (pdftex.def)             Requested size: 439.15318pt x 278.51862pt.
 
-<images/graph2.png, id=536, 960.58875pt x 608.2725pt>
+[23] <images/graph2.png, id=555, 960.58875pt x 608.2725pt>
 File: images/graph2.png Graphic file (type png)
- <use images/graph2.png>
-Package pdftex.def Info: images/graph2.png used on input line 63.
-(pdftex.def)             Requested size: 439.15318pt x 278.0824pt.
 
-[23] [24 <C:/Users/tom/Documents/Individual Project/Project/Report/Final Report
-/images/graph1.png> <C:/Users/tom/Documents/Individual Project/Project/Report/F
-inal Report/images/graph2.png>])
+<use images/graph2.png>
+Package pdftex.def Info: images/graph2.png used on input line 66.
+(pdftex.def)             Requested size: 439.15318pt x 278.0824pt.
+)
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Final Report\Chapter
-s/FurtherWork.tex" [25]
+s/FurtherWork.tex" [24 <C:/Users/tom/Documents/Individual Project/Project/Repor
+t/Final Report/images/graph1.png>] [25 <C:/Users/tom/Documents/Individual Proje
+ct/Project/Report/Final Report/images/graph2.png>]
 Chapter 7.
 ------------------------------------------------------------------------------
  7 Further Work
 ------------------------------------------------------------------------------
 [26
 
-]) [27]
+] [27])
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Final Report\Chapter
 s/Conclusion.tex" [28]
 Chapter 8.
@@ -845,33 +837,30 @@ Appendix B.
 
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Final Report\Thesis.
 bbl")
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
-[34
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
+ [34
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
 
 ("C:\Users\tom\Documents\Individual Project\Project\Report\Final Report\Thesis.
 aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6022D29C3A7F7F5462E715CA1F209FF5;10469.
+(rerunfilecheck)             Checksum: 19D29FBFE072749C6EA66570B5643F23;10779.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 14629 strings out of 493921
- 209696 string characters out of 3144882
- 321900 words of memory out of 3000000
- 17471 multiletter control sequences out of 15000+200000
+ 14642 strings out of 493921
+ 209930 string characters out of 3144882
+ 321985 words of memory out of 3000000
+ 17480 multiletter control sequences out of 15000+200000
  17309 words of font info for 67 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  49i,21n,45p,13211b,1755s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -896,9 +885,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2
 onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Thesis.pdf (38 pages, 652183 bytes).
+Output written on Thesis.pdf (38 pages, 661017 bytes).
 PDF statistics:
- 773 PDF objects out of 1000 (max. 8388607)
- 217 named destinations out of 1000 (max. 500000)
- 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 790 PDF objects out of 1000 (max. 8388607)
+ 221 named destinations out of 1000 (max. 500000)
+ 506 words of extra memory for PDF output out of 10000 (max. 10000000)
 

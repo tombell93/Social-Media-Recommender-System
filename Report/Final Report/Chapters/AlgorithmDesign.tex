@@ -4,7 +4,7 @@ This section reviews the state-of-the-art and explains my theoretical findings a
 
 \section{User Profile}
 
-In order for items to be scored according to their user-specific relevance, a user profile must be used to specify the users item attribute preferences. A users preferences will be modelled as a tuple $U$ of attributes $u_k$ which gives the users preference for each topic. This is the user profile.
+In order for items to be scored according to their user-specific relevance, a user profile must be used to specify the users item attribute preferences. A users preferences will be modelled as a tuple $U$ of attributes $u_k$ which gives the users a preference for each topic. This is the user profile.
 
 \section{Topic-classification scoring formulae}
 
@@ -15,7 +15,7 @@ Term frequency is the most frequently used and widely explored approach to under
 	\sum\limits_{t\in d \bigcap q} \ln{\frac{N-df+0.5}{df+0.5}}\centerdot \frac{tf}{0.5+1.5 \centerdot \frac{dl}{avdl}+tf} \centerdot R
 \end{equation}
 
-Here $df$ is the document frequency (documents in a collection) and $tf$ is simply the term frequency (to occurrences of a term in a particular document). $avdl$ is the average document length and $R$ is a component which limits the range over which the term rank has an effect. 
+Here $df$ is the document frequency (documents in a collection) and $tf$ is simply the term frequency (occurrences of a term in a particular document). $avdl$ is the average document length and $R$ is a component which limits the range over which the term rank has an effect. 
 
 Topic classification is done remotely using a similar technique using multiple term frequency using weights which describe how closely each term relates to the specified topic. This classification provides us with information about our item of data which can be used to rank it according to its relevance. 
 
@@ -23,7 +23,7 @@ Topic classification is done remotely using a similar technique using multiple t
 
 In order to rank data according to its relevance, it must first be scored according to its relevance. Scoring uses a recommendation system in which an item of data is allocated a tuple of attribute scores. These are compared to the users profile to give the item a score.
 
-Relevance is defined here as the extent to which the score of each attribute of an item matches the preference score of the user for that attribute. Attribute-specific scores are found by comparing the complementary user preference and data-item attributes according to a well defined scoring rule. 
+Relevance is defined here as the extent to which the score of each attribute of an item matches the preference score of the user for that attribute. Attribute-specific scores are found by comparing the complementary user preference and item attributes according to a well defined scoring rule. 
 
 Using the unweighted scoring rule
 
@@ -48,23 +48,23 @@ f_U (D) &= \left(\sum_{n=1}^{M-1} n (u_{\sigma{(n)}} - u_{\sigma{(n+1)}})\times 
 \\ &= u_1d_1 + u_2d_2 + \dots + u_Md_M
 \end{align}
 
-This led to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{BasicScoringRule}).
+to give an expanded form of the weighted rule. This led to the proof of an intuitive linear weighted scoring rule (Eqn. \ref{BasicScoringRule}).
 
 \begin{equation}\label{BasicScoringRule}
 f_U (D) = \sum_{k=1}^{M-1} u_kd_k
 \end{equation}
 
-\subsection{Time-Specific Relevance and Item Removal}
+\subsection{Item Removal and Time-Specific Relevance}
 
-As items are received, they are scored and ordered, however an item may be relevant in terms of topic, but not in terms of age since its creation. It may have been created a long time ago and thus needs removing to make way for new items. Here, an item-deletion term ${\mathrm{e}}^{-\alpha t(d)}$ is added, where $t(d)$ is the minutes lapsed since the receiving of item $d$ and $\alpha$ is a delay coefficient. As time increases, the item-removal term tends to zero. This gives us
+As items are received, they are scored and ordered, however an item may be relevant in terms of the time since its creation, but not in terms of topic. It may have been created a long time ago and thus needs removing to make way for new items. Here, an item-deletion term ${\mathrm{e}}^{-\alpha t(d)}$ is added, where $t(d)$ is the minutes lapsed since the receiving of item $d$ and $\alpha$ is a delay coefficient. As time increases, the item-removal term tends to zero. This gives us
 
 \begin{equation}\label{BasicScoringRule2}
 	f_U (D) = {\mathrm{e}}^{-\alpha t(d)} \times \sum_{k=1}^{m-1} u_kd_k
 \end{equation}
 
-This exponential deletion function is used as it keeps new items at the top for longer. A polynomial could have been used with similar effects, but a linear decay would have cause the item to fall down the ranked list too quickly.
+An \emph{exponential} deletion function is used as it keeps new items at the top for longer. A polynomial could have been used with similar effects, but a linear decay would have caused the item to fall down the ranked list too quickly early on.
 
-In contrast to social information, the relevance of productivity related information is not usually based upon its topic, for example the relevance of a calendar appointment for a meeting or a dentist appointment cannot be assessed according to the principles used above. Its topic-classification is not useful in commenting on its relevance. This situation calls for a weighting which is based not upon topic-relevance, but upon time-relevance. It must complement topic-relevance so as not to affect the ranking order of non-time-specific items of data. 
+In contrast to social information, the relevance of productivity related information is not usually based upon its topic, for example the relevance of a calendar appointment for a meeting or a dentist appointment cannot be assessed according to the principles used above. Its topic-classification is not useful in commenting on its relevance. This situation calls for a rule which is based not upon topic-relevance, but upon time-relevance. It must complement topic-relevance so as not to affect the ranking order of non-time-specific items of data. 
 
 This weighting may be implemented using 
 \begin{enumerate}
@@ -79,7 +79,7 @@ Time scoring may better be done using a continuous increasing term whose value i
 \end{equation}
 
 The exponential decay rate, similar to that of entropy in information theory is used to cause the rate at which score increases to increase as the deadline approaches. 
-Here, a parameter $\gamma$ is introduced to control the relative weight between the topic-scoring term and the time-based scoring term. A static look-up matrix may be used to find the value of $\gamma$ such that score is derived from the correct term given the nature of the item's relevance to the user (See lookup table).
+Here, a parameter $\gamma$ is introduced to control the relative weight between the topic-scoring term and the time-based scoring term. A static look-up matrix may be used to find the value of $\gamma$ such that score is derived from the correct term given the nature of the item's relevance to the user (See lookup table). This coefficient could be a decimal value for future items which are relevant for time- and topic-related factors. 
 
 \begin{table}\label{BetaLookup}
 \begin{center}
@@ -97,8 +97,8 @@ Here, a parameter $\gamma$ is introduced to control the relative weight between 
 \end{center}
 \end{table}
 
-A normalisation constant is introduced in the topic-related term so ensure it is smaller than time-related scores. The maximum value of a topic-score is 10 and there are 12 topics, so the maximum score is 120. The maximum score of the time-related term is 1, giving us the normalisation constant of 1/120.
-This gives the normalised weighted scoring function, which incorporates both topic-relevance and time-relevance into a single equation (Eqn. \ref{BasicScoringRule3}).
+A normalisation constant is introduced in the topic-related term to ensure it is smaller than time-related scores. The maximum value of a topic-score is 10 and there are 12 topics, so the maximum score is 120. The maximum score of the time-related term is 1, giving us the normalisation constant of 1/120.
+This gives the normalised weighted scoring function, which incorporates both topic-relevance and time-relevance into a single equation (Eqn. \ref{BasicScoringRule3}). 
 
 \begin{equation}\label{BasicScoringRule3}
 	f_U (D) = \left[\frac{{\mathrm{e}}^{-\alpha t(d)} \times (1-\gamma) \sum_{k=1}^{m-1} u_kd_k}{120} \right] + \gamma{\mathrm{e}}^{\ (t_{threshold}-t_{tillDue}(D))}

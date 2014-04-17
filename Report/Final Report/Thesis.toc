@@ -3,59 +3,61 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.3}
 \contentsline {section}{\numberline {1.1}The Problem}{1}{section.4}
 \contentsline {section}{\numberline {1.2}Project Objective}{1}{section.5}
-\contentsline {section}{\numberline {1.3}Goals}{1}{section.6}
-\contentsline {section}{\numberline {1.4}Unique Features}{2}{section.18}
-\contentsline {chapter}{\numberline {2}Background and Report of Literature Review}{3}{chapter.19}
-\contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{3}{section.20}
-\contentsline {section}{\numberline {2.2}Text Analytics Libraries}{3}{section.21}
-\contentsline {section}{\numberline {2.3}Data-Mining}{4}{section.22}
-\contentsline {section}{\numberline {2.4}Semantic Analysis}{4}{section.23}
-\contentsline {subsection}{\numberline {2.4.1}DatumBox API and Usage}{5}{subsection.24}
-\contentsline {section}{\numberline {2.5}Sorting Algorithms}{5}{section.25}
-\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{5}{section.27}
-\contentsline {section}{\numberline {2.7}Recommender Systems}{6}{section.28}
-\contentsline {subsection}{\numberline {2.7.1}Collaborative Filtering}{6}{subsection.29}
-\contentsline {subsection}{\numberline {2.7.2}Content-Based Filtering}{6}{subsection.30}
-\contentsline {subsection}{\numberline {2.7.3}Hybrid Recommender Systems}{7}{subsection.31}
-\contentsline {subsection}{\numberline {2.7.4}The Utility Matrix}{7}{subsection.32}
-\contentsline {chapter}{\numberline {3}Algorithm Design}{8}{chapter.35}
-\contentsline {section}{\numberline {3.1}User Profile}{8}{section.36}
-\contentsline {section}{\numberline {3.2}Topic-classification scoring formulae}{8}{section.37}
-\contentsline {section}{\numberline {3.3}Scoring Rule}{9}{section.39}
-\contentsline {subsection}{\numberline {3.3.1}Time-Specific Relevance and Item Removal}{10}{subsection.46}
-\contentsline {subsection}{\numberline {3.3.2}Lexical Analysis and Preprocessing}{12}{subsection.53}
-\contentsline {chapter}{\numberline {4}Software Design and Implementation}{13}{chapter.54}
-\contentsline {section}{\numberline {4.1}Data Sources and Acquisition}{13}{section.55}
-\contentsline {subsection}{\numberline {4.1.1}Acquisition}{13}{subsection.56}
-\contentsline {subsection}{\numberline {4.1.2}DataItem Conversion and Structure}{14}{subsection.57}
-\contentsline {subsection}{\numberline {4.1.3}UserContext Acquisition and Structure}{14}{subsection.58}
-\contentsline {section}{\numberline {4.2}Structure of Implementation}{14}{section.59}
-\contentsline {subsection}{\numberline {4.2.1}Text Analysis}{14}{subsection.61}
-\contentsline {subsection}{\numberline {4.2.2}Scoring Algorithm}{15}{subsection.62}
-\contentsline {section}{\numberline {4.3}Design Considerations}{16}{section.63}
-\contentsline {subsection}{\numberline {4.3.1}Speed Considerations}{16}{subsection.64}
-\contentsline {subsection}{\numberline {4.3.2}Usability Considerations}{16}{subsection.65}
-\contentsline {chapter}{\numberline {5}Planning and Progress}{18}{chapter.82}
-\contentsline {section}{\numberline {5.1}Planning}{18}{section.83}
-\contentsline {section}{\numberline {5.2}Progress}{19}{section.85}
-\contentsline {chapter}{\numberline {6}Testing and Evaluation}{21}{chapter.87}
-\contentsline {section}{\numberline {6.1}Test Environment}{21}{section.88}
-\contentsline {section}{\numberline {6.2}Verification Strategy}{21}{section.89}
-\contentsline {subsection}{\numberline {6.2.1}Test data}{22}{subsection.90}
-\contentsline {subsection}{\numberline {6.2.2}Kendall's $\tau $ Coefficient for Agreement}{22}{subsection.91}
-\contentsline {subsection}{\numberline {6.2.3}Key assumptions and limitations}{23}{subsection.94}
-\contentsline {section}{\numberline {6.3}Kendall's $\tau $}{23}{section.95}
-\contentsline {chapter}{\numberline {7}Further Work}{26}{chapter.98}
-\contentsline {section}{\numberline {7.1}Productivity-Related Data Scoring}{26}{section.99}
-\contentsline {section}{\numberline {7.2}Social Media Scoring}{26}{section.100}
-\contentsline {section}{\numberline {7.3}Preference Learning}{27}{section.101}
-\contentsline {section}{\numberline {7.4}API Speed Improvements}{27}{section.102}
-\contentsline {chapter}{\numberline {8}Conclusions}{29}{chapter.103}
+\contentsline {section}{\numberline {1.3}Goals}{2}{section.6}
+\contentsline {section}{\numberline {1.4}Unique Features}{2}{section.17}
+\contentsline {chapter}{\numberline {2}Background and Report of Literature Review}{3}{chapter.18}
+\contentsline {section}{\numberline {2.1}Existing Data-Ranking Implementations}{3}{section.19}
+\contentsline {section}{\numberline {2.2}Text Analytics Libraries}{3}{section.20}
+\contentsline {section}{\numberline {2.3}Data-Mining}{4}{section.21}
+\contentsline {section}{\numberline {2.4}Semantic Analysis}{4}{section.22}
+\contentsline {subsection}{\numberline {2.4.1}DatumBox API and Usage}{5}{subsection.23}
+\contentsline {section}{\numberline {2.5}Sorting Algorithms}{5}{section.24}
+\contentsline {section}{\numberline {2.6}Data Sources and Persistence}{5}{section.26}
+\contentsline {section}{\numberline {2.7}Recommender Systems}{6}{section.27}
+\contentsline {subsection}{\numberline {2.7.1}Collaborative Filtering}{6}{subsection.28}
+\contentsline {subsection}{\numberline {2.7.2}Content-Based Filtering}{6}{subsection.29}
+\contentsline {subsection}{\numberline {2.7.3}Hybrid Recommender Systems}{7}{subsection.30}
+\contentsline {subsection}{\numberline {2.7.4}The Utility Matrix}{7}{subsection.31}
+\contentsline {chapter}{\numberline {3}Algorithm Design}{8}{chapter.34}
+\contentsline {section}{\numberline {3.1}User Profile}{8}{section.35}
+\contentsline {section}{\numberline {3.2}Topic-classification scoring formulae}{8}{section.36}
+\contentsline {section}{\numberline {3.3}Scoring Rule}{9}{section.38}
+\contentsline {subsection}{\numberline {3.3.1}Item Removal and Time-Specific Relevance}{10}{subsection.45}
+\contentsline {subsection}{\numberline {3.3.2}Lexical Analysis and Preprocessing}{12}{subsection.52}
+\contentsline {chapter}{\numberline {4}Software Design and Implementation}{13}{chapter.53}
+\contentsline {section}{\numberline {4.1}Data Sources and Acquisition}{13}{section.54}
+\contentsline {subsection}{\numberline {4.1.1}Acquisition}{13}{subsection.55}
+\contentsline {subsection}{\numberline {4.1.2}DataItem Conversion and Structure}{14}{subsection.56}
+\contentsline {subsection}{\numberline {4.1.3}UserContext Acquisition and Structure}{14}{subsection.57}
+\contentsline {section}{\numberline {4.2}Structure of Implementation}{14}{section.58}
+\contentsline {subsection}{\numberline {4.2.1}Text Analysis}{14}{subsection.60}
+\contentsline {subsection}{\numberline {4.2.2}Scoring Algorithm}{15}{subsection.61}
+\contentsline {section}{\numberline {4.3}Design Considerations}{16}{section.62}
+\contentsline {subsection}{\numberline {4.3.1}Speed Considerations}{16}{subsection.63}
+\contentsline {subsection}{\numberline {4.3.2}Usability Considerations}{16}{subsection.64}
+\contentsline {chapter}{\numberline {5}Planning and Progress}{18}{chapter.81}
+\contentsline {section}{\numberline {5.1}Planning}{18}{section.82}
+\contentsline {section}{\numberline {5.2}Progress}{19}{section.84}
+\contentsline {chapter}{\numberline {6}Testing and Evaluation}{21}{chapter.86}
+\contentsline {section}{\numberline {6.1}Test Environment}{21}{section.87}
+\contentsline {section}{\numberline {6.2}Verification Strategy}{21}{section.88}
+\contentsline {subsection}{\numberline {6.2.1}Test data}{22}{subsection.89}
+\contentsline {subsection}{\numberline {6.2.2}Kendall's $\tau $ Coefficient for Agreement}{22}{subsection.90}
+\contentsline {subsection}{\numberline {6.2.3}Key assumptions and limitations}{23}{subsection.93}
+\contentsline {section}{\numberline {6.3}Kendall's $\tau $}{23}{section.94}
+\contentsline {chapter}{\numberline {7}Further Work}{26}{chapter.97}
+\contentsline {section}{\numberline {7.1}Verification}{26}{section.98}
+\contentsline {section}{\numberline {7.2}Productivity-Related Data Scoring}{26}{section.99}
+\contentsline {section}{\numberline {7.3}Social Media Scoring}{27}{section.100}
+\contentsline {section}{\numberline {7.4}Data Type Scoring}{27}{section.101}
+\contentsline {section}{\numberline {7.5}Preference Learning}{27}{section.102}
+\contentsline {section}{\numberline {7.6}API Speed Improvements}{28}{section.103}
+\contentsline {chapter}{\numberline {8}Conclusions}{29}{chapter.104}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Project Brief}{30}{appendix.104}
-\contentsline {paragraph}{Problem}{30}{section*.105}
-\contentsline {paragraph}{Goals}{30}{section*.106}
-\contentsline {paragraph}{Scope}{31}{section*.107}
-\contentsline {chapter}{\numberline {B}API Code Examples}{32}{appendix.108}
+\contentsline {chapter}{\numberline {A}Project Brief}{30}{appendix.105}
+\contentsline {paragraph}{Problem}{30}{section*.106}
+\contentsline {paragraph}{Goals}{30}{section*.107}
+\contentsline {paragraph}{Scope}{31}{section*.108}
+\contentsline {chapter}{\numberline {B}API Code Examples}{32}{appendix.109}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{34}{dummy.165}
+\contentsline {chapter}{Bibliography}{34}{dummy.166}

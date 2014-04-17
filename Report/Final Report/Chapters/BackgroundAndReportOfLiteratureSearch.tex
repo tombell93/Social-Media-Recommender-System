@@ -1,6 +1,6 @@
 \chapter{Background and Report of Literature Review}
 
-This project requires research into a range of areas across the entire spectrum of low- to hight-level data processing. These include text analysis, recommender and ranking algorithms, as well as consideration of cross-platform implementation and an understanding of similar existing solutions. This section summarises the research undertaken before and during the research and design phases.
+This project required research into a range of areas across the entire spectrum of low- to hight-level data processing. These include text analysis, recommender systems and ranking algorithms, as well as consideration of cross-platform implementation and an understanding of similar existing solutions. This section summarises the research undertaken before and during the research and design phases.
 
 \section{Existing Data-Ranking Implementations}
 
@@ -10,9 +10,9 @@ Google Now \cite{GoogleNow} combines Google's search feature with weather and na
 
 \section{Text Analytics Libraries}
 
-A broad range of text analytics services exist which include sentiment analysis, text categorisation, contextual targeting and a range of others. For example, Alchemy provides an API which performs sentiment analysis and text categorisation (among others), however it often failed to make any categorisation. The most comprehensive solution was Semantria \cite{Semantria}, but it is expensive to use. 
+A broad range of text analytics services exist which include sentiment analysis, text categorisation, contextual targeting and a range of others. For example, Alchemy \cite{AlchemyAPI} provides an API which performs sentiment analysis and text categorisation (among others), however it often failed to make any categorisation. The most comprehensive solution was Semantria \cite{Semantria} for its sentiment analysis, auto-categorisation, theme extraction, text summarisation and discovery of entities, but it is expensive to use. 
 
-DatumBox \cite{DatumBox} is a free machine learning API which performs sentiment analysis, subjectivity analysis, topic classification, language detection, readability detection, educational detection, document similarity analysis, and gender detection. It has a simple API using http POST requests and a JSON response. 
+DatumBox \cite{DatumBox} is a free machine learning API which performs sentiment analysis, subjectivity analysis, topic classification, language detection, readability detection, educational detection, document similarity analysis, and gender detection. It has a simple API using HTTP POST requests and a JSON response. 
 
 \section{Data-Mining}
 
@@ -20,13 +20,13 @@ A variety of data sources have been explored and an appendix is dedicated to ill
 
 Facebook4J \cite{Facebook4JExample} is a Java Facebook wrapper API which simplifies the most common Facebook API features into a more minimal library. Twitter provides an API which is freely available yet overly complex for this project. Twitter4J \cite{Twitter4JExample} is a free API which simplifies this.
 
-Calendars from a user's Google account can be retrieved on the Android platform using the CalendarProvider. This is a repository of a user's calendar events which can be queried. Tasks can be retrieved from a Google account using the Google Tasks API.
+Calendars from a user's Google account can be retrieved on the Android platform using the \emph{CalendarProvider}. This is a repository of a user's calendar events which can be queried. Tasks can be retrieved from a Google account using the Google Tasks API.
 
-SMS messages can be received in Android applications using a BroadcastReceiver which collects incoming SMS messages.
+SMS messages can be received in Android applications using a \emph{BroadcastReceiver} which collects incoming SMS messages.
 
 \section{Semantic Analysis}
 
-This project requires topic analysis of items of mobile data, in order to compare them to the user's profile and ascribe relevance to them. Other semantic analysis capabilities would prove beneficial for increasing the range of criteria by which relevance may be judged and to eliminate irrelevant data as early on as possible. These include readability, gender, subjectivity and language detection. The DatumBox \cite{DatumBox} API is chosen for semantic analysis for its coverage of these requirements; its ease of implementation and the free usage. 
+This project requires the topic classification of items of mobile data, in order to compare them to the user's profile and ascribe relevance to them. Other semantic analysis capabilities would prove beneficial for increasing the range of criteria by which relevance may be judged and to eliminate irrelevant data as early on as possible. These include readability, gender, subjectivity and language detection. The DatumBox API \cite{DatumBox} is chosen for semantic analysis for its coverage of these requirements; its ease of implementation and the free usage. 
 
 \subsection{DatumBox API and Usage}
 
@@ -35,10 +35,10 @@ Each feature provided by DatumBox has a POST Request URL and is retrieved in cod
 \section{Sorting Algorithms}
 
 Sorting is required for ordering scored items of data into a list whereby the topmost items are the most relevant and the bottommost are the least relevant. Since we are only dealing with relatively small sets of data, efficiency is not paramount in terms of maximising accuracy or usability. Despite this, some consideration is made to using the most appropriate sorting algorithms. 
-Merge-sort which uses a divide-and-conquer approach is one of the most suitable for initial scoring of larger numbers of items. It is stable and due to its constant performance of $O(nlogn)$ and predictable in terms of execution time. 
+Merge-sort which uses a divide-and-conquer approach is one of the most suitable for initial scoring of larger numbers of items. It is stable and due to its constant performance of $O(nlogn)$ is it predictable in terms of execution time. 
 For nearly sorted lists such as scenarios where single or small numbers of data items (less than 10) may be added to an ordered list, insertion sort is superior in speed and simplicity to others and will have a performance of $O(n)$.
 
-Insertion sort is ideal for the requirements of this project. It is fast for small and mostly sorted lists, and is basic to implement. The following insertion sort algorithm will sort items according to their score (Algorithm \ref{InsertionSort}).
+Insertion sort is ideal for the requirements of this project. It is fast for small and mostly sorted lists, and is simple to implement. The following insertion sort algorithm will sort items according to their score (Algorithm \ref{InsertionSort}).
 
 \begin{pseudocode}{InsertionSort}{A}
 	\label{InsertionSort}
@@ -61,7 +61,7 @@ Insertion sort is ideal for the requirements of this project. It is fast for sma
 
 This project requires flexibility in terms of its data sources. For the purposes of research, development and initial testing, JSON (JavaScript Object Notation) objects in text files are considered the best solution for storing test data. They are flexible in terms of multi-device usability and fully interchangeable with Java objects.
 
-Android data storage options include: shared preferences, internal storage, external storage, SQLite databases or on an external server accessed remotely \cite{BeginningAndroidDataPersistence}. Any number of these could be used to store information about the user, such as their preferences and UserContext which is required by the ranking agent. Internal storage will store text files in the file system. They are private to the user and other applications and can be used to store JSON objects. A database may be used to store test data and user-related data, but this would require extra code to manage this. Either internal or database storage would be perfectly adequate.
+Android data storage options include: shared preferences, internal storage, external storage, \emph{SQLite} databases or on an external server accessed remotely \cite{BeginningAndroidDataPersistence}. Any number of these can be used to store information about the user, such as their preferences or \emph{UserContext} which is required by the ranking agent. Internal storage will store text files in the file system. They are private to the user and other applications and can be used to store JSON objects. A database may be used to store test data and user-related data, but this would require extra code to manage this. Either internal or database storage would be perfectly adequate.
 
 \section{Recommender Systems}
 
@@ -73,7 +73,7 @@ Collaborative filtering methods \cite{CollaborativeRecommenderGoldberg} use info
 
 \subsection{Content-Based Filtering}
 
-Pazzani and Billisus discuss content-based approaches \cite{ContentRecommenderPazzani} which use characteristics of the items to be recommended to match them to items similar to those the user has liked in the past. Content-based filtering uses an item profile (a tuple of discrete attributes) characterising the item of data. The weight of each attribute denotes the extent to which each corresponding feature describes the item, and is compared to the user's profile. The most basic methods use the mean values of the attributes to denote importance. More complex systems use Bayesian classifiers, cluster analysis, or decision trees, among others.
+Pazzani and Billisus discuss content-based approaches \cite{ContentRecommenderPazzani} which use characteristics of the items to be recommended to match them to items similar to those the user has liked in the past. Content-based filtering uses an item profile (a tuple of discrete attributes) characterising the item of data. The weight of each attribute denotes the extent to which each corresponding feature describes the item, and they are compared to the user's personality profile. The most basic methods use the mean values of the attributes to denote importance. More complex systems use Bayesian classifiers, cluster analysis, or decision trees, among others.
 
 \subsection{Hybrid Recommender Systems}
 
@@ -83,7 +83,7 @@ Hybrid recommender systems combine the two approaches by combining the results o
 
 In typical recommendation systems a \textit{utility matrix} is a matrix which gives the user-item pair for each user's preference of each item. This is more common in collaborative filtering approaches where a user's recommendation of an item is based upon other users who viewed it. 
 
-In content-based approaches, it specifies the preference of the user, for an item's feature, such that the item is then scored by comparing the item profile with the user profile/utility matrix.
+In content-based approaches, it specifies the preference of the user for an item's feature, such that the item is then scored by comparing the item profile with the user profile/utility matrix.
 
 The utility matrix may be populated either by
 \begin{enumerate}
