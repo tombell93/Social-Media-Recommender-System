@@ -103,14 +103,26 @@ public class RankingAgent {
         List<DataItem> tempDataItems = sortedDataItems;
         tempDataItems.addAll(unsortedDataItems);
         
+        System.out.println("\nUserContext: ");
+        for (String topic : userContext.getCategories()) {
+            System.out.println("Topic: " + topic + ". Score: " + userContext.getFeaturesMap().get(topic).toString());
+        }
+        
+        System.out.println("Before analysis: ");
+        int i = 1;
         for (DataItem dataItem : tempDataItems){
-            System.out.println("Before sorting: " + dataItem.getScore().toString());
+            dataItem.setId(i);
+            System.out.println(Integer.toString(i) + "). ID: " + Integer.toString(dataItem.getId()) + ". Content: " + dataItem.getDetail().toString());
+            i++;
         }
         
         Collections.sort(tempDataItems, comparator);
-
+        Collections.reverse(tempDataItems);
+        System.out.println("After analysis: ");
+        i = 1;
         for (DataItem dataItem : tempDataItems){
-            System.out.println("After sorting: " + dataItem.getScore().toString() + " ID: " + dataItem.getId());
+             System.out.println(Integer.toString(i) + "). ID: " + Integer.toString(dataItem.getId()) + ". Topic: " + dataItem.getDataContext().getTopic() + ". Score: " + dataItem.getScore() + ". Content: " + dataItem.getDetail().toString());
+             i++;
         }
         
         //When implemented return tempDataItems

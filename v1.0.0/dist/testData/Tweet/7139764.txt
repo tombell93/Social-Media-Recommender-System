@@ -1,0 +1,1 @@
+{"id":0,"title":null,"detail":"Early night needed so bad :(","type":"Tweet","score":0,"link":null,"date":{"year":2013,"month":0,"dayOfMonth":30,"hourOfDay":14,"minute":34,"second":43},"author":"hannah4","location":null,"from":null,"to":null,"hashtag":"#lovetech","priority":0}

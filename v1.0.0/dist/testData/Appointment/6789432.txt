@@ -1,0 +1,1 @@
+{"id":0,"title":"Meet jack","detail":"meet up with jack for coffee about football event","type":"Appointment","score":0,"link":null,"date":{"year":2014,"month":1,"dayOfMonth":27,"hourOfDay":15,"minute":55,"second":12},"author":null,"location":"SUSU cafe","from":null,"to":null,"hashtag":null,"priority":0}

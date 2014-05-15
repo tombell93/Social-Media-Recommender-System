@@ -1,0 +1,1 @@
+{"id":0,"title":null,"detail":"FIrst thousand words of the old dissertation done.","type":"Tweet","score":0,"link":null,"date":{"year":2013,"month":9,"dayOfMonth":13,"hourOfDay":13,"minute":54,"second":59},"author":"tombell93","location":null,"from":null,"to":null,"hashtag":"#whatisahashtag","priority":0}

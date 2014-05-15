@@ -64,7 +64,7 @@ public class UserContext{
     public void setCurrentTime(Calendar currentTime) {
         this.currentTime = currentTime;
     }
-
+    
     /**
      * @return the featuresMap
      */

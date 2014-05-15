@@ -74,6 +74,48 @@ public class TestDataManager {
     public static List<DataItem> loadData() throws IOException{
         List<DataItem> dataItems = new ArrayList<DataItem>();
         Scanner reader = new Scanner(System.in);
+        System.out.println("How many items do you want to load?");
+        System.out.println("Type a number from 1 to 37: ");
+        String userInput = reader.nextLine();
+        int numberOfItemsToLoad = Integer.parseInt(userInput);
+        
+        dataItems.addAll(loadTestData("demoData"));
+        
+        List<DataItem> subSet = new ArrayList<DataItem>(dataItems.subList(0, numberOfItemsToLoad));
+        
+        System.out.println("Do you want to add noise?");
+        System.out.println("What noise ratio do you want to use?: "
+                + "\n no - No noise"
+                + "\n <number> - Ratio (Decimal between 0 and 1)");
+        String noiseUserInput = reader.nextLine();
+        
+        
+        if("no".equals(noiseUserInput)){
+            
+        } else {
+            double ratioToChange = Double.parseDouble(noiseUserInput);
+            int noCharsToChange = 0;
+            for(DataItem dataItem : subSet) {
+                noCharsToChange = (int)((double)(dataItem.getDetail().toCharArray().length) * ratioToChange);
+                for (int i = 0; i < noCharsToChange; i++) {
+                    String oldDetail = dataItem.getDetail();
+                    char[] characters = oldDetail.toCharArray();
+                    int rand = (int)(Math.random() * oldDetail.length());
+                    characters[rand] = '_';
+                    String newDetail =  new String(characters);
+                    dataItem.setDetail(newDetail);    
+                }                
+            }
+        }
+        
+        
+        return subSet;
+        
+    }
+    
+    public static List<DataItem> loadDataForVerification() throws IOException{
+        List<DataItem> dataItems = new ArrayList<DataItem>();
+        Scanner reader = new Scanner(System.in);
         System.out.println("What data do you want to load?");
         System.out.println("Choose one: "
                 + "\n 1 - Data types"
